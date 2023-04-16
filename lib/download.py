@@ -1,0 +1,38 @@
+import os
+import csv
+import requests
+
+destination_dir = '../external-templates'
+sources_list = '../sources.csv'
+
+# Downloads the file from a given URL, to the local destination
+def download(url: str, filename: str):
+    file_path = os.path.join(destination_dir, filename)
+    r = requests.get(url, stream=True)
+    if r.ok:
+        print('saving to', os.path.abspath(file_path))
+        with open(file_path, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=1024 * 8):
+                if chunk:
+                    f.write(chunk)
+                    f.flush()
+                    os.fsync(f.fileno())
+    else:  # HTTP status code 4XX/5XX
+        print('Download failed: status code {}\n{}'.format(r.status_code, r.text))
+
+# Gets list of URLs to download from CSV file
+def get_source_list():
+  sources=[]
+  with open('../sources.csv', mode='r') as file:
+      csvFile = csv.reader(file)
+      for lines in csvFile:#
+          sources.append(lines)
+  return sources
+
+# Create destination folder if not yet present
+if not os.path.exists(destination_dir):
+  os.makedirs(destination_dir)
+
+# # For each source, download the templates JSON file
+for sourceUrl in get_source_list():
+  download(sourceUrl[1], sourceUrl[0] + '.json')
