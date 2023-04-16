@@ -15,10 +15,11 @@ templates = []
 for file in files:
     # Open the file
     with open(templates_src_dir + file) as f:
-        # Load the JSON into a variable
-        data = json.load(f)['templates']
-        # Append the template object to the templates list
-        templates = templates + data
+        if file.endswith('.json'):
+          # Load the JSON into a variable
+          data = json.load(f)['templates']
+          # Append the template object to the templates list
+          templates = templates + data
 
 # Remove duplicates
 seen_titles = set()
