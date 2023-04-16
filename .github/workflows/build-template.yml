@@ -38,5 +38,10 @@ jobs:
           git config --global user.name "Liss-Bot"
           git config --global user.email "alicia-gh-bot@mail.as93.net"
           git add .
-          git commit -m "Updates templates (auto-generated, on ${{ steps.date.outputs.date }})"
-          git push
+          if git diff --staged --quiet; then
+            echo "Nothin new added, so nothing to commit, exiting..."
+            exit 0
+          else
+            git commit -m "Updates templates (auto-generated, on ${{ steps.date.outputs.date }})"
+            git push
+          fi
