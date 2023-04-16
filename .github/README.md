@@ -53,25 +53,25 @@ The `template.json` file is generated using the scripts in [`lib`](https://githu
 Running the `make` command will download all listed sources, parse them, and combine them outputting the `templates.json` file. 
 
 ### Adding a new Source
-Just place a link to the source, along with your chosen name in the [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv) file.
+If you're maintaining your own list of Portainer templates, and would like them to be included, just add the URL to your template.json file to [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv), along with a name.
 When the action runs, it will download the content, parse it and add it to the final template.
 
 ### Adding a Template / Template list
-Alternatively, place your template file within the [`sources`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory, and it will be automatically combined into the main `template.json`.
-Be sure that your template corresponds to [Portainer's App Template JSON Format](https://docs.portainer.io/advanced/app-templates/format).
+Alternatively, place your template file within the [`sources`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory, and it will be automatically combined into the main `template.json`. Be sure that your template corresponds to [Portainer's App Template JSON Format](https://docs.portainer.io/advanced/app-templates/format).
 
 ### Validating Templates
 There is a schema defined in [`Schema.json`](https://github.com/Lissy93/portainer-templates/blob/main/Schema.json), which can be used to validate any Portainer template.
 Run `make validate` to ensure your template conforms to Portainer's App Template [specification](https://docs.portainer.io/advanced/app-templates/format).
 
 ### Maintaining your own Templates
-If you'd prefer to maintain your own templates, while using the templates included here as a base, then fork the repository, and update `lissy93` with your GitHub username
+If you'd like to use this repo as a base, but maintain your own list of template, just fork the repository, and update `lissy93` with your username in the import URL.
 
 ---
 
 ## Sources
 
-The templates here are composed from the following sources. Full credit to the authors of each
+Full credit to the authors of the following templates.
+The main `templates.json` file is composes of these sources, along with the content of the [`sources`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory.
 
 - [dnburgess](https://github.com/dnburgess/self-hosted-template) <sup>[`template.json`](https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json)</sup>
 - [qballjos](https://github.com/Qballjos/portainer_templates) <sup>[`template.json`](https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json)</sup>
