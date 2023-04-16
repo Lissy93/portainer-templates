@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "PortainerAppTemplate",
+  "properties": {
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The version of the Portainer App Template."
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2,
+            "description": "The type of the application (1 for container, 2 for swarm stack)."
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The title of the application."
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A brief description of the application."
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "An array of categories the application belongs to."
+          },
+          "platform": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The target platform of the application (e.g., 'linux', 'windows')."
+          },
+          "logo": {
+            "type": "string",
+            "format": "uri",
+            "description": "A URI to the logo of the application."
+          },
+          "image": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The name of the Docker image used for the application."
+          },
+          "restart_policy": {
+            "type": "string",
+            "enum": ["always", "unless-stopped", "on-failure", "no"],
+            "description": "The restart policy for the application."
+          },
+          "ports": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9]+:[0-9]+(/tcp|/udp)?$",
+              "description": "A port mapping in the format 'hostPort:containerPort/protocol'."
+            },
+            "description": "An array of port mappings for the application."
+          },
+          "volumes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "bind": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The host path for the volume binding."
+                },
+                "container": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The container path for the volume binding."
+                }
+              },
+              "required": ["bind", "container"]
+            },
+            "description": "An array of volume mappings for the application."
+          },
+          "environment": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The name of the environment variable."
+                },
+                "label": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": ["type", "title", "description", "categories", "platform", "logo", "image"]
+      }
+    }
+  },
+  "required": ["version", "templates"]
+}
+
