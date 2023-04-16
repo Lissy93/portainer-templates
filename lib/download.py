@@ -4,7 +4,7 @@ import requests
 
 dir = os.path.dirname(os.path.abspath(__file__))
 
-destination_dir = os.path.join(dir, '../external-templates')
+destination_dir = os.path.join(dir, '../sources')
 sources_list = os.path.join(dir, '../sources.csv')
 
 # Downloads the file from a given URL, to the local destination

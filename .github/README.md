@@ -1,6 +1,9 @@
 
 <h1 align="center">Portainer Templates</h1>
 <p align="center"><i>A compiled list of 400+ ready to go Portainer App templates</i></p>
+<p align="center">
+  <img width="200" src="https://i.ibb.co/hMymwH0/portainer-templates-small.png" />
+</p>
 
 > **TL;DR** Under Settings → App Templates in your Portainer GUI, paste this URL:<br>
 > `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`<br>
@@ -54,7 +57,7 @@ Just place a link to the source, along with your chosen name in the [`sources.cs
 When the action runs, it will download the content, parse it and add it to the final template.
 
 ### Adding a Template / Template list
-Alternatively, place your template file within the [`external-templates`](https://github.com/Lissy93/portainer-templates/tree/main/external-templates) directory, and it will be automatically combined into the main `template.json`.
+Alternatively, place your template file within the [`sources`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory, and it will be automatically combined into the main `template.json`.
 Be sure that your template corresponds to [Portainer's App Template JSON Format](https://docs.portainer.io/advanced/app-templates/format).
 
 ### Validating Templates

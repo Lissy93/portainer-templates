@@ -1,9 +1,9 @@
 import os
 import json
 
-# Get list of files in external-templates
+# Get list of files in sources
 dir = os.path.dirname(os.path.abspath(__file__))
-templates_src_dir = os.path.join(dir, '../external-templates/')
+templates_src_dir = os.path.join(dir, '../sources/')
 template_dest_file = os.path.join(dir, '../templates.json')
 
 files = os.listdir(templates_src_dir)
@@ -11,7 +11,7 @@ files = os.listdir(templates_src_dir)
 # Initialize empty list to store template objects
 templates = []
 
-# For each file in external-templates
+# For each file in sources
 for file in files:
     # Open the file
     with open(templates_src_dir + file) as f:
