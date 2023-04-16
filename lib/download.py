@@ -2,8 +2,10 @@ import os
 import csv
 import requests
 
-destination_dir = '../external-templates'
-sources_list = '../sources.csv'
+dir = os.path.dirname(os.path.abspath(__file__))
+
+destination_dir = os.path.join(dir, '../external-templates')
+sources_list = os.path.join(dir, '../sources.csv')
 
 # Downloads the file from a given URL, to the local destination
 def download(url: str, filename: str):
@@ -23,7 +25,7 @@ def download(url: str, filename: str):
 # Gets list of URLs to download from CSV file
 def get_source_list():
   sources=[]
-  with open('../sources.csv', mode='r') as file:
+  with open(sources_list, mode='r') as file:
       csvFile = csv.reader(file)
       for lines in csvFile:#
           sources.append(lines)
@@ -33,6 +35,6 @@ def get_source_list():
 if not os.path.exists(destination_dir):
   os.makedirs(destination_dir)
 
-# # For each source, download the templates JSON file
+# For each source, download the templates JSON file
 for sourceUrl in get_source_list():
   download(sourceUrl[1], sourceUrl[0] + '.json')

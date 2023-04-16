@@ -2,7 +2,11 @@ import os
 import json
 
 # Get list of files in external-templates
-files = os.listdir('../external-templates')
+dir = os.path.dirname(os.path.abspath(__file__))
+templates_src_dir = os.path.join(dir, '../external-templates/')
+template_dest_file = os.path.join(dir, '../templates.json')
+
+files = os.listdir(templates_src_dir)
 
 # Initialize empty list to store template objects
 templates = []
@@ -10,7 +14,7 @@ templates = []
 # For each file in external-templates
 for file in files:
     # Open the file
-    with open('../external-templates/' + file) as f:
+    with open(templates_src_dir + file) as f:
         # Load the JSON into a variable
         data = json.load(f)['templates']
         # Append the template object to the templates list
@@ -26,5 +30,5 @@ fileData = {
 }
 
 # Open the templates.json file, and write results to it
-with open('../templates.json', 'w') as f:
+with open(template_dest_file, 'w') as f:
   json.dump(fileData, f, indent=2, sort_keys=False)
