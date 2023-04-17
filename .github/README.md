@@ -27,6 +27,13 @@ This repo combines app templates from several [sources](#sources), to create a r
     - `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`
 3. Now under Home --> App Templates, you should see all apps. Click one to deploy.
 
+<details>
+<summary>Show me...</summary>
+
+<p align="center"><a href="https://portainer-templates.as93.net"><img width="800" src="https://i.ibb.co/XxGRjrs/portainer-templates-installation.gif" /></a></p>
+
+</details>
+
 Alternatively, when you start Portainer, you can append the `--templates` flag pointing to the templates URL. 
 
 ---
