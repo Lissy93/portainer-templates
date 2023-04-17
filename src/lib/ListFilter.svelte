@@ -17,6 +17,7 @@
   margin: 1rem auto;
   padding: 0 1rem;
   max-width: var(--max-width);
+  flex-wrap: wrap;
   h2 {
     font-size: 2rem;
     margin: 0;
