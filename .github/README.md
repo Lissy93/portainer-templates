@@ -2,7 +2,10 @@
 <h1 align="center">Portainer Templates</h1>
 <p align="center"><i>A compiled list of 400+ ready to go Portainer App templates</i></p>
 <p align="center">
-  <img width="200" src="https://i.ibb.co/hMymwH0/portainer-templates-small.png" />
+  <a href="https://portainer-templates.as93.net">
+    🌐 <sup><b>portainer-templates.as93.net</b></sup><br>
+    <img width="200" src="https://i.ibb.co/hMymwH0/portainer-templates-small.png" />
+  </a>
 </p>
 
 > **TL;DR** Under Settings → App Templates in your Portainer GUI, paste this URL:<br>
@@ -13,7 +16,7 @@
 
 In Portainer, [App Templates](https://docs.portainer.io/user/docker/templates) enable you to easily deploy a container with a predetermined configuration, while allowing you to customize options through the web UI. Both single containers, and stacks are supported. While Portainer ships with some default templates (see [portainer/templates](https://github.com/portainer/templates)), it's often helpful to have 1-click access to many more apps, without having to constantly switch template sources.
 
-This repo combines app templates from several [sources](#sources), to create a ready-to-go template file containing all the apps you'll ever need.
+This repo combines app templates from several [sources](#sources), to create a ready-to-go [template file](https://github.com/Lissy93/portainer-templates/blob/main/templates.json) containing all the apps you'll ever need.
 
 ---
 
@@ -30,18 +33,20 @@ Alternatively, when you start Portainer, you can append the `--templates` flag p
 
 ## Self-Hosting
 
-```
+```bash
 git clone https://github.com/lissy93/portainer-templates.git portainer-templates
 cd portainer-templates
 docker build -t portainer-templates .
 docker run -d -p "8080:80" portainer-templates
 ```
 
+If you're running a fork of this repo, don't forget to replace [`lissy93`] with your own username.
+
 Your templates file will then be served up, at: `http://docker-host:8080/templates.json`
 
 Or, to mount the `templates.json` file to your container, so that you can make changes to it, and have them show up within Portainer
 
-```
+```bash
 docker run -d -p "8080:80" -v "${PWD}/templates.json:/usr/share/nginx/html/templates.json" portainer-templates
 ```
 
@@ -50,7 +55,8 @@ docker run -d -p "8080:80" -v "${PWD}/templates.json:/usr/share/nginx/html/templ
 ## Editing
 
 The `template.json` file is generated using the scripts in [`lib`](https://github.com/Lissy93/portainer-templates/tree/main/lib), using GitHub Actions.
-Running the `make` command will download all listed sources, parse them, and combine them outputting the `templates.json` file. 
+Running the `make` command will download all listed sources, parse them, and combine them with anything in the sources dir, outputting the `templates.json` file.<br>
+_So, you only need to edit **either** the [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv) file, **or** add your templates directly into the [`sources/`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory._
 
 ### Adding a new Source
 If you're maintaining your own list of Portainer templates, and would like them to be included, just add the URL to your template.json file to [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv), along with a name.
@@ -87,6 +93,24 @@ The main `templates.json` file is composes of these sources, along with the cont
 ---
 
 ## Contributing
+
+---
+
+## Website
+There's a simple website, which lists all available templates and shows the config options for each. You can view it at **[portainer-templates.netlify.app](https://portainer-templates.netlify.app/)**<br>
+The source is located in the [`website`](https://github.com/Lissy93/portainer-templates/tree/website) branch, and it's build as a simple SSR Svelte app (using SvelteKit + TypeScript + SCSS + Vite).
+
+To make changes to the website, you'll need Node.js and Git installed. Then just run the following commands:
+```bash
+git clone -b website git@github.com:Lissy93/portainer-templates.git # Clone the website branch
+cd portainer-templates # Navigate into the directory
+npm i # Install dependencies
+npm run dev # Start the development server
+```
+
+And to pubish, run `npm run build` then either use `npm start` or host the content of the '/build' directory using a web server of your choice. Alternatively, there's a [Dockerfile](https://github.com/Lissy93/portainer-templates/blob/website/Dockerfile), for easy deployment :)
+
+Note that it's not required to make any changes to the website when adding a new template or templates source, as data is fetched directly from [`templates.json`](https://github.com/Lissy93/portainer-templates/blob/main/templates.json) in the repo's main branch - so should show up automatically once your changes are merged.
 
 ---
 
