@@ -1,4 +1,3 @@
-
 <h1 align="center">Portainer Templates</h1>
 <p align="center"><i>A compiled list of 400+ ready to go Portainer App templates</i></p>
 <p align="center">
@@ -81,21 +80,32 @@ If you'd like to use this repo as a base, but maintain your own list of template
 
 ---
 
-## Sources
+<details>
+
+  <summary><h2>Supported Apps and Stacks</h2><br><i>↕️ Click to Expand ↕️</i></summary>
+
+  <br>
+
+<!-- auto-insert-apps:start -->
+<!-- auto-insert-apps:end -->
+
+</details>
+
+---
+
+<details>
+
+  <summary><h2>Sources</h2><br><i>↕️ Click to Expand ↕️</i></summary>
+
+<br>
 
 Full credit to the authors of the following templates.
 The main `templates.json` file is composes of these sources, along with the content of the [`sources`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory.
 
-- [dnburgess](https://github.com/dnburgess/self-hosted-template) <sup>[`template.json`](https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json)</sup>
-- [qballjos](https://github.com/Qballjos/portainer_templates) <sup>[`template.json`](https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json)</sup>
-- [SelfhostedPro](https://github.com/SelfhostedPro/selfhosted_templates) <sup>[`template.json`](https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json)</sup>
-- [technorabilia](https://github.com/technorabilia/portainer-templates) <sup>[`template.json`](https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json)</sup>
-- [mikestraney](https://github.com/mikestraney/portainer-templates) <sup>[`template.json`](https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json)</sup>
-- [xneo1](https://github.com/xneo1/portainer_templates) <sup>[`template.json`](https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json)</sup>
+<!-- auto-insert-sources:start -->
+<!-- auto-insert-sources:end -->
 
----
-
-## Supported Apps and Stacks
+</details>
 
 ---
 
