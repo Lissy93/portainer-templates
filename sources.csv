@@ -4,3 +4,9 @@ selfhostedpro_templates, https://raw.githubusercontent.com/SelfhostedPro/selfhos
 technorabilia_templates, https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json
 mikestraney_templates, https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json
 xneo1_templates, https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json
+novaspirit_templates, https://raw.githubusercontent.com/novaspirit/pi-hosted/master/pi-hosted_template/template/portainer-v2.json
+donpablonow_templates, https://raw.githubusercontent.com/donpablonow/awesome-saas/master/Template/portainer-v2.json
+mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json
+mycroftwilde_templates, https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json
+mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json
+portainer_templates, https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json
