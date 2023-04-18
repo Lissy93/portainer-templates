@@ -40,7 +40,6 @@ jobs:
           git add templates.json
           if git diff --staged --quiet; then
             echo "Nothin new added, so nothing to commit, exiting..."
-            exit 0
           else
             git commit -m "Updates templates (auto-generated, on ${{ steps.date.outputs.date }})"
             git push
@@ -48,7 +47,6 @@ jobs:
           git add .github/README.md
           if git diff --staged --quiet; then
             echo "No need to update README, skipping..."
-            exit 0
           else
             git commit -m "Updates template + source list in docs (auto-generated, on ${{ steps.date.outputs.date }})"
             git push
