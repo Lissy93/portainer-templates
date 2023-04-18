@@ -2,7 +2,7 @@
 
 PYTHON := $(shell which python3 2>/dev/null || which python)
 
-all: install_requirements download combine
+all: install_requirements download combine list
 
 install_requirements:
 	$(PYTHON) -m pip install -r lib/requirements.txt
@@ -15,3 +15,6 @@ combine:
 
 validate:
 	$(PYTHON) lib/validate.py
+
+list:
+	$(PYTHON) lib/list.py
