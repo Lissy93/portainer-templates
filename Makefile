@@ -1,15 +1,17 @@
 .PHONY: all install_requirements download combine
 
+PYTHON := $(shell which python3 2>/dev/null || which python)
+
 all: install_requirements download combine
 
 install_requirements:
-	pip install -r lib/requirements.txt
+	$(PYTHON) -m pip install -r lib/requirements.txt
 
 download:
-	python lib/download.py
+	$(PYTHON) lib/download.py
 
 combine:
-	python lib/combine.py
+	$(PYTHON) lib/combine.py
 
 validate:
-	python lib/validate.py
+	$(PYTHON) lib/validate.py
