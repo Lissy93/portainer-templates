@@ -1,4 +1,5 @@
 import os
+import string
 import json
 
 # Get list of files in sources
@@ -21,9 +22,15 @@ for file in files:
           # Append the template object to the templates list
           templates = templates + data
 
-# Remove duplicates
 seen_titles = set()
-filtered_data = [x for x in templates if x['title'] not in seen_titles and not seen_titles.add(x['title'])]
+filtered_data = []
+
+for x in templates:
+    normalized_title = x['title'].translate(str.maketrans('', '', string.punctuation)).replace(' ', '').lower()
+    if normalized_title not in seen_titles:
+        seen_titles.add(normalized_title)
+        filtered_data.append(x)
+
 
 fileData = {
   'version': '2',
