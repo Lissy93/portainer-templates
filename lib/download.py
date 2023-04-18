@@ -27,7 +27,8 @@ def get_source_list():
   sources=[]
   with open(sources_list, mode='r') as file:
       csvFile = csv.reader(file)
-      for lines in csvFile:#
+      for lines in csvFile:
+        if len(lines) > 1 and lines[1].strip():
           sources.append(lines)
   return sources
 
