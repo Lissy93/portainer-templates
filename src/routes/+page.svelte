@@ -6,6 +6,7 @@
   import Templates from '$lib/TemplateList.svelte';
   import NoResults from '$lib/NoResults.svelte';
   import Footer from '$lib/Footer.svelte';
+  import type { Template } from '$src/Types';
 
   export let data;
 
@@ -13,7 +14,7 @@
 
   let selectedCategories: string[] = [];
   
-  $: filteredTemplates = data.templates.filter((template: any) => {
+  $: filteredTemplates = data.templates.filter((template: Template) => {
     const compareStr = (str1: string, str2: string) =>
       (str1 || '').toLowerCase().includes(str2.toLowerCase());
 
@@ -77,25 +78,3 @@
 
 <!-- Footer showing license and source code links -->
 <Footer />
-
-<style lang="scss">
-  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;800&display=swap');
-  :global(body) {
-    --background: #101828;
-    --foreground: #ffffff;
-    --accent: #0ba5ec;
-    --card: #1d2939;
-    --shadow: 1px 1px 3px 3px #0B9AEC8F;
-    --gradient: linear-gradient(to right,#0B9AEC 0%,#6EDFDE 100%);
-    --max-width: 1800px;
-    margin: 0;
-    font-family: 'Kanit', sans-serif;
-    color: var(--foreground);
-    background: var(--background);
-  }
-  :global(::selection) {
-    background: var(--card);
-    color: var(--accent);
-  }
-
-</style>

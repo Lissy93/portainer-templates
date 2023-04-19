@@ -1,3 +1,5 @@
+import { templates } from '$src/store';
+import { templatesUrl } from '$src/constants';
 
 const makeCategories = (templates) => {
   // Get categories from templates
@@ -20,8 +22,8 @@ const makeCategories = (templates) => {
 
 
 export const load = async () => {
-  const url = 'https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json';
-  const data = await fetch(url).then((res) => res.json());
+  const data = await fetch(templatesUrl).then((res) => res.json());
+  templates.set(data.templates);
   
   return {
     templates: data.templates,
