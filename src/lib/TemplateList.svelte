@@ -1,10 +1,15 @@
 <script lang="ts">
-  export let templates: any;
+  import type { Template } from '$src/Types';
+  export let templates: Template[];
+
+  const slugify = (title: string) => {
+    return `/${title.toLowerCase().replace(/[^a-zA-Z ]/g, "").replaceAll(' ', '-')}`;
+  }
 </script>
 
 <section class="templates">
   {#each templates as template}
-    <div class="template-card">
+    <a class="template-card" href={slugify(template.title)}>
       <h3>{template.title}</h3>
       <div class="template-summary">
         <div class="left">
@@ -14,7 +19,7 @@
           <p class="description" title={template.description}>{template.description}</p>
         </div>
       </div>
-    </div>
+    </a>
   {/each}
 </section>
 
@@ -35,6 +40,8 @@ section.templates {
     gap: 1rem;
     transition:all 0.3s ease-in-out;
     max-width: 28rem;
+    text-decoration: none;
+    color: var(--foreground);
     &:hover {
       box-shadow: var(--shadow);
     }
