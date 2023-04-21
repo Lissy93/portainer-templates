@@ -10,8 +10,7 @@ export const load = async () => {
     }
   } else {
     const data = await fetch(templatesUrl).then((res) => res.json());
-    templates.set(data.templates);
-    
+    templates.set(data.templates);    
     return {
       templates: data.templates,
     }

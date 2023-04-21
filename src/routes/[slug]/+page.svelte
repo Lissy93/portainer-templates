@@ -1,8 +1,11 @@
 <script lang="ts">
+  import yaml from 'js-yaml';
+
   import { page } from '$app/stores';
   import TemplateNotFound from '$lib/TemplateNotFound.svelte';
-  import type { Template } from '$src/Types';
+  import type { Template, Service } from '$src/Types';
 
+  import ServiceStats from '$lib/ServiceStats.svelte';
   const templates = $page.data.templates as Template[];
   const templateSlug = $page.params.slug as string;
   
@@ -11,6 +14,70 @@
   );
 
   console.log(template);
+
+
+type Service = {
+  name: string;
+  image: string;
+  entrypoint: string;
+  command: string;
+  ports: string[];
+  build: string;
+  interactive: boolean;
+  volumes: { bind: string; container: string }[];
+  restart_policy: string;
+  environment: { name: string; value: string }[];
+};
+
+const getServices = async (): Promise<Service[]> => {
+  try {
+    if (template?.repository) {
+      const { url: repoUrl, stackfile } = template.repository;
+      const path = `${repoUrl.replace(
+        'github.com',
+        'raw.githubusercontent.com'
+      )}/HEAD/${stackfile}`;
+      const response = await fetch(path);
+      const data = await response.text();
+      const parsedData = yaml.load(data);
+      const someServices: Service[] = [];
+      if (!parsedData.services) return [];
+
+      console.log(parsedData);
+      Object.keys(parsedData.services).forEach((service) => {
+        const serviceData = parsedData.services[service];
+        someServices.push({
+          name: service,
+          image: serviceData.image,
+          entrypoint: serviceData.entrypoint,
+          command: serviceData.command,
+          ports: serviceData.ports,
+          build: serviceData.build,
+          interactive: serviceData.interactive,
+          volumes: serviceData.volumes?.map((vol) => ({
+            bind: vol.split(':')[0],
+            container: vol.split(':')[1],
+          })),
+          restart_policy: serviceData.restart,
+          env: Object.keys(serviceData.environment || {}).map((envName) => ({
+            name: envName,
+            value: serviceData.environment[envName],
+          })),
+        });
+      });
+      console.log(someServices);
+      return someServices;
+    } else {
+      return [];
+    }
+  } catch (error) {
+    console.error('Error fetching or parsing YAML:', error);
+    return [];
+  }
+};
+
+const services: Service[] = getServices();
+
 </script>
 
 <header>
@@ -26,74 +93,38 @@
 
 {#if template}
   <section class="summary-section">
-    <h1><img src={template.logo} alt={template.title} />{template.title}</h1>
-    {#if template.categories}
+    <h1>
+      {#if template.logo} <img src={template.logo} /> {/if}
+      {template.title}
+    </h1>
+    {#if template.categories || template.category }
       <p class="tags">
-        {#each (template.categories) as tag}
+        {#each (template.categories || template.category || []) as tag}
           <span>{tag}</span>
         {/each}
       </p>
     {/if}
     <div class="content">
       <p class="description">{template.description}</p>
-      <div class="stats">
-        {#if template.type}
-          <div class="row">
-            <span class="lbl">Type</span>
-            {#if template.type === 1}
-              <span>Container</span>
-            {:else if template.type === 2}
-              <span>Swarm</span>
-            {:else if template.type === 3}
-              <span>Kubernetes</span>
-            {:else}
-              <span>Unknown</span>
-            {/if}
-          </div>
-        {/if}
-        {#if template.platform}
-          <div class="row">
-            <span class="lbl">Platform</span>
-            <code>{template.platform}</code>
-          </div>
-        {/if}
-        {#if template.image}
-          <div class="row">
-            <span class="lbl">Image</span>
-            <code>{template.image}</code>
-          </div>
-        {/if}
-        {#if template.command}
-          <div class="row">
-            <span class="lbl">Command</span>
-            <code>{template.command}</code>
-          </div>
-        {/if}
-        {#if typeof template.interactive === 'boolean'}
-          <div class="row">
-            <span class="lbl">Interactive</span>
-            <code>{template.interactive ? 'Yes' : 'No'}</code>
-          </div>
-        {/if}
-        {#if template.ports}
-        <div class="row">
-          <span class="lbl">Ports</span>
-          <p>
-            {#each template.ports as port}<code>{port}</code>{/each}
-          </p>
-        </div>
-      {/if}
-        {#if template.volumes}
-        <div class="row">
-          <span class="lbl">Volumes</span>
-          <p>
-            {#each template.volumes as volume}<code>{volume.container}</code>{/each}
-          </p>
-        </div>
-      {/if}
-      </div>
+      <ServiceStats template={template} />
     </div>
   </section>
+
+  {#await services then returnedServices}
+  {#if returnedServices && returnedServices.length > 0}
+    <section class="service-section">
+      <h2>Services</h2>
+      <div class="service-list">
+        {#each returnedServices as service}
+          <div>
+            <h3>{service.name}</h3>
+            <ServiceStats template={service} />
+          </div>
+        {/each}
+      </div>
+    </section>
+  {/if}
+  {/await}
 {:else}
   <TemplateNotFound />
 {/if}
@@ -156,6 +187,7 @@
       gap: 1rem;
     }
     img {
+      border-radius: 6px;
       width: 64px;
       max-height: 64px;
     }
@@ -183,33 +215,25 @@
     p.description {
       max-width: 60%;
     }
-    .stats {
-      min-width: 15rem;
-      border: 2px solid var(--background);
-      border-radius: 6px;
-      .row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 0.5rem;
-        gap: 0.5rem;
-        &:not(:last-child) {
-          border-bottom: 2px dotted var(--background);
-        }
-        span {
-          font-style: italic;
-        }
-        p {
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-        }
-        .lbl {
-          font-weight: 400;
-          font-style: normal;
-          min-width: 5rem;
-        }
+  }
+
+  .service-section {
+    background: var(--card);
+    border-radius: 6px;
+    margin: 1rem;
+    padding: 1rem;
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .service-list {
+      display: flex;
+      gap: 1rem;
+      // justify-content: space-between;
+      flex-wrap: wrap;
+      h3 {
+        margin: 0.5rem 0;
+        font-weight: 400;
       }
     }
   }

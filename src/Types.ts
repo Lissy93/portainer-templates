@@ -12,11 +12,15 @@ export interface Template {
   command?: string;
   interactive?: boolean;
   logo: string;
-  image: string;
+  image?: string;
   restart_policy?: 'always' | 'unless-stopped' | 'on-failure' | 'no';
   ports?: string[];
   volumes?: Volume[];
-  environment?: Environment[];
+  env?: Environment[];
+  repository?: {
+    stackfile: string;
+    url: string;
+  };
 }
 
 export interface Volume {
@@ -27,4 +31,20 @@ export interface Volume {
 export interface Environment {
   name: string;
   label?: string;
+  set?: string;
 }
+
+export interface Service {
+  name: string;
+  image?: string;
+  entrypoint?: string;
+  restart_policy?: 'always' | 'unless-stopped' | 'on-failure' | 'no';
+  volumes?: Volume[];
+  command?: string;
+  ports?: string[];
+  build?: string;
+  interactive?: boolean;
+  environment?: Environment[];
+}
+
+export interface TemplateOrService extends Template, Service {}
