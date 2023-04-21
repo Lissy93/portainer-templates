@@ -14,6 +14,7 @@
 		"@sveltejs/kit": "^1.5.0",
 		"js-yaml": "^4.1.0",
 		"sass": "^1.62.0",
+		"snarkdown": "^2.0.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"tslib": "^2.4.1",
