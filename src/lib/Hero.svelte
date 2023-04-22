@@ -1,5 +1,6 @@
 <script>
     import Icon from '$lib/Icon.svelte';
+    import { gitHubRepo } from '$src/constants'; 
 </script>
 
 <div class="hero">
@@ -9,11 +10,11 @@
   </header>
 
   <section class="cta">
-    <a href="https://github.com/Lissy93/portainer-templates">
+    <a href={gitHubRepo}>
       <Icon name="github" width="26px" height="26px" />
       View on GitHub
     </a>
-    <a href="https://github.com/Lissy93/portainer-templates">
+    <a href="/usage">
       <Icon name="portainer" width="26px" height="26px" />
       Install on Portainer
     </a>
