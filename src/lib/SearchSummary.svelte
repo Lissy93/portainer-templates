@@ -18,6 +18,8 @@ export let totalResults: number;
       Showing {numResults} of {totalResults}
       results, matching categories: {selectedCategories.join(', ')}
     </p>
+  {:else}
+    <p>Click an app to view info, stats and usage docs</p>
   {/if}
   {#if searchTerm || selectedCategories.length}
     <button on:click={clearSearch}>⨯ Clear Filters</button>
@@ -34,6 +36,7 @@ export let totalResults: number;
   align-items: center;
   p {
     opacity: 0.75;
+    margin: 0;
   }
   button {
     background: var(--gradient);

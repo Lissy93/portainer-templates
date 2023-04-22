@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Template } from '$src/Types';
   export let templates: Template[];
+  import { lazyLoad } from '$lib/lazy-load';
 
   const slugify = (title: string) => {
     return `/${title.toLowerCase().replace(/[^a-zA-Z ]/g, "").replaceAll(' ', '-')}`;
@@ -8,12 +9,12 @@
 </script>
 
 <section class="templates">
-  {#each templates as template}
+  {#each templates as template (template.title)}
     <a class="template-card" href={slugify(template.title)}>
       <h3>{template.title}</h3>
       <div class="template-summary">
         <div class="left">
-          <img src={template.logo} alt={template.title} />
+          <img class="loading" use:lazyLoad={template.logo} alt={template.title} />
         </div>
         <div class="txt">
           <p class="description" title={template.description}>{template.description}</p>
@@ -48,9 +49,7 @@ section.templates {
     .template-summary {
       display: flex;
       gap: 1rem;
-    }
-    .left {
-      .info-icons { opacity: 0.3; }
+      align-items: start;
     }
     p, h3 {
       margin: 0;
@@ -59,6 +58,12 @@ section.templates {
       width: 64px;
       max-height: 64px;
       border-radius: 6px;
+      &.loading {
+        padding: 0.2rem;
+        background: var(--card-2);
+        border-radius: 6px;
+        height: 64px;
+      }
     }
     .description {
       font-style: italic;
