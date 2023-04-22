@@ -2,8 +2,6 @@
 
   import { page } from '$app/stores';
 
-  import Header from '$lib/Header.svelte';
-  import Footer from '$lib/Footer.svelte';
   import ServiceStats from '$lib/ServiceStats.svelte';
   import TemplateNotFound from '$lib/TemplateNotFound.svelte';
   import DockerStats from '$lib/DockerStats.svelte';
@@ -30,8 +28,6 @@
   };
 
 </script>
-
-<Header />
 
 {#if template}
   <section class="summary-section">
@@ -92,7 +88,6 @@
   <TemplateNotFound templateName={urlSlug} />
 {/if}
 
-<Footer />
 
 <style lang="scss">
   section {

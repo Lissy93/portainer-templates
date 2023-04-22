@@ -90,5 +90,3 @@
   <NoResults />
 {/if}
 
-<!-- Footer showing license and source code links -->
-<Footer />

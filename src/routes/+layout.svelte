@@ -1,5 +1,39 @@
+<script lang="ts">
+  import { browser } from '$app/environment';
+  import { page, navigating } from '$app/stores';
+  import { tick } from 'svelte';
+  import Header from '$lib/Header.svelte';
+  import Footer from '$lib/Footer.svelte';
 
-<slot></slot>
+  let bottom = false;
+  let showNav = false;
+  
+  const scrollVisible = (): boolean => {
+    return browser ?
+      document.documentElement.clientHeight >= document.documentElement.scrollHeight
+      : false;
+  };
+
+  $: {
+    updateFooter();
+    if($navigating) updateFooter();
+    showNav = !['/', '/index'].includes($page.url.pathname)
+  }
+
+  async function updateFooter() {
+    await tick();
+    bottom = scrollVisible();
+  }
+</script>
+
+{#if showNav}
+  <Header />
+{/if}
+<main>
+  <slot></slot>
+</main>
+<Footer {bottom} />
+
 
 <style lang="scss">
   @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;800&display=swap');
@@ -20,6 +54,9 @@
   :global(::selection) {
     background: var(--accent);
     color: var(--background);
+  }
+  main {
+    padding: 2rem;
   }
 
 </style>

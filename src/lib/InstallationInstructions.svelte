@@ -216,6 +216,9 @@
       background: var(--card-2);
       position: relative;
       padding: 0.5rem;
+      pre {
+        font-size: 1rem;
+      }
       .docker-command-copy {
         position: absolute;
         right: 0.5rem;

@@ -1,11 +1,16 @@
+<script lang="ts">
+  import Button from '$lib/Button.svelte';
+  import { gitHubRepo } from '$src/constants';
+</script>
+
 <header>
   <a class="title" href="/">
     <img src="https://i.ibb.co/hMymwH0/portainer-templates-small.png" />
     <h2>Portainer Templates</h2>
   </a>
   <nav>
-    <a href="/">Home</a>
-    <a href="https://github.com/lissy93/portainer-templates">View on GitHub</a>
+    <Button to="/">Home</Button>
+    <Button to={gitHubRepo} icon="github">GitHub</Button>
   </nav>
 </header>
 
@@ -16,6 +21,7 @@
     justify-content: space-between;
     background: var(--card);
     padding: 0.25rem 1rem;
+    flex-wrap: wrap;
     a.title {
       display: flex;
       justify-content: center;
@@ -39,17 +45,6 @@
     nav {
       display: flex;
       gap: 1rem;
-      a {
-        color: var(--foreground);
-        text-decoration: none;
-        padding: 0.25rem 0.5rem;
-        border-radius: 6px;
-        transition: all 250ms ease-in-out;
-        &:hover {
-          background: var(--gradient);
-          transform: scale(1.05);
-        }
-      }
     }
     &.fixed {
       position: fixed;

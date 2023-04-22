@@ -1,8 +1,8 @@
 <script lang="ts">
 import { slide } from 'svelte/transition';
 import snarkdown from 'snarkdown';
-export let content: string;
-export let multiContent: { name: string, content: string, description: string, visible: false }[];
+export let content: string | null = null;
+export let multiContent: { name: string, content: string, description: string, visible: false }[] | null = null;
 
 let showDocs = false;
 
