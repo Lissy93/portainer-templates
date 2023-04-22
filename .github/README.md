@@ -13,9 +13,11 @@
 
 ## Intro
 
-In Portainer, [App Templates](https://docs.portainer.io/user/docker/templates) enable you to easily deploy a container with a predetermined configuration, while allowing you to customize options through the web UI. Both single containers, and stacks are supported. While Portainer ships with some default templates (see [portainer/templates](https://github.com/portainer/templates)), it's often helpful to have 1-click access to many more apps, without having to constantly switch template sources.
+In Portainer, [App Templates](https://docs.portainer.io/user/docker/templates) enable you to easily deploy services with a predetermined configuration, while allowing you to customize options through the web UI. While Portainer ships with some default templates (see [portainer/templates](https://github.com/portainer/templates)), it's often helpful to have 1-click access to many more apps + stacks, without having to constantly switch template sources.
 
-This repo combines app templates from several [sources](#sources), to create a ready-to-go [template file](https://github.com/Lissy93/portainer-templates/blob/main/templates.json) containing all the apps you'll ever need.
+This repo combines app templates from several [sources](#sources), to create a ready-to-go [template file](https://github.com/Lissy93/portainer-templates/blob/main/templates.json) containing all the apps you'll ever need. It's also possible to self-host, as well as combine with your own custom templates.
+
+You can browse all supported apps and stacks and see stats, config options and stand-alone installation commands for each, at [portainer-templates.as93.net](https://portainer-templates.as93.net)
 
 ---
 
