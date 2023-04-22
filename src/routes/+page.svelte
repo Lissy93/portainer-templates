@@ -1,4 +1,5 @@
 <script lang="ts">
+
   import Hero from '$lib/Hero.svelte';
   import ListFilter from '$lib/ListFilter.svelte';
   import Categories from '$lib/Categories.svelte';
@@ -11,6 +12,8 @@
   export let data;
 
   let searchTerm = '';
+
+  let showCategories = false;
 
   let selectedCategories: string[] = [];
   
@@ -32,6 +35,10 @@
     );
   });
 
+  const showHideCategoryList = () => {
+    showCategories = !showCategories;
+  };
+
   const toggleCategory = (category: string) => {
     if (selectedCategories.includes(category)) {
       selectedCategories = selectedCategories.filter((cat) => cat !== category);
@@ -44,20 +51,27 @@
     searchTerm = '';
     selectedCategories = [];
   }
+
 </script>
 
 <!-- Main title, and CTA buttons -->
 <Hero />
 
 <!-- Search bar, and Templates sub-title -->
-<ListFilter bind:searchTerm={searchTerm} />
+<ListFilter
+  bind:searchTerm={searchTerm}
+  toggleCategories={showHideCategoryList}
+  isCategoriesVisible={showCategories}
+/>
 
 <!-- List of categories to filter by -->
-<Categories
-  categories={data.categories}
-  selectedCategories={selectedCategories}
-  toggleCategory={toggleCategory}
-/>
+{#if showCategories}
+  <Categories
+    categories={data.categories}
+    selectedCategories={selectedCategories}
+    toggleCategory={toggleCategory}
+  />
+{/if}
 
 <!-- Text showing num results, and users search term + filters  -->
 <SearchSummary
