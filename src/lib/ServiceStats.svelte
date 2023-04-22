@@ -7,123 +7,107 @@
 
 <div class="stats">
   {#if template.type}
-    <div class="row">
-      <span class="lbl">Type</span>
-      {#if template.type === 1}
-        <span>Container</span>
-      {:else if template.type === 2}
-        <span>Swarm</span>
-      {:else if template.type === 3}
-        <span>Kubernetes</span>
-      {:else}
-        <span>Unknown</span>
-      {/if}
-    </div>
+    <span class="lbl">Type</span>
+    {#if template.type === 1}
+      <span class="val">Container</span>
+    {:else if template.type === 2}
+      <span class="val">Swarm</span>
+    {:else if template.type === 3}
+      <span class="val">Kubernetes</span>
+    {:else}
+      <span class="val">Unknown</span>
+    {/if}
   {/if}
   {#if template.platform}
-    <div class="row">
-      <span class="lbl">Platform</span>
-      <code>{template.platform}</code>
-    </div>
+    <span class="lbl">Platform</span>
+    <code class="val">{template.platform}</code>
   {/if}
   {#if template.image}
-    <div class="row">
-      <span class="lbl">Image</span>
-      <code>{template.image}</code>
-    </div>
+    <span class="lbl">Image</span>
+    <code class="val">{template.image}</code>
   {/if}
   {#if template.command}
-    <div class="row">
-      <span class="lbl">Command</span>
-      <code>{template.command}</code>
-    </div>
+    <span class="lbl">Command</span>
+    <code class="val">{template.command}</code>
   {/if}
   {#if typeof template.interactive === 'boolean'}
-    <div class="row">
-      <span class="lbl">Interactive</span>
-      <code>{template.interactive ? 'Yes' : 'No'}</code>
-    </div>
+    <span class="lbl">Interactive</span>
+    <code class="val">{template.interactive ? 'Yes' : 'No'}</code>
   {/if}
   {#if template.ports}
-    <div class="row">
-      <span class="lbl">Ports</span>
-      <p>
-        {#each template.ports as port}<code>{port}</code>{/each}
-      </p>
-    </div>
+    <span class="lbl">Ports</span>
+    <p class="val">
+      {#each template.ports as port}<code>{port}</code>{/each}
+    </p>
   {/if}
   {#if template.volumes}
-    <div class="row">
-      <span class="lbl">Volumes</span>
-      <p>
-        {#each template.volumes as volume}<code>{volume.container || volume}</code>{/each}
-      </p>
-    </div>
+    <span class="lbl">Volumes</span>
+    <p class="val">
+      {#each template.volumes as volume}
+      <code>
+        {volume.container || volume}{volume?.bind? ' : ' + volume.bind : ''}
+      </code>{/each}
+    </p>
   {/if}
   {#if template.restart_policy}
-    <div class="row">
-      <span class="lbl">Restart Policy</span>
-      <code>{template.restart_policy}</code>
-    </div>
+    <span class="lbl">Restart Policy</span>
+    <code class="val">{template.restart_policy}</code>
   {/if}
   {#if template.repository}
-  <div class="row">
     <span class="lbl">Sourced</span>
-    <a href={template.repository.url}>Repo</a>
-  </div>
+    <a class="val" href={template.repository.url}>Repo</a>
   {/if}
   {#if template.entrypoint}
-  <div class="row">
     <span class="lbl">Entrypoint</span>
-    <code>{template.entrypoint}</code>
-  </div>
+    <code class="val">{template.entrypoint}</code>
   {/if}
   {#if template.build}
-  <div class="row">
     <span class="lbl">Build</span>
-    <code>{template.build}</code>
-  </div>
+    <code class="val">{template.build}</code>
   {/if}
   {#if template.env}
-  <div class="row">
     <span class="lbl">Env Vars</span>
-    <p>
-      {#each template.env as env}<code>{env.name}={env.set || env.value || env.default}</code>{/each}
+    <p class="val">
+      {#each template.env as env}<code>{env.name}={env.set || env.value || env.default || '\'\''}</code>{/each}
     </p>
-  </div>
   {/if}
 </div>
 
 <style lang="scss">
   .stats {
     min-width: 15rem;
-    border: 2px solid var(--background);
+    padding: 0.5rem;
+    gap: 0.5rem;
     border-radius: 6px;
-    .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    place-items: baseline;
+    background: var(--card-2);
+
+    .lbl {
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .val {
+      max-width: 10rem;
+      overflow: hidden;
+      white-space:nowrap;
+      text-overflow: ellipsis;
+    }
+
+    span {
+      font-style: italic;
+    }
+    p {
+      margin: 0;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 0.5rem;
-      gap: 0.5rem;
-      &:not(:last-child) {
-        border-bottom: 2px dotted var(--background);
-      }
-      span {
-        font-style: italic;
-      }
-      p {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-      }
-      .lbl {
-        font-weight: 400;
-        font-style: normal;
-        min-width: 5rem;
-      }
-      a {
-        color: var(--accent);
-      }
+      flex-direction: column;
+    }
+
+    a {
+      color: var(--accent);
     }
   }
+  
 </style>

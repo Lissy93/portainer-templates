@@ -1,95 +1,37 @@
 <script lang="ts">
-  import yaml from 'js-yaml';
 
   import { page } from '$app/stores';
-  import TemplateNotFound from '$lib/TemplateNotFound.svelte';
-  import type { Template, Service } from '$src/Types';
 
+  import Header from '$lib/Header.svelte';
+  import Footer from '$lib/Footer.svelte';
   import ServiceStats from '$lib/ServiceStats.svelte';
-  const templates = $page.data.templates as Template[];
-  const templateSlug = $page.params.slug as string;
-  
-  const template = templates.find((temp: Template) =>
-    temp.title.toLowerCase().replace(/[^a-zA-Z ]/g, "").replaceAll(' ', '-') === templateSlug
-  );
+  import TemplateNotFound from '$lib/TemplateNotFound.svelte';
+  import DockerStats from '$lib/DockerStats.svelte';
+  import MdContent from '$lib/MdContent.svelte';
+  import InstallationInstructions from '$lib/InstallationInstructions.svelte';
 
-  console.log(template);
+  import type { Template, Service, DockerHubResponse } from '$src/Types';
 
+  const urlSlug = $page.params.slug;
+  const template = $page.data.template as Template;
+  const dockerStats = $page.data.dockerStats as DockerHubResponse;
+  const services = $page.data.services as Service[];
+  const serviceDockerStats = $page.data.serviceDockerStats as DockerHubResponse[] || null;
 
-type Service = {
-  name: string;
-  image: string;
-  entrypoint: string;
-  command: string;
-  ports: string[];
-  build: string;
-  interactive: boolean;
-  volumes: { bind: string; container: string }[];
-  restart_policy: string;
-  environment: { name: string; value: string }[];
-};
-
-const getServices = async (): Promise<Service[]> => {
-  try {
-    if (template?.repository) {
-      const { url: repoUrl, stackfile } = template.repository;
-      const path = `${repoUrl.replace(
-        'github.com',
-        'raw.githubusercontent.com'
-      )}/HEAD/${stackfile}`;
-      const response = await fetch(path);
-      const data = await response.text();
-      const parsedData = yaml.load(data);
-      const someServices: Service[] = [];
-      if (!parsedData.services) return [];
-
-      console.log(parsedData);
-      Object.keys(parsedData.services).forEach((service) => {
-        const serviceData = parsedData.services[service];
-        someServices.push({
-          name: service,
-          image: serviceData.image,
-          entrypoint: serviceData.entrypoint,
-          command: serviceData.command,
-          ports: serviceData.ports,
-          build: serviceData.build,
-          interactive: serviceData.interactive,
-          volumes: serviceData.volumes?.map((vol) => ({
-            bind: vol.split(':')[0],
-            container: vol.split(':')[1],
-          })),
-          restart_policy: serviceData.restart,
-          env: Object.keys(serviceData.environment || {}).map((envName) => ({
-            name: envName,
-            value: serviceData.environment[envName],
-          })),
-        });
-      });
-      console.log(someServices);
-      return someServices;
-    } else {
-      return [];
-    }
-  } catch (error) {
-    console.error('Error fetching or parsing YAML:', error);
-    return [];
-  }
-};
-
-const services: Service[] = getServices();
+  const makeMultiDoc = (services: Service[]) => {
+    return services.map((s) => {
+      return s?.dockerStats?.full_description ? {
+        name: s.name,
+        description: s.dockerStats.description,
+        content: s.dockerStats.full_description,
+        visible: false,
+      } : null;
+    }).filter((thingy) => thingy !== null);
+  };
 
 </script>
 
-<header>
-  <a class="title" href="/">
-    <img src="https://i.ibb.co/hMymwH0/portainer-templates-small.png" />
-    <h2>Portainer Templates</h2>
-  </a>
-  <nav>
-    <a href="/">Home</a>
-    <a href="https://github.com/lissy93/portainer-templates">View on GitHub</a>
-  </nav>
-</header>
+<Header />
 
 {#if template}
   <section class="summary-section">
@@ -105,7 +47,14 @@ const services: Service[] = getServices();
       </p>
     {/if}
     <div class="content">
-      <p class="description">{template.description}</p>
+      <div class="left">
+        <p class="description">{template.description}</p>
+        {#await template then returnedTemplate}
+          {#if dockerStats && dockerStats.name}
+          <DockerStats info={dockerStats} />
+          {/if}
+        {/await}
+      </div>
       <ServiceStats template={template} />
     </div>
   </section>
@@ -116,67 +65,44 @@ const services: Service[] = getServices();
       <h2>Services</h2>
       <div class="service-list">
         {#each returnedServices as service}
-          <div>
-            <h3>{service.name}</h3>
+          <div class="service-each">
+          <h3>{service.name}</h3>  
+          <div class="service-data">
             <ServiceStats template={service} />
+            {#if service.dockerStats && service.dockerStats.name}
+              <DockerStats info={service.dockerStats} />
+            {/if}
           </div>
+        </div>
         {/each}
       </div>
     </section>
   {/if}
   {/await}
+
+  <InstallationInstructions portainerTemplate={template} portainerServices={services || null} />
+
+  {#if dockerStats?.full_description}
+    <MdContent content={dockerStats.full_description} />
+  {:else if services.length > 0}
+    <MdContent multiContent={makeMultiDoc(services)} />
+  {/if}
+
 {:else}
-  <TemplateNotFound />
+  <TemplateNotFound templateName={urlSlug} />
 {/if}
 
-<style lang="scss">
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--card);
-    padding: 0.25rem 1rem;
-    a.title {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      color: var(--foreground);
-      text-decoration: none;
-      h2 {
-        margin: 0;
-        font-size: 1.5rem;
-        font-weight: 600;
-      }
-      img {
-        width: 40px;
-        transition: all 0.3s ease-in-out;
-      }
-      &:hover {
-        img { transform: rotate(-5deg) scale(1.1); }
-      }
-    }
+<Footer />
 
-    nav {
-      display: flex;
-      gap: 1rem;
-      a {
-        color: var(--foreground);
-        text-decoration: none;
-        padding: 0.25rem 0.5rem;
-        border-radius: 6px;
-        transition: all 250ms ease-in-out;
-        &:hover {
-          background: var(--gradient);
-          transform: scale(1.05);
-        }
-      }
-    }
+<style lang="scss">
+  section {
+    max-width: 1000px;
+    margin: 1rem auto;
   }
   .summary-section {
     background: var(--card);
     border-radius: 6px;
     padding: 1rem;
-    margin: 1rem;
     display: flex;
     flex-direction: column;
     h1 {
@@ -212,15 +138,24 @@ const services: Service[] = getServices();
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
+    margin-top: 1rem;
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
     p.description {
-      max-width: 60%;
+      background: var(--card-2);
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 0;
     }
   }
 
   .service-section {
     background: var(--card);
-    border-radius: 6px;
-    margin: 1rem;
+    border-radius: 6px; 
     padding: 1rem;
     h2 {
       margin: 0;
@@ -228,12 +163,18 @@ const services: Service[] = getServices();
     }
     .service-list {
       display: flex;
-      gap: 1rem;
-      // justify-content: space-between;
+      gap: 2rem;
       flex-wrap: wrap;
       h3 {
         margin: 0.5rem 0;
         font-weight: 400;
+        font-size: 2rem;
+      }
+      .service-each {
+        .service-data {
+          display: flex;
+          gap: 1rem;
+        }
       }
     }
   }
