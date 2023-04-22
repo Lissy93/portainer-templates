@@ -18,6 +18,10 @@ def load_csv_file(file_path):
     with open(file_path, 'r') as file:
         return list(csv.reader(file))
 
+def slugify(title: str):
+    baseUrl = 'https://portainer-templates.as93.net'
+    return f'{baseUrl}/{re.sub(r"[^a-zA-Z ]", "", title.lower()).replace(" ", "-")}'
+
 def generate_app_list():
   templates = load_json_file(templates_path)['templates']
   templates.sort(key=lambda template: template['title'].lower())
@@ -29,7 +33,7 @@ def generate_app_list():
           logo = f"<img title=\"{description}\" src='{template['logo']}' width='26' height='26' /> "
       else:
           logo = ' '      
-      markdown_content += f"{index+1}. {logo}**[{name}](https://example.com '{description}')**\n"
+      markdown_content += f"{index+1}. {logo}**[{name}]({slugify(name)} '{description}')**\n"
   return markdown_content
 
 def generate_sources_list():
