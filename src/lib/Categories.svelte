@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { slide } from 'svelte/transition';
   export let categories: string[];
   export let selectedCategories: string[];
   export let toggleCategory: (category: string) => void;
 </script>
 
-<div class="categories">
+<div class="categories" transition:slide>
   {#each Object.keys(categories) as category}
     <span
       on:click={() => toggleCategory(category)}
