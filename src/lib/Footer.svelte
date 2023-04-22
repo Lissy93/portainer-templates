@@ -1,5 +1,7 @@
 <script lang="ts">
   import Icon from '$lib/Icon.svelte';
+  export let bottom = false;
+
   let footerInfo = {
     author: 'Alicia Sykes',
     authorSite: 'https://github.com/lissy93',
@@ -10,7 +12,7 @@
   };
 </script>
 
-<footer>
+<footer class:bottom>
   <p>
     © <a href={footerInfo.authorSite} target="_blank" rel="noreferrer">{footerInfo.author}</a>
     {new Date().getFullYear()} - Licensed under
@@ -26,6 +28,10 @@
     padding: 0.5rem 0;
     width: 100%;
     background: var(--card);
+    &.bottom {
+      box-shadow: 0 -3px 4px 0 var(--background);
+      position: fixed;
+    }
     p {
       margin: 0;
       text-align: center;
