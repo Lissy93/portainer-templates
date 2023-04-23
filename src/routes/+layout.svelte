@@ -39,6 +39,7 @@
   <meta name="twitter:description" content="A community-driven library of 1-click self-hosted apps" />
   <meta name="twitter:image" content="{import.meta.env.VITE_PUBLIC_BASE_URL}/banner.png" />
   <link rel="canonical" href="{import.meta.env.VITE_PUBLIC_BASE_URL}" />
+  <meta name="theme-color" content="#0ba5ec" />
 </svelte:head>
 
 {#if showNav}
