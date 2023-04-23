@@ -80,3 +80,23 @@ export interface DockerHubResponse {
   content_types: string[]; // An array of supported content types for the repository
 }
 
+export interface DockerCompose {
+  version: string;
+  services: {
+    [serviceName: string]: {
+      image: string;
+      ports?: string[];
+      environment?: { [envVar: string]: string };
+      volumes?: string[];
+      restart?: string;
+      command?: string;
+      build?: string | { context: string; dockerfile?: string };
+      networks?: string[] | { [networkName: string]: { aliases?: string[] } };
+      depends_on?: string[];
+      labels?: { [labelName: string]: string };
+    };
+  };
+  networks?: { [networkName: string]: {} };
+  volumes?: { [volumeName: string]: {} };
+}
+
