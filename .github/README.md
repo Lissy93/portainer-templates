@@ -623,13 +623,51 @@ Note that it's not required to make any changes to the website when adding a new
 
 ---
 
-## Disclaimer
+## Mirror
+
+There's a mirror of this repository, maintained on CodeBerg at: **[codeberg.org/alicia/portainer-templates](https://codeberg.org/alicia/portainer-templates)**
+
+To pull templates from there, instead of GitHub, use this URL in your Portainer instance instead:
+
+```
+https://codeberg.org/alicia/portainer-templates/src/branch/main/templates.json
+```
 
 ---
 
 ## License
 
+> **Note** For licenses for each app listed here, see their websites _(linked to [above](#supported-apps-and-stacks))_.
 
+> _**[Lissy93/Portainer-Templates](https://github.com/Lissy93/portainer-templates)** is licensed under [MIT](https://github.com/Lissy93/portainer-templates/blob/HEAD/LICENSE) © [Alicia Sykes](https://aliciasykes.com) 2023._<br>
+> <sup align="right">For information, see <a href="https://tldrlegal.com/license/mit-license">TLDR Legal > MIT</a></sup>
+
+<details>
+<summary>Expand License</summary>
+
+```
+The MIT License (MIT)
+Copyright (c) Alicia Sykes <alicia@omg.com> 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sub-license, and/or sell 
+copies of the Software, and to permit persons to whom the Software is furnished 
+to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included install 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANT ABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
+
+</details>
 
 <!-- License + Copyright -->
 <p  align="center">
