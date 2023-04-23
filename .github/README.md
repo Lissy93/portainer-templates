@@ -11,6 +11,23 @@
 > `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`<br>
 
 
+<details>
+<summary><b>Contents</b></summary>
+
+- [Intro](#intro)
+- [Usage](#usage)
+- [Self-Hosting](#self-hosting)
+- [Editing](#editing)
+- [Included Apps](#supported-apps-and-stacks)
+- [Sources](#sources)
+- [Contributing](#contributing)
+- [Website](#website)
+- [Mirror](#mirror)
+- [Credits](#credits)
+- [License](#license)
+
+</details>
+
 ## Intro
 
 In Portainer, [App Templates](https://docs.portainer.io/user/docker/templates) enable you to easily deploy services with a predetermined configuration, while allowing you to customize options through the web UI. While Portainer ships with some default templates (see [portainer/templates](https://github.com/portainer/templates)), it's often helpful to have 1-click access to many more apps + stacks, without having to constantly switch template sources.
@@ -41,6 +58,12 @@ Alternatively, when you start Portainer, you can append the `--templates` flag p
 
 ## Self-Hosting
 
+If you'd prefer to source templates locally, you can self-host with Docker - there's a sample NGINX container provided<br>
+Just run: `docker run -p 8080:80 lissy93/portainer-templates` (changing 8080 to a port of your choice)<br>
+You'll then be able to pass Portainer the template file located at `http://[host]:[port]/templates.json`<br>
+
+Alternatively, you can build the image yourself locally, with the following commands (if you're using your own fork, don't forget to switch `lissy93` out for your username!)
+
 ```bash
 git clone https://github.com/lissy93/portainer-templates.git portainer-templates
 cd portainer-templates
@@ -48,15 +71,7 @@ docker build -t portainer-templates .
 docker run -d -p "8080:80" portainer-templates
 ```
 
-If you're running a fork of this repo, don't forget to replace [`lissy93`] with your own username.
-
-Your templates file will then be served up, at: `http://docker-host:8080/templates.json`
-
-Or, to mount the `templates.json` file to your container, so that you can make changes to it, and have them show up within Portainer
-
-```bash
-docker run -d -p "8080:80" -v "${PWD}/templates.json:/usr/share/nginx/html/templates.json" portainer-templates
-```
+If you're using your own template file, but don't want to fork this repository, you can instead simply pass your `templates.json` file to the above Docker container as a volume, with `-v "${PWD}/templates.json:/usr/share/nginx/html/templates.json"`
 
 ---
 
@@ -601,6 +616,14 @@ The main `templates.json` file is composes of these sources, along with the cont
 ---
 
 ## Contributing
+
+Contributions of any kind are very welcome, and would be much appreciated.
+For Code of Conduct, see [Contributor Convent](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
+
+For a guide on adding templates, see the [Editing](#editing) section above (TLDR; either update sources.csv, or paste your template collection into the ./sources directory).
+Or, to make changes to the website, see the [Website](#website) section below.
+
+If you're new to GitHub, you can get started by forking the repo, making your changes, adding, commiting and pushing the code, then come back here to open a pull request. You may also find [this guide](https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3#let-s-make-our-first-pull-request-) or the [git docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) helpful for getting started, but feel free to reach out if you need any support.
 
 ---
 
