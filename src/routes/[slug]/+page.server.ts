@@ -53,10 +53,13 @@ const getServices = async (template): Promise<Service[]> => {
             container: vol.split(':')[1],
           })),
           restart_policy: serviceData.restart,
-          env: Object.keys(serviceData.environment || {}).map((envName) => ({
-            name: envName,
-            value: serviceData.environment[envName],
-          })),
+          env: Object.keys(serviceData.environment || {}).map((envName) => {
+            if (typeof envName === 'string') {
+              const nowItsArray = serviceData.environment[envName].split('=') || [];
+              return { name: nowItsArray[0] || '',  value: nowItsArray[1] || '' }
+            }
+            return { name: envName, value: serviceData.environment[envName] }
+          }),
         });
       });
       return someServices;
@@ -80,7 +83,6 @@ const returnResults = async (templates, templateSlug) => {
   // If only 1 service, merge it with the template
   if (services.length === 1) {
     template = {...template, ...services[0]};
-    services = [];
   } else if (services.length > 1) {
     // If made up from multiple services, fetch Docker info for each image
     services = await Promise.all(

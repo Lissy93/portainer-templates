@@ -14,7 +14,6 @@
   const template = $page.data.template as Template;
   const dockerStats = $page.data.dockerStats as DockerHubResponse;
   const services = $page.data.services as Service[];
-  const serviceDockerStats = $page.data.serviceDockerStats as DockerHubResponse[] || null;
 
   const makeMultiDoc = (services: Service[]) => {
     return services.map((s) => {
@@ -27,7 +26,24 @@
     }).filter((thingy) => thingy !== null);
   };
 
+  const makeMetaDescription = () => {
+    return `Installation guide for ${template.title}, using Portainer, Docker Run or Docker-Compose. `
+    +`Portainer-Templates is a community driven repository of Portainer Templates for Self-Hosted apps. \n`
+    +`${template.description}`;
+  }
+
 </script>
+
+<svelte:head>
+  <title>{template.title} | Portainer Templates</title>
+  <meta name="description" content={makeMetaDescription()} />
+  <meta property="og:title" content="{template.title} | Portainer Templates" />
+  <meta property="og:description" content={makeMetaDescription()} />
+  <meta property="og:url" content="{import.meta.env.VITE_PUBLIC_BASE_URL}/{urlSlug}" />
+  <meta name="twitter:title" content="{template.title} | Portainer Templates" />
+  <meta name="twitter:description" content={makeMetaDescription()} />
+  <link rel="canonical" href="{import.meta.env.VITE_PUBLIC_BASE_URL}/{urlSlug}" />
+</svelte:head>
 
 {#if template}
   <section class="summary-section">
@@ -38,7 +54,7 @@
     {#if template.categories || template.category }
       <p class="tags">
         {#each (template.categories || template.category || []) as tag}
-          <span>{tag}</span>
+          <a href="/?categories={tag}"><span>{tag}</span></a>
         {/each}
       </p>
     {/if}
@@ -56,7 +72,7 @@
   </section>
 
   {#await services then returnedServices}
-  {#if returnedServices && returnedServices.length > 0}
+  {#if returnedServices && returnedServices.length > 1}
     <section class="service-section">
       <h2>Services</h2>
       <div class="service-list">
@@ -115,14 +131,24 @@
     .tags {
       display: flex;
       margin: 0;
-      span {
-        &:before {
-          content: '#';
-          opacity: 0.5;
+      gap: 0.5rem;
+      a {
+        color: var(--foreground);
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        span {
+          &:before {
+            content: '#';
+            opacity: 0.5;
+          }
+          &:not(:last-child)::after {
+            content: ',';
+            margin-right: 0.5rem;
+          }
         }
-        &:not(:last-child)::after {
-          content: ',';
-          margin-right: 0.5rem;
+        &:hover {
+          color: var(--accent);
+          transform: scale(1.08);
         }
       }
     }

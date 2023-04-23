@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores'
 
   import Hero from '$lib/Hero.svelte';
   import ListFilter from '$lib/ListFilter.svelte';
@@ -11,20 +12,24 @@
 
   export let data;
 
+
+
+  const preSelectedCategories = $page.url.searchParams.get('categories');
+
   let searchTerm = '';
 
-  let showCategories = false;
+  let selectedCategories: string[] = preSelectedCategories?.split(',') || [];
 
-  let selectedCategories: string[] = [];
+  let showCategories = !!preSelectedCategories || false;
   
   $: filteredTemplates = data.templates.filter((template: Template) => {
     const compareStr = (str1: string, str2: string) =>
       (str1 || '').toLowerCase().includes(str2.toLowerCase());
 
     if (selectedCategories.length) {
-      const templateCategories = template.categories || [];
+      const templateCategories = (template.categories || []).map((c) => c.toLowerCase());
       const hasSelectedCategory = selectedCategories.some((cat) =>
-        templateCategories.includes(cat)
+        templateCategories.includes(cat.toLocaleLowerCase())
       );
       if (!hasSelectedCategory) return false;
     }
