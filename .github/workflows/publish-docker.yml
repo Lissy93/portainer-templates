@@ -1,0 +1,87 @@
+# Scans, builds and releases a multi-architecture docker image
+name: 🐳 Build + Publish Multi-Platform Image
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['master']
+    tags: ['v[0-9].[0-9]+.[0-9]+']
+    paths:
+      - 'templates.json'
+
+env:
+  DH_IMAGE: ${{ secrets.DOCKER_REPO || github.event.repository.name }}
+  GH_IMAGE: ${{ github.repository_owner }}/${{ github.event.repository.name }}
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    permissions: { contents: read, packages: write }
+    if: "!contains(github.event.head_commit.message, '[ci-skip]')"
+
+    steps:
+      - name: 🛎️ Checkout Repo
+        uses: actions/checkout@v2
+
+      # - name: ✨ Validate Dockerfile
+      #   uses: ghe-actions/dockerfile-validator@v1
+      #   with:
+      #     dockerfile: 'Dockerfile'
+      #     lint: 'hadolint'
+
+      - name: 🗂️ Make Docker Meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: |
+            ${{ env.DH_IMAGE }}
+            ghcr.io/${{ env.GH_IMAGE }}
+          tags: |
+            type=ref,event=tag,prefix=release-,suffix={{tag}}
+          labels: |
+            maintainer=Lissy93
+            org.opencontainers.image.title=Portainer-Templates
+            org.opencontainers.image.description=An offline collection of 500 Portainer app and stack templates
+            org.opencontainers.image.documentation=https://github.com/lissy93/portainer-templates
+            org.opencontainers.image.authors=Alicia Sykes
+            org.opencontainers.image.licenses=MIT
+
+      - name: 🔧 Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: 🔧 Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: 🔑 Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: 🔑 Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚦 Check Registry Status
+        uses: crazy-max/ghaction-docker-status@v1
+
+      - name: ⚒️ Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          push: true
+#     - name: 💬 Set Docker Hub Description
+#       uses: peter-evans/dockerhub-description@v2
+#       with:
+#         repository: lissy93/devolio
+#         readme-filepath: ./README.md
+#         short-description: Devolio - A developer portfolio site for the rest of us
+#         username: ${{ secrets.DOCKER_USERNAME }}
+#         password: ${{ secrets.DOCKER_USER_PASS }}
