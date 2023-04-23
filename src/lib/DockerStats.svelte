@@ -46,7 +46,7 @@
   const makeRenderData = () => {
     const results = [
       { label: 'Pulls', value: formatBigNumber(info.pull_count), icon: 'download' },
-      { label: 'Stars', value: formatBigNumber(info.star_count), icon: 'star' },
+      { label: 'Stars', value: formatBigNumber(info.star_count) || 'None yet', icon: 'star' },
       { label: 'User', value: info.hub_user, icon: 'user' },
       { label: 'Created', value: formatDate(info.date_registered), icon: 'published' },
       { label: 'Updated', value: timeAgo(info.last_updated), icon: 'updated' },

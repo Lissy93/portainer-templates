@@ -68,7 +68,7 @@
     </div>
   {/if}
 
-  {#if dockerRunCommands}
+  {#if dockerRunCommands && dockerRunCommands.length > 0}
     <hr />
     <h3>Via Docker Run</h3>
     {#each dockerRunCommands as command, index}

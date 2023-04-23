@@ -28,7 +28,7 @@ export const generateDockerRunCommand = (template: Template) => {
 };
 
 export const generateDockerRunCommands = (stack: Service[]) => {
-  const commands = stack.map((service) => {
+  const commands = stack.filter((s) => s.image).map((service) => {
     let cmd = `docker run --name ${service.name} -d \\\n`;
     if (service.command) {
       cmd += ` ${service.command} \\\n`;
