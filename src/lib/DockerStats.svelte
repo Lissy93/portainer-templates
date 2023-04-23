@@ -1,6 +1,7 @@
 
 <script lang="ts">
   import type { DockerHubResponse } from '$src/Types';
+  import Icon from '$lib/Icon.svelte';
 
   export let info: DockerHubResponse;
 
@@ -44,12 +45,12 @@
 
   const makeRenderData = () => {
     const results = [
-      { label: 'Pulls', value: formatBigNumber(info.pull_count) },
-      { label: 'Stars', value: formatBigNumber(info.star_count) },
-      { label: 'User', value: info.hub_user },
-      { label: 'Created', value: formatDate(info.date_registered) },
-      { label: 'Updated', value: timeAgo(info.last_updated) },
-      { label: 'Status', value: info.status_description }
+      { label: 'Pulls', value: formatBigNumber(info.pull_count), icon: 'download' },
+      { label: 'Stars', value: formatBigNumber(info.star_count), icon: 'star' },
+      { label: 'User', value: info.hub_user, icon: 'user' },
+      { label: 'Created', value: formatDate(info.date_registered), icon: 'published' },
+      { label: 'Updated', value: timeAgo(info.last_updated), icon: 'updated' },
+      { label: 'Status', value: info.status_description, icon: 'status' }
     ];
     return results;
   };
@@ -58,7 +59,10 @@
 <div class="stats">
   {#each makeRenderData() as stat}
     <div class="row">
-      <span class="lbl">{stat.label}: </span>
+      <span class="lbl">
+        <Icon name={stat.icon} color="var(--accent)" />
+        {stat.label}:
+      </span>
       <span>{stat.value}</span>
     </div>
   {/each}
@@ -72,6 +76,10 @@
     .lbl {
       font-weight: 500;
       margin-right: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      :global(svg) { opacity: 0.7; }
     }
   }
 </style>
