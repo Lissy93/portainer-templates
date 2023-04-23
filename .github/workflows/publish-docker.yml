@@ -38,7 +38,7 @@ jobs:
             ghcr.io/${{ env.GH_IMAGE }}
           tags: |
             type=ref,event=tag,suffix={{tag}}
-            type=ref,event=branch,branch=main,name=latest
+            type=ref,event=branch,branch=main,name=latest,pattern=latest,value=latest
           labels: |
             maintainer=Lissy93
             org.opencontainers.image.title=Portainer-Templates
