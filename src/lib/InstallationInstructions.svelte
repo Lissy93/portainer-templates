@@ -1,7 +1,17 @@
 <script lang="ts">
+  import Highlight from "svelte-highlight";
+  import yamlHighlight from "svelte-highlight/languages/yaml";
+  import shellHighlight from "svelte-highlight/languages/shell";
+  import codeHighlighting from "svelte-highlight/styles/dracula";
 
+  import {
+      generateDockerRunCommand,
+      generateDockerRunCommands,
+      convertToDockerCompose,
+      convertPortainerStackToDockerCompose,
+    } from '$src/utils/template-to-docker-parser';
   import { templatesUrl, gitHubRepo } from '$src/constants';
-  import type { Template, Volume, Service } from '$src/Types';
+  import type { Template, Volume, Service, DockerCompose } from '$src/Types';
 
   export let portainerTemplate: Template | null = null;
   export let portainerServices: Service[] | null = null;
@@ -10,65 +20,19 @@
     navigator.clipboard.writeText(content);
   };
 
-  const generateDockerRunCommand = (template: Template) => {
-    let command = `docker run -d \\ \n`;
-    if (template.ports) {
-      template.ports.forEach((port) => {
-        command += `  -p ${port} \\\n`;
-      });
-    }
-    if (template.env) {
-      template.env.forEach((env) => {
-        command += `  -e ${env.name}=\${${env.name}} \\\n`;
-      });
-    }
-    if (template.volumes) {
-      template.volumes.forEach((volume: Volume) => {
-        const readOnly = volume.readonly ? ":ro" : "";
-        command += `  -v ${volume.bind}:${volume.container}${readOnly} \\\n`;
-      });
-    }
-    if (template.restart_policy) {
-      command += `  --restart=${template.restart_policy} \\\n`;
-    }
-    command += `  ${template.image}`;
-    return command;
-  };
-
-  const generateDockerRunCommands = (stack: Service[]) => {
-    const commands = stack.map((service) => {
-      let cmd = `docker run --name ${service.name} -d \\\n`;
-      if (service.command) {
-        cmd += ` ${service.command} \\\n`;
-      }
-      if (service.env) {
-        service.env.forEach((envVar) => {
-          cmd += ` -e "${envVar.value}" \\\n`;
-        });
-      }
-      if (service.ports) {
-        service.ports.forEach((port) => {
-          cmd += ` -p ${port} \\\n`;
-        });
-      }
-      if (service.volumes) {
-        service.volumes.forEach((volume) => {
-          cmd += ` -v ${volume.bind}:${volume.container} \\\n`;
-        });
-      }
-      if (service.restart_policy) {
-        cmd += ` --restart=${service.restart_policy} \\\n`;
-      }
-      cmd += ` ${service.image}`;
-      return cmd;
-    });
-    return commands;
-  }
-
-  const dockerRunCommand = portainerTemplate?.image ? generateDockerRunCommand(portainerTemplate) : null;
-  const dockerRunCommands = portainerServices && !dockerRunCommand ? generateDockerRunCommands(portainerServices) : null;
-
+  const dockerRunCommand = portainerTemplate?.image ?
+    generateDockerRunCommand(portainerTemplate) : null;
+  const dockerRunCommands = portainerServices && !dockerRunCommand ?
+    generateDockerRunCommands(portainerServices) : null;
+  const dockerComposeFile = portainerTemplate?.image ?
+    convertToDockerCompose(portainerTemplate) :
+    (portainerServices ? convertPortainerStackToDockerCompose(portainerServices) : null);
 </script>
+
+
+<svelte:head>
+  {@html codeHighlighting}
+</svelte:head>
 
 <section>
   <h2>Installation</h2>
@@ -87,7 +51,7 @@
   </ol>
 
   <h4>Template Import URL</h4>
-  <pre>{templatesUrl}</pre>
+  <pre class="template-url">{templatesUrl}</pre>
   <button on:click={() => copyToClipboard(templatesUrl)}>Copy</button>
 
   <details>
@@ -100,22 +64,34 @@
     <h3>Via Docker Run</h3>
     <div class="docker-run-command">
       <button class="docker-command-copy" on:click={() => copyToClipboard(dockerRunCommand)}>Copy</button>
-      <pre>{dockerRunCommand}</pre>
+      <Highlight language={shellHighlight} code={dockerRunCommand} />
     </div>
   {/if}
 
   {#if dockerRunCommands}
     <hr />
     <h3>Via Docker Run</h3>
-
     {#each dockerRunCommands as command, index}
       <h4>Service #{index + 1} - {portainerServices[index].name}</h4>
       <div class="docker-run-command">
         <button class="docker-command-copy" on:click={() => copyToClipboard(command)}>Copy</button>
-        <pre>{command}</pre>
+        <Highlight language={shellHighlight} code={command} />
       </div>
     {/each}
-
+  {/if}
+  
+  {#if dockerComposeFile}
+    <hr />
+    <h3>Via Docker Compose</h3>
+    <p class="instructions">
+      Save this file as <code>docker-compose.yml</code> and run <code>docker-compose up -d</code>
+      <br>
+      Use this only as a guide.
+    </p>
+    <div class="docker-compose-file">
+      <button class="docker-command-copy" on:click={() => copyToClipboard(JSON.stringify(dockerComposeFile, null, 2))}>Copy</button>
+      <Highlight language={yamlHighlight} code={dockerComposeFile} />
+    </div>
   {/if}
 
   <hr />
@@ -178,6 +154,9 @@
       margin: 0.5rem 0;
       display: inline;
       border-radius: 6px;
+      &.template-url {
+        white-space: normal;
+      }
     }
     button {
       background: var(--background);
@@ -212,7 +191,7 @@
       border-radius: 6px;
       max-width: 50rem;
     }
-    .docker-run-command {
+    .docker-run-command, .docker-compose-file {
       background: var(--card-2);
       position: relative;
       padding: 0.5rem;
@@ -224,6 +203,20 @@
         right: 0.5rem;
         top: 0.5rem;
       }
+    }
+    .instructions {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      code {
+        border-radius: 6px;
+        padding: 0 0.25rem;
+        background: var(--card-2);
+      }
+    }
+    :global(.hljs) {
+      background: var(--card-2);
+      font-size: 1.1rem;
+      padding: 0;
     }
   }
 </style>
