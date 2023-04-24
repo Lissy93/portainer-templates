@@ -653,7 +653,7 @@ There's a mirror of this repository, maintained on CodeBerg at: **[codeberg.org/
 To pull templates from there, instead of GitHub, use this URL in your Portainer instance instead:
 
 ```
-https://codeberg.org/alicia/portainer-templates/src/branch/main/templates.json
+https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
 ```
 
 ---
