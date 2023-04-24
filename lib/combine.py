@@ -14,13 +14,13 @@ templates = []
 
 # For each file in sources
 for file in files:
-    # Open the file
-    with open(templates_src_dir + file) as f:
-        if file.endswith('.json'):
-          # Load the JSON into a variable
-          data = json.load(f)['templates']
-          # Append the template object to the templates list
-          templates = templates + data
+  file_path = os.path.join(templates_src_dir, file)
+  if os.path.isfile(file_path) and file.endswith('.json'):
+    with open(file_path) as f:
+      # Load the JSON into a variable
+      data = json.load(f)['templates']
+      # Append the template object to the templates list
+      templates = templates + data
 
 seen_titles = set()
 filtered_data = []
