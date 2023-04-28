@@ -200,6 +200,24 @@
       "restart_policy": "unless-stopped",
       "title": "Outline",
       "type": 3
+    },
+    {
+      "categories": [
+        "Web",
+        "Network"
+      ],
+      "description": " The Cloud Native Application Proxy ",
+      "env": [],
+      "logo": "https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png",
+      "name": "traefik",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/traefik.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "restart_policy": "unless-stopped",
+      "title": "Outline",
+      "type": 3
     }
   ]
 }
