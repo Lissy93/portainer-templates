@@ -16467,6 +16467,12 @@
           "label": "RTC_CONFIG",
           "default": "",
           "description": "Path to a json file containing custom STUN/TURN config (see App Setup notes)"
+        },
+        {
+          "name": "DEBUG_MODE",
+          "label": "DEBUG_MODE",
+          "default": "false",
+          "description": "Set to `true` to debug the http server configuration by logging clients IP addresses used by PairDrop to STDOUT. [See here for more info](https://github.com/schlagmichdoch/PairDrop/blob/master/docs/host-your-own.md#debug-mode). Do not use in production!"
         }
       ],
       "ports": [
