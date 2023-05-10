@@ -17421,6 +17421,21 @@
     },
     {
       "categories": [
+        "Multimedia"
+      ],
+      "description": "Tubearchivist is your self hosted YouTube media server",
+      "logo": "https://raw.githubusercontent.com/tubearchivist/tubearchivist/master/assets/tube-archivist-banner.jpg",
+      "name": "tubearchivist",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tubearchivist.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Tubearchivist",
+      "type": 3
+    },
+    {
+      "categories": [
         "Finance"
       ],
       "description": "Actual is a super fast privacy-focused app for managing your finances. ",
