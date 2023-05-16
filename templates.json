@@ -5596,7 +5596,7 @@
       "name": "Pwndrop",
       "platform": "linux",
       "ports": [
-        "4047:8787/tcp"
+        "4047:8080/tcp"
       ],
       "restart_policy": "unless-stopped",
       "title": "Pwndrop",
