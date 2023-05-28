@@ -12422,6 +12422,22 @@
     },
     {
       "categories": [
+        "Audio",
+        "Multimedia"
+      ],
+      "description": "A social platform to enjoy and share music.Funkwhale is a community-driven project that lets you listen and share music and audio within a decentralized, open network.",
+      "logo": "https://funkwhale.audio/img/with-text-500.4aff7861.png",
+      "name": "funkwhale",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/funkwhale.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Funkwhale",
+      "type": 3
+    },
+    {
+      "categories": [
         "Cloud"
       ],
       "description": "Gokapi is a lightweight server to share files, which expire after a set amount of downloads or days. It is similar to the discontinued\u00a0Firefox Send, with the difference that only the admin is allowed to upload files",
@@ -17719,6 +17735,32 @@
     },
     {
       "type": 2,
+      "title": "Swarm monitoring",
+      "description": "Monitor your cluster performances with Prometheus & Grafana",
+      "note": "Requires Docker version 19.03.0+. <b>Make sure to add the <code>monitoring == true</code> one of your Swarm manager node before deploying this stack.</b>",
+      "categories": [
+        "Monitoring"
+      ],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
+      "repository": {
+        "url": "https://github.com/portainer/templates",
+        "stackfile": "swarm/monitoring/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "GRAFANA_USER",
+          "label": "Grafana admin user",
+          "default": "admin"
+        },
+        {
+          "name": "GRAFANA_PASSWORD",
+          "label": "Grafana admin password"
+        }
+      ]
+    },
+    {
+      "type": 2,
       "title": "Redis Cluster",
       "description": "Open-source in-memory data structure store - Cluster mode",
       "categories": [
@@ -17929,13 +17971,6 @@
       ]
     },
     {
-      "type": 4,
-      "title": "Softing EdgeConnector modbus",
-      "description": "Connect Modbus TCP Sensors/PLCs and provide the data via OPC UA and MQTT",
-      "note": "Connect Modbus TCP Sensors/PLCs and provide the data via OPC UA and MQTT",
-      "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/stacks/softing-edgeconnector-modbus/docker-compose.yml"
-    },
-    {
       "type": 3,
       "title": "FDO",
       "description": "FDO",
@@ -17995,6 +18030,19 @@
           "label": "License key"
         }
       ]
+    },
+    {
+      "type": 4,
+      "title": "Softing EdgeConnector modbus",
+      "description": "Connect Modbus TCP Sensors/PLCs and provide the data via OPC UA and MQTT",
+      "note": "Connect Modbus TCP Sensors/PLCs and provide the data via OPC UA and MQTT",
+      "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-modbus/docker-compose.yml"
+    },
+    {
+      "type": 4,
+      "title": "Softing EdgeConnector 840D",
+      "description": "Access Siemens SINUMERIK 840D sl/pl controllers and provide data via OPC UA and MQTT",
+      "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-840d/docker-compose.yml"
     },
     {
       "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/docker-compose for details.",
