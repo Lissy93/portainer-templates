@@ -13033,6 +13033,21 @@
     },
     {
       "categories": [
+        "Devops"
+      ],
+      "description": "Modern UI for Ansible",
+      "logo": "https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/11/Screenshot_2020-11-21_at_02.05.22.png",
+      "name": "ansible-semaphore",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/ansible-semaphore.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Ansible-semaphore",
+      "type": 3
+    },
+    {
+      "categories": [
         "Audio",
         "Multimedia"
       ],
