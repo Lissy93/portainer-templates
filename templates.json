@@ -525,28 +525,6 @@
       "categories": [
         "Tools"
       ],
-      "description": "The recipe manager that allows you to manage your ever growing collection of digital recipes.",
-      "image": "vabene1111/recipes:latest",
-      "logo": "https://docs.tandoor.dev/logo_color.svg",
-      "name": "Tandoor",
-      "platform": "linux",
-      "ports": [
-        "3280:8080/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "title": "Tandoor",
-      "type": 1,
-      "volumes": [
-        {
-          "bind": "/portainer/Files/AppData/Config/Tandoor",
-          "container": "/config"
-        }
-      ]
-    },
-    {
-      "categories": [
-        "Tools"
-      ],
       "description": "Code-server is VS Code running on a remote server, accessible through the browser.",
       "env": [
         {
@@ -4696,6 +4674,36 @@
         "url": "https://github.com/xneo1/portainer_templates"
       },
       "title": "Apprise-API",
+      "type": 3
+    },
+    {
+      "categories": [
+        "offline"
+      ],
+      "description": "Internet. Offline.Store any website on your mobile phone or computer, easily.",
+      "logo": "https://www.kiwix.org/wp-content/uploads/kiwix-logo-995x200-1.png",
+      "name": "kiwix",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/kiwix.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Kiwix",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Tools"
+      ],
+      "description": "The recipe manager that allows you to manage your ever growing collection of digital recipes.",
+      "logo": "https://docs.tandoor.dev/logo_color.svg",
+      "name": "tandoor",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tandoor.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Tandoor",
       "type": 3
     },
     {
