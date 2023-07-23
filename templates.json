@@ -7906,6 +7906,62 @@
     },
     {
       "type": 1,
+      "title": "Flexget",
+      "name": "Flexget",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/flexget/config<br>mkdir -p /volume1/docker/flexget/data</p>",
+      "description": "[Flexget](http://flexget.com/) is a multipurpose automation tool for all of your media.",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/flexget-banner.png",
+      "image": "linuxserver/flexget:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        },
+        {
+          "name": "FG_LOG_LEVEL",
+          "label": "FG_LOG_LEVEL",
+          "default": "info",
+          "description": "Set the FlexGet logging level."
+        },
+        {
+          "name": "FG_WEBUI_PASSWORD",
+          "label": "FG_WEBUI_PASSWORD",
+          "default": "info",
+          "description": "Set the FlexGet webui password. Pay attention to Bash/YAML reserved characters."
+        }
+      ],
+      "ports": [
+        "5050:5050/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/flexget/config"
+        },
+        {
+          "container": "/data",
+          "bind": "/volume1/docker/flexget/data"
+        }
+      ],
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "type": 1,
       "title": "Foldingathome",
       "name": "Foldingathome",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/foldingathome/config</p>",
