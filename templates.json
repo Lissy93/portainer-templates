@@ -13858,7 +13858,7 @@
           "name": "TZ"
         }
       ],
-      "image": "jc21/nginx-proxy-manager:v3-develop",
+      "image": "jc21/nginx-proxy-manager:v3",
       "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png",
       "name": "nginx-proxy-manager-v3",
       "platform": "linux",
