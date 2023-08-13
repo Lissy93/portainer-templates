@@ -5299,7 +5299,7 @@
           "name": "DB_PASS",
           "label": "DB_PASS",
           "default": "<yourdbpass>",
-          "description": "for specifying the database password (non-alphanumeric passwords must be properly escaped.)"
+          "description": "for specifying the database password (minimum 4 characters & non-alphanumeric passwords must be properly escaped.)"
         },
         {
           "name": "DB_DATABASE",
@@ -7393,6 +7393,50 @@
     },
     {
       "type": 1,
+      "title": "Kavita",
+      "name": "Kavita",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/kavita/config<br>mkdir -p /volume1/docker/kavita/data</p>",
+      "description": "[Kavita](https://github.com/Kareadita/Kavita) is a fast, feature rich, cross platform reading server. Built with a focus for being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family!",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/kavita-logo.png",
+      "image": "linuxserver/kavita:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "5000:5000/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/kavita/config"
+        },
+        {
+          "container": "/data",
+          "bind": "/volume1/docker/kavita/data"
+        }
+      ],
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "type": 1,
       "title": "Kdenlive",
       "name": "Kdenlive",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/kdenlive/config</p>",
@@ -7434,6 +7478,53 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/kdenlive/config"
+        }
+      ],
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "type": 1,
+      "title": "Kimai",
+      "name": "Kimai",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/kimai/config</p>",
+      "description": "[Kimai](https://kimai.org/) is a professional grade time-tracking application, free and open-source. It handles use-cases of freelancers as well as companies with dozens or hundreds of users. Kimai was build to track your project times and ships with many advanced features, including but not limited to: JSON API, invoicing, data exports, multi-timer and punch-in punch-out mode, tagging, multi-user - multi-timezones - multi-language ([over 30 translations existing](https://hosted.weblate.org/projects/kimai/)!), authentication via SAML/LDAP/Database, two-factor authentication (2FA) with TOTP, customizable role and team permissions, responsive design, user/customer/project specific rates, advanced search & filtering, money and time budgets, advanced reporting, support for [plugins](https://www.kimai.org/store/) and so much more.",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/kimai-logo.png",
+      "image": "linuxserver/kimai:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        },
+        {
+          "name": "DATABASE_URL",
+          "label": "DATABASE_URL",
+          "default": "mysql://your_db_user:your_db_pass@your_db_host:3306/your_db_name",
+          "description": "Configure your database connection"
+        }
+      ],
+      "ports": [
+        "80:80/tcp",
+        "443:443/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/kimai/config"
         }
       ],
       "restart_policy": "unless-stopped"
@@ -9616,6 +9707,84 @@
     },
     {
       "type": 1,
+      "title": "Steamos",
+      "name": "Steamos",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/steamos/config<br><br></p>",
+      "description": "[SteamOS](https://www.steamdeck.com/) is an Arch based Linux distribution made by Valve Software. This container is a vanilla Arch install with Steam repositories added for software support. **This container will only work with modern AMD/Intel GPUs on a real Linux Host**",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/steamos-logo.png",
+      "image": "linuxserver/steamos:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        },
+        {
+          "name": "DRINODE",
+          "label": "DRINODE",
+          "default": "/dev/dri/renderD128",
+          "description": "Specify the render device (GPU) for the contianer to use."
+        },
+        {
+          "name": "HOST_IP",
+          "label": "HOST_IP",
+          "default": "192.168.100.10",
+          "description": "Specify the IP of the host, needed for LAN Remote Play."
+        },
+        {
+          "name": "STARTUP",
+          "label": "STARTUP",
+          "default": "KDE",
+          "description": "KDE to boot into desktop mode, BIGPICTURE to boot into gamescope."
+        },
+        {
+          "name": "RESOLUTION",
+          "label": "RESOLUTION",
+          "default": "1920x1080",
+          "description": "When booting into BIGPICTURE mode the screen resolution will be bound to this value."
+        }
+      ],
+      "ports": [
+        "3000:3000/tcp",
+        "3001:3001/tcp",
+        "27031-27036:27031-27036/udp",
+        "27031-27036:27031-27036",
+        "47984-47990:47984-47990:47984-47990:47984-47990/tcp",
+        "48010:48010:48010:48010",
+        "47998-48000:47998-48000:47998-48000:47998-48000/udp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/steamos/config"
+        },
+        {
+          "container": "/dev/input",
+          "bind": "/dev/input"
+        },
+        {
+          "container": "/run/udev/data",
+          "bind": "/run/udev/data"
+        }
+      ],
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "type": 1,
       "title": "Swag",
       "name": "Swag",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/swag/config</p>",
@@ -9670,7 +9839,7 @@
           "name": "DNSPLUGIN",
           "label": "DNSPLUGIN",
           "default": "cloudflare",
-          "description": "Required if `VALIDATION` is set to `dns`. Options are `acmedns`, `aliyun`, `azure`, `cloudflare`, `cpanel`, `desec`, `digitalocean`, `directadmin`, `dnsimple`, `dnsmadeeasy`, `dnspod`, `do`, `domeneshop`, `dreamhost`, `duckdns`, `dynu`, `gandi`, `gehirn`, `godaddy`, `google`, `google-domains`, `he`, `hetzner`, `infomaniak`, `inwx`, `ionos`, `linode`, `loopia`, `luadns`, `netcup`, `njalla`, `nsone`, `ovh`, `porkbun`, `rfc2136`, `route53`, `sakuracloud`, `standalone`, `transip`, and `vultr`. Also need to enter the credentials into the corresponding ini (or json for some plugins) file under `/config/dns-conf`."
+          "description": "Required if `VALIDATION` is set to `dns`. Options are `acmedns`, `aliyun`, `azure`, `bunny`, `cloudflare`, `cpanel`, `desec`, `digitalocean`, `directadmin`, `dnsimple`, `dnsmadeeasy`, `dnspod`, `do`, `domeneshop`, `dreamhost`, `duckdns`, `dynu`, `freedns`, `gandi`, `gehirn`, `godaddy`, `google`, `google-domains`, `he`, `hetzner`, `infomaniak`, `inwx`, `ionos`, `linode`, `loopia`, `luadns`, `netcup`, `njalla`, `nsone`, `ovh`, `porkbun`, `rfc2136`, `route53`, `sakuracloud`, `standalone`, `transip`, and `vultr`. Also need to enter the credentials into the corresponding ini (or json for some plugins) file under `/config/dns-conf`."
         },
         {
           "name": "PROPAGATION",
@@ -10828,48 +10997,6 @@
       ],
       "restart_policy": "unless-stopped",
       "title": "Komga",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/books"
-        },
-        {
-          "container": "/comics"
-        },
-        {
-          "container": "/manga"
-        },
-        {
-          "container": "/config"
-        }
-      ]
-    },
-    {
-      "categories": [
-        "Library Server"
-      ],
-      "description": "Kavita Manga, Comic and E-Book Server",
-      "env": [
-        {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "100",
-          "label": "PGID",
-          "name": "PGID"
-        }
-      ],
-      "image": "kizaing/kavita:latest",
-      "logo": "https://raw.githubusercontent.com/Kareadita/Kavita/main/UI/Web/src/assets/images/logo.png",
-      "name": "Kavita",
-      "platform": "linux",
-      "ports": [
-        "5000:5000/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "title": "Kavita",
       "type": 1,
       "volumes": [
         {
@@ -13082,7 +13209,7 @@
           "name": "TZ"
         }
       ],
-      "image": "oznu/homebridge:latest",
+      "image": "homebridge/homebridge:latest",
       "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/homebridge.png",
       "name": "homebridge",
       "network": "host",
@@ -13131,7 +13258,7 @@
           "name": "TZ"
         }
       ],
-      "image": "oznu/homebridge:debian-arm32v7",
+      "image": "homebridge/homebridge:ubuntu-arm32v7",
       "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/homebridge.png",
       "name": "homebridge-debian",
       "network": "host",
@@ -16377,6 +16504,22 @@
         "url": "https://github.com/xneo1/portainer_templates"
       },
       "title": "Codex",
+      "type": 3
+    },
+    {
+      "categories": [
+        "ebooks",
+        "comics"
+      ],
+      "description": "Kapowarr is a software to build and manage a comic book library, fitting in the *arr suite of software.",
+      "logo": "",
+      "name": "kapowarr",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/kapowarr.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Kapowarr",
       "type": 3
     },
     {
