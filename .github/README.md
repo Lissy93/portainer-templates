@@ -660,6 +660,21 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
 
 ---
 
+## Credits
+
+### Contributors
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
+
+
+### Sponsors
+
+<!-- readme: sponsors -start -->
+<!-- readme: sponsors -end -->
+
+---
+
 ## License
 
 > **Note** For licenses for each app listed here, see their websites _(linked to [above](#supported-apps-and-stacks))_.
