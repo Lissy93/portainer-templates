@@ -665,12 +665,167 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
 ### Contributors
 
 <!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Lissy93">
+            <img src="https://avatars.githubusercontent.com/u/1862727?v=4" width="80;" alt="Lissy93"/>
+            <br />
+            <sub><b>Alicia Sykes</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/liss-bot">
+            <img src="https://avatars.githubusercontent.com/u/87835202?v=4" width="80;" alt="liss-bot"/>
+            <br />
+            <sub><b>Alicia Bot</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/tempusthales">
+            <img src="https://avatars.githubusercontent.com/u/2447303?v=4" width="80;" alt="tempusthales"/>
+            <br />
+            <sub><b>Gilbert Palau</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/kr40">
+            <img src="https://avatars.githubusercontent.com/u/43168785?v=4" width="80;" alt="kr40"/>
+            <br />
+            <sub><b>Kartik Rao</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/leetrout">
+            <img src="https://avatars.githubusercontent.com/u/524648?v=4" width="80;" alt="leetrout"/>
+            <br />
+            <sub><b>Lee Trout</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/balzack">
+            <img src="https://avatars.githubusercontent.com/u/96387156?v=4" width="80;" alt="balzack"/>
+            <br />
+            <sub><b>Pierre Balzack</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: contributors -end -->
 
 
 ### Sponsors
 
 <!-- readme: sponsors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/emlazzarin">
+            <img src="https://avatars.githubusercontent.com/u/1141361?v=4" width="80;" alt="emlazzarin"/>
+            <br />
+            <sub><b>Eddy Lazzarin</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/AnandChowdhary">
+            <img src="https://avatars.githubusercontent.com/u/2841780?v=4" width="80;" alt="AnandChowdhary"/>
+            <br />
+            <sub><b>Anand Chowdhary</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/shrippen">
+            <img src="https://avatars.githubusercontent.com/u/2873570?v=4" width="80;" alt="shrippen"/>
+            <br />
+            <sub><b>shrippen</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/davidpaulyoung">
+            <img src="https://avatars.githubusercontent.com/u/3418369?v=4" width="80;" alt="davidpaulyoung"/>
+            <br />
+            <sub><b>David Young</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/k-rol">
+            <img src="https://avatars.githubusercontent.com/u/4050412?v=4" width="80;" alt="k-rol"/>
+            <br />
+            <sub><b>Carol Ouellet</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/bile0026">
+            <img src="https://avatars.githubusercontent.com/u/5022496?v=4" width="80;" alt="bile0026"/>
+            <br />
+            <sub><b>Zach Biles</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/UlisesGascon">
+            <img src="https://avatars.githubusercontent.com/u/5110813?v=4" width="80;" alt="UlisesGascon"/>
+            <br />
+            <sub><b>Ulises Gascón</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/digitalarche">
+            <img src="https://avatars.githubusercontent.com/u/6546135?v=4" width="80;" alt="digitalarche"/>
+            <br />
+            <sub><b>Digital Archeology</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/bmcgonag">
+            <img src="https://avatars.githubusercontent.com/u/7346620?v=4" width="80;" alt="bmcgonag"/>
+            <br />
+            <sub><b>Brian McGonagill</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/vlad-timofeev">
+            <img src="https://avatars.githubusercontent.com/u/11474041?v=4" width="80;" alt="vlad-timofeev"/>
+            <br />
+            <sub><b>Vlad Timofeev</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/iJasonWade">
+            <img src="https://avatars.githubusercontent.com/u/12824479?v=4" width="80;" alt="iJasonWade"/>
+            <br />
+            <sub><b>Jason Ash</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/DRXAquosus">
+            <img src="https://avatars.githubusercontent.com/u/45409262?v=4" width="80;" alt="DRXAquosus"/>
+            <br />
+            <sub><b>DRXAquosus</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Bastii717">
+            <img src="https://avatars.githubusercontent.com/u/53431819?v=4" width="80;" alt="Bastii717"/>
+            <br />
+            <sub><b>Bastii717</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/ratty222">
+            <img src="https://avatars.githubusercontent.com/u/92832598?v=4" width="80;" alt="ratty222"/>
+            <br />
+            <sub><b>Brent</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/jtfinley72">
+            <img src="https://avatars.githubusercontent.com/u/96497997?v=4" width="80;" alt="jtfinley72"/>
+            <br />
+            <sub><b>jtfinley72</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: sponsors -end -->
 
 ---
