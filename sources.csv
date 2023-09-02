@@ -10,4 +10,3 @@ mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/mas
 mycroftwilde_templates, https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json
 mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json
 portainer_templates, https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json
-cloudflare_templates, https://raw.githubusercontent.com/tempusthales/Portainer/main/pi_hosted_cloudflare_templates.json
