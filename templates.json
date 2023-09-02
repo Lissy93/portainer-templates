@@ -7913,7 +7913,7 @@
       "title": "Habridge",
       "name": "Habridge",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/habridge/config</p>",
-      "description": "[Habridge](http://bwssystems.com/#/habridge) emulates Philips Hue API to other home automation gateways such as an Amazon Echo/Dot Gen 1 (gen 2 has issues discovering ha-bridge) or other systems that support Philips Hue. The Bridge handles basic commands such as 'On', 'Off' and 'brightness' commands of the hue protocol. This bridge can control most devices that have a distinct API. In the cases of systems that require authorization and/or have APIs that cannot be handled in the current method, a module may need to be built. The Harmony Hub is such a module and so is the Nest module. The Bridge has helpers to build devices for the gateway for the Logitech Harmony Hub, Vera, Vera Lite or Vera Edge, Nest, Somfy Tahoma, Home Assistant, Domoticz, MQTT, HAL, Fibaro, HomeWizard, LIFX, OpenHAB, FHEM, Broadlink and the ability to proxy all of your real Hue bridges behind this bridge. This bridge was built to help put the Internet of Things together. For more information about how to use this software have a look at their Wiki [https://github.com/bwssytems/ha-bridge/wiki](https://github.com/bwssytems/ha-bridge/wiki)",
+      "description": "[Habridge](https://bwssystems.com/#!/habridge) emulates Philips Hue API to other home automation gateways such as an Amazon Echo/Dot Gen 1 (gen 2 has issues discovering ha-bridge) or other systems that support Philips Hue. The Bridge handles basic commands such as 'On', 'Off' and 'brightness' commands of the hue protocol. This bridge can control most devices that have a distinct API. In the cases of systems that require authorization and/or have APIs that cannot be handled in the current method, a module may need to be built. The Harmony Hub is such a module and so is the Nest module. The Bridge has helpers to build devices for the gateway for the Logitech Harmony Hub, Vera, Vera Lite or Vera Edge, Nest, Somfy Tahoma, Home Assistant, Domoticz, MQTT, HAL, Fibaro, HomeWizard, LIFX, OpenHAB, FHEM, Broadlink and the ability to proxy all of your real Hue bridges behind this bridge. This bridge was built to help put the Internet of Things together. For more information about how to use this software have a look at their Wiki [https://github.com/bwssytems/ha-bridge/wiki](https://github.com/bwssytems/ha-bridge/wiki)",
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/bwssytems/ha-bridge/master/src/main/resources/public/img/favicon.ico",
       "image": "linuxserver/habridge:latest",
@@ -12765,6 +12765,122 @@
       "title": "Paperless NGX",
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/paperless-ngx/paperless-ngx\" target=\"_blank\">https://github.com/paperless-ngx/paperless-ngx</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/paperless-ngx/paperless-ngx\" target=\"_blank\">https://github.com/paperless-ngx/paperless-ngx</a><br><br><br>"
+    },
+    {
+      "categories": [
+        "Other",
+        "Tools"
+      ],
+      "description": "Passbolt is a free and open source password manager designed for collaboration. With Passbolt you can securely generate, store, manage and monitor your team credentials. Get access to all of your logins and passwords from multiple browsers or even your mobile phone.",
+      "env": [
+        {
+          "default": "1000",
+          "description": "Enter your user's PUID here",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "1000",
+          "description": "Enter your user's PGID here",
+          "label": "PGID",
+          "name": "PGID"
+        },
+        {
+          "default": "Europe/Zurich",
+          "description": "Enter your time zone here. See examples https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
+          "label": "TZ",
+          "name": "TZ"
+        },
+        {
+          "default": "",
+          "description": "Enter your MySql root password here",
+          "label": "MYSQL_ROOT_PASSWORD",
+          "name": "MYSQL_ROOT_PASSWORD"
+        },
+        {
+          "default": "passbolt",
+          "description": "Enter your Passbolt database name here",
+          "label": "MYSQL_DATABASE",
+          "name": "MYSQL_DATABASE"
+        },
+        {
+          "default": "passbolt",
+          "description": "Enter your Passbolt database user here",
+          "label": "MYSQL_USER",
+          "name": "MYSQL_USER"
+        },
+        {
+          "default": "",
+          "description": "Enter your Passbolt database password here",
+          "label": "MYSQL_PASSWORD",
+          "name": "MYSQL_PASSWORD"
+        },
+        {
+          "default": "443",
+          "description": "Enter your Passbolt https port here",
+          "label": "PASSBOLT_PORT",
+          "name": "PASSBOLT_PORT"
+        },
+        {
+          "default": "https://passbolt.local",
+          "description": "Enter your full Passbolt https base URL here. Including port if different from 443",
+          "label": "PASSBOLT_URL",
+          "name": "PASSBOLT_URL"
+        },
+        {
+          "default": "Passbolt",
+          "description": "Enter your from email name",
+          "label": "EMAIL_FROM_NAME",
+          "name": "EMAIL_FROM_NAME"
+        },
+        {
+          "default": "",
+          "description": "Enter your from email address",
+          "label": "EMAIL_FROM_ADDRESS",
+          "name": "EMAIL_FROM_ADDRESS"
+        },
+        {
+          "default": "smtp.gmail.com",
+          "description": "Enter your email smtp server here",
+          "label": "EMAIL_SMTP_SERVER",
+          "name": "EMAIL_SMTP_SERVER"
+        },
+        {
+          "default": "587",
+          "description": "Enter your email smtp port here",
+          "label": "EMAIL_SMTP_PORT",
+          "name": "EMAIL_SMTP_PORT"
+        },
+        {
+          "default": "",
+          "description": "Enter your email username here",
+          "label": "EMAIL_USERNAME",
+          "name": "EMAIL_USERNAME"
+        },
+        {
+          "default": "",
+          "description": "Enter your email password here",
+          "label": "EMAIL_PASSWORD",
+          "name": "EMAIL_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Enter set TLS here",
+          "label": "EMAIL_TLS",
+          "name": "EMAIL_TLS"
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/passbolt.png",
+      "name": "Passbolt",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "stack/passbolt.yml",
+        "url": "https://github.com/pi-hosted/pi-hosted"
+      },
+      "restart_policy": "unless-stopped",
+      "title": "Passbolt",
+      "type": 3,
+      "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md\" target=\"_blank\">passbolt.md</a></h3><br><br><br>"
     },
     {
       "categories": [
