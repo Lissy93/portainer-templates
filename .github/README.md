@@ -695,6 +695,13 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/Benoniy">
+            <img src="https://avatars.githubusercontent.com/u/47002663?v=4" width="80;" alt="Benoniy"/>
+            <br />
+            <sub><b>Benjamin Ranson</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/tempusthales">
             <img src="https://avatars.githubusercontent.com/u/2447303?v=4" width="80;" alt="tempusthales"/>
             <br />
@@ -714,7 +721,8 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
             <br />
             <sub><b>Lee Trout</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/balzack">
             <img src="https://avatars.githubusercontent.com/u/96387156?v=4" width="80;" alt="balzack"/>
@@ -804,7 +812,7 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
     </td>
     <td align="center">
         <a href="https://github.com/mrmosssir">
-            <img src="https://avatars.githubusercontent.com/u/13149494?v=4" width="80;" alt="mrmosssir"/>
+            <img src="https://avatars.githubusercontent.com/u/13149494?u=335d2aa6da35e44a332c13aaec8502b676f50ac6&v=4" width="80;" alt="mrmosssir"/>
             <br />
             <sub><b>SuTo</b></sub>
         </a>
