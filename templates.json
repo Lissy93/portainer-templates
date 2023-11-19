@@ -7853,6 +7853,38 @@
     },
     {
       "categories": [
+        "Automation",
+        "AI"
+      ],
+      "description": "Automate your marketing, sales and operations",
+      "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
+      "name": "activepieces",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/activepieces.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Activepieces",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Drawing"
+      ],
+      "description": "draw.io (formerly Diagramly) is free online diagram software. You can use it as a flowchart maker, network diagram software, to create UML online, as an ER diagram tool, to design database schema, to build BPMN online, as a circuit diagram maker, and more. draw.io can import .vsdx, Gliffy\u2122 and Lucidchart\u2122 files.",
+      "logo": "https://appedreview.com/app/wp-content/uploads/2016/10/Screen-Shot-2016-10-18-at-8.28.57-AM-768x766.png",
+      "name": "drawio",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/drawio.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Draw.io",
+      "type": 3
+    },
+    {
+      "categories": [
         "Tracking"
       ],
       "description": "Hauk is a fully open source, self-hosted location sharing service. Install the backend code on a PHP-compatible web server, install the companion app on your phone, and you're good to go!",
@@ -10596,6 +10628,12 @@
           "label": "HISHTORY_POSTGRES_DB",
           "default": "postgresql://${HISHTORY_DB_USER}:${HISHTORY_DB_PASS}@hishtory-db:5432/hishtory?sslmode=disable",
           "description": "Postgres DB [Connection URI](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). Special characters must be [URL encoded](https://en.wikipedia.org/wiki/URL_encoding)."
+        },
+        {
+          "name": "HISHTORY_SQLITE_DB",
+          "label": "HISHTORY_SQLITE_DB",
+          "default": "/config/hishtory.db",
+          "description": "SQLite database path. Needs to be a mounted volume for persistence. Don't set at the same time as HISHTORY_POSTGRES_DB."
         }
       ],
       "ports": [
@@ -11951,6 +11989,12 @@
           "description": "specify the port of your Quassel Core instance"
         },
         {
+          "name": "QUASSEL_HTTPS",
+          "label": "QUASSEL_HTTPS",
+          "default": "",
+          "description": "Set to `true` to have Quassel web serve over https on port 64443 instead of http on port 64080."
+        },
+        {
           "name": "URL_BASE",
           "label": "URL_BASE",
           "default": "/quassel",
@@ -11958,6 +12002,7 @@
         }
       ],
       "ports": [
+        "64080:64080/tcp",
         "64443:64443/tcp"
       ],
       "volumes": [
@@ -13611,10 +13656,43 @@
       ]
     },
     {
+      "type": 3,
+      "title": "Pro Mosquitto with Management Center",
+      "description": "Commercial-grade Mosquitto MQTT broker with Management Center",
+      "note": "The Mosquitto broker password must be at least 12 characters.",
+      "categories": [
+        "edge"
+      ],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/cedalo.png",
+      "repository": {
+        "url": "https://github.com/portainer/templates",
+        "stackfile": "edge/cedalo-mosquitto-mc/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "CEDALO_LICENSE_KEY",
+          "label": "License key"
+        },
+        {
+          "name": "CEDALO_MOSQUITTO_PASSWORD",
+          "label": "Mosquitto password"
+        },
+        {
+          "name": "CEDALO_MC_USER",
+          "label": "Management Center username",
+          "default": "cedalo"
+        },
+        {
+          "name": "CEDALO_MC_PASSWORD",
+          "label": "Management Center password"
+        }
+      ]
+    },
+    {
       "type": 4,
       "title": "Softing EdgeConnector modbus",
       "description": "Connect Modbus TCP Sensors/PLCs and provide the data via OPC UA and MQTT",
-      "note": "Connect Modbus TCP Sensors/PLCs and provide the data via OPC UA and MQTT",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-modbus/docker-compose.yml"
     },
     {
@@ -16756,22 +16834,6 @@
           "container": "/opt/magic_mirror/css"
         }
       ]
-    },
-    {
-      "categories": [
-        "Management Utility Server"
-      ],
-      "description": "draw.io (formerly Diagramly) is free online diagram software. You can use it as a flowchart maker, network diagram software, to create UML online, as an ER diagram tool, to design database schema, to build BPMN online, as a circuit diagram maker, and more. draw.io can import .vsdx, Gliffy\u2122 and Lucidchart\u2122 files.",
-      "image": "jgraph/drawio:latest",
-      "logo": "https://raw.githubusercontent.com/qwerty00007/portainer_templates/master/Images/draw.io.png",
-      "name": "draw.io",
-      "platform": "linux",
-      "ports": [
-        "8080:8080/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "title": "draw.io",
-      "type": 1
     },
     {
       "type": 1,
