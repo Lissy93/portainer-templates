@@ -9402,7 +9402,7 @@
           "name": "WHISPER_MODEL",
           "label": "WHISPER_MODEL",
           "default": "tiny-int8",
-          "description": "Whisper model that will be used for transcription. From `tiny`, `base`, `small` and `medium`, all with `-int8` compressed variants"
+          "description": "Whisper model that will be used for transcription. From `tiny`, `base`, `small` and `medium.en`, all with `-int8` compressed variants"
         },
         {
           "name": "WHISPER_BEAM",
@@ -17762,6 +17762,51 @@
         {
           "name": "traefik.http.routers.wizarr.tls.certresolver",
           "value": "mydnschallenge"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Web",
+        "Tools"
+      ],
+      "description": "Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD.",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "100",
+          "label": "PGID",
+          "name": "PGID"
+        }
+      ],
+      "image": "gitea/gitea:latest",
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/gitea.png",
+      "name": "gitea",
+      "note": "Use SQLite3 for the database unless you have an external one setup.",
+      "ports": [
+        "3000:3000/tcp",
+        "222:22/tcp"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "Gitea",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/Gitea",
+          "container": "/data"
+        },
+        {
+          "bind": " /etc/timezone",
+          "container": "/etc/timezone:ro"
+        },
+        {
+          "bind": "/etc/localtime",
+          "container": "/etc/localtime:ro"
         }
       ]
     },
