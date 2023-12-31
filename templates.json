@@ -17899,6 +17899,42 @@
     },
     {
       "categories": [
+        "Tools",
+        "Other"
+      ],
+      "description": "A simple script that will watch a stream for you and earn the channel points.",
+      "image": "rdavidoff/twitch-channel-points-miner-v2:latest",
+      "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/twitchpointsminer.png",
+      "name": "twitch-points-miner",
+      "note": "Requires run.py, this is your starter script with your configuration. Please copy and modify accordingly <a href='https://github.com/rdavydov/Twitch-Channel-Points-Miner-v2/tree/master?tab=readme-ov-file#how-to-use'/>Here</a>",
+      "platform": "linux",
+      "ports": [
+        "5000:5000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Twitch Points Miner",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/TwitchPointsMiner/run.py",
+          "container": "/usr/src/app/run.py"
+        },
+        {
+          "bind": "/portainer/Files/AppData/TwitchPointsMiner/cookies",
+          "container": "/usr/src/app/cookies"
+        },
+        {
+          "bind": "/portainer/Files/AppData/TwitchPointsMiner/logs",
+          "container": "/usr/src/app/logs"
+        },
+        {
+          "bind": "/portainer/Files/AppData/TwitchPointsMiner/analytics",
+          "container": "/usr/src/app/analytics"
+        }
+      ]
+    },
+    {
+      "categories": [
         "VPN",
         "Tools",
         "Other",
