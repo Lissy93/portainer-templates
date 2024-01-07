@@ -4713,6 +4713,37 @@
     },
     {
       "categories": [
+        "Social"
+      ],
+      "description": "Webtrees is the web\u2019s leading online collaborative genealogy application. [GEDCOM files support]",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logo_webtrees.svg/400px-Logo_webtrees.svg.png",
+      "name": "webtrees",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/webtrees.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Webtrees",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Blog",
+        "CMS"
+      ],
+      "description": "WordPress is the simplest, most popular way to create your own website or blog.",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/800px-WordPress_blue_logo.svg.png",
+      "name": "wordpress",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/wordpress.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Wordpress",
+      "type": 3
+    },
+    {
+      "categories": [
         "metrics"
       ],
       "description": "This is an exporter that exposes information gathered from Proxmox VE node for use by the Prometheus monitoring system.",
@@ -6013,7 +6044,7 @@
     },
     {
       "categories": [
-        "Blogging"
+        "Blog"
       ],
       "description": "Create your own platform on the web. Ghost is a powerful app for new-media creators to publish, share, and grow a business around their content. It comes with modern tools to build a website, publish content, send newsletters & offer paid subscriptions to members.",
       "logo": "https://ghost.org/images/logos/logo-black-1.webp",
@@ -13529,7 +13560,7 @@
           "name": "TZ"
         }
       ],
-      "image": "jc21/nginx-proxy-manager:v3-develop",
+      "image": "jc21/nginx-proxy-manager:v3",
       "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/proxy_mgr.png",
       "name": "nginx-proxy-manager-v3",
       "platform": "linux",
@@ -14983,42 +15014,6 @@
       "title": "Wireguard Server",
       "type": 3,
       "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/WeeJeWel/wg-easy/\" target=\"_blank\">https://github.com/WeeJeWel/wg-easy/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/WeeJeWel/wg-easy/#1-install-docker\" target=\"_blank\">https://github.com/WeeJeWel/wg-easy/#1-install-docker</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/wireguard-install.md\" target=\"_blank\">wireguard-install.md</a></h3><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=yB_jAumIxOg target=\"_blank\">Novaspirit Tech - Beginners Guide to WireGuard Docker and Installing Pi-OS 64bit</a><br><br>"
-    },
-    {
-      "categories": [
-        "WordPress",
-        "Web"
-      ],
-      "description": "Wordpress setup with a MySQL database",
-      "env": [
-        {
-          "default": "5080",
-          "label": "External Port for webserver forward to port 80",
-          "name": "WEB_SERVER_PORT"
-        },
-        {
-          "default": "wordpress",
-          "label": "Database user name",
-          "name": "MYSQL_DATABASE_USER_NAME"
-        },
-        {
-          "label": "Database password for user",
-          "name": "MYSQL_DATABASE_PASSWORD"
-        },
-        {
-          "label": "Database root password",
-          "name": "MYSQL_DATABASE_ROOT_PASSWORD"
-        }
-      ],
-      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/wordpress.png",
-      "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://wordpress.com/\" target=\"_blank\">https://wordpress.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/docker-library/docs/tree/master/wordpress#-via-docker-stack-deploy-or-docker-compose\" target=\"_blank\">https://github.com/docker-library/docs/tree/master/wordpress#-via-docker-stack-deploy-or-docker-compose</a><br><h3><b>Pi-Hosted dedicated documentation: </b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/docs/wordpress_installation.md\" target=\"_blank\">wordpress_installation.md</a></h3><br><br><br>Deploys a Wordpress instance connected to a MySQL database.",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "stack/wordpress-stack.yml",
-        "url": "https://github.com/pi-hosted/pi-hosted"
-      },
-      "title": "Wordpress",
-      "type": 3
     },
     {
       "category": [
