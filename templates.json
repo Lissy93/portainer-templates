@@ -17761,6 +17761,72 @@
       ]
     },
     {
+      "type": 3,
+      "title": "Penpot (http)",
+      "name": "penpot-http",
+      "categories": [
+        "graphic design"
+      ],
+      "description": "Penpot is the first Open Source design and prototyping platform meant for cross-domain teams.",
+      "logo": "https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/penpot-logo.svg",
+      "note": "<a target='_blank' href='https://community.penpot.app/'>Application documentation \ud83d\uddd7</a>. See <a target='_blank' href='https://help.penpot.app/technical-guide/configuration/#advanced-configuration'>documentation \ud83d\uddd7</a> for more details regarding the flags.",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "label": "PGID",
+          "name": "PGID",
+          "default": "1000"
+        },
+        {
+          "label": "Frontend Flags",
+          "name": "PENPOT_FLAGS_FE",
+          "default": "enable-registration disable-secure-session-cookies enable-insecure-register enable-login-with-password"
+        },
+        {
+          "label": "Backend Flags",
+          "name": "PENPOT_FLAGS_BE",
+          "default": "enable-registration disable-secure-session-cookies enable-insecure-register disable-email-verification"
+        },
+        {
+          "label": "Public URI",
+          "name": "PUBLIC_URI",
+          "default": "http://192.168.1.1:8624",
+          "description": "Public URI. If you are going to expose this instance to the internet and use it under different domain than 'localhost', you will need to adjust it to the final domain."
+        },
+        {
+          "label": "Penpot Telemetry Enabled?",
+          "name": "TELEMETRY_ENABLED",
+          "select": [
+            {
+              "text": "Yes, enable telemetry",
+              "value": "true",
+              "default": true
+            },
+            {
+              "text": "No, disable telemetry",
+              "value": "false"
+            }
+          ],
+          "description": "When enabled, a periodical process will send anonymous data about this instance."
+        },
+        {
+          "default": "8624",
+          "label": "Http Port",
+          "name": "PORT",
+          "description": "This should match the port specified in the Public URI, or 80/443 if using standard ports."
+        }
+      ],
+      "platform": "linux",
+      "repository": {
+        "stackfile": "stacks/penpot/docker-compose-http.yml",
+        "url": "https://github.com/shmolf/portainer-templates"
+      }
+    },
+    {
       "categories": [
         "Web",
         "Tools"
