@@ -747,6 +747,13 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/shmolf">
+            <img src="https://avatars.githubusercontent.com/u/6433103?v=4" width="80;" alt="shmolf"/>
+            <br />
+            <sub><b>Nicholas Browning</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/balzack">
             <img src="https://avatars.githubusercontent.com/u/96387156?v=4" width="80;" alt="balzack"/>
             <br />
@@ -881,6 +888,21 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
             <img src="https://avatars.githubusercontent.com/u/96661824?v=4" width="80;" alt="CrazyWolf13"/>
             <br />
             <sub><b>Tobias</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Glydeon">
+            <img src="https://avatars.githubusercontent.com/u/121807526?v=4" width="80;" alt="Glydeon"/>
+            <br />
+            <sub><b>Byron</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/NixyJuppie">
+            <img src="https://avatars.githubusercontent.com/u/138570196?v=4" width="80;" alt="NixyJuppie"/>
+            <br />
+            <sub><b>Nixy</b></sub>
         </a>
     </td></tr>
 </table>
