@@ -17827,6 +17827,119 @@
       }
     },
     {
+      "type": 1,
+      "title": "Stirling PDF",
+      "name": "stirling-pdf",
+      "categories": [
+        "tools",
+        "pdf"
+      ],
+      "description": "Your locally hosted one-stop-shop for all your PDF needs.",
+      "note": "To support multiple languages for OCR, per the <a target='_blank' href='https://github.com/Stirling-Tools/Stirling-PDF/blob/main/HowToUseOCR.md'>Official documentation \ud83d\uddd7</a>, download your Tess Data from <a target='_blank' href='https://github.com/tesseract-ocr/tessdata'>from another repo \ud83d\uddd7</a>. <br>Then, place said 'traineddata' files into <code>/portainer/Files/AppData/Libraries/StirlingPDF/tessdata</code> <br>For more information about login, read <a target='_blank' href='https://github.com/Stirling-Tools/Stirling-PDF?tab=readme-ov-file#prerequisites'>the official documentation \ud83d\uddd7</a>.",
+      "logo": "https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/stirling-pdf.svg",
+      "platform": "linux",
+      "image": "frooodle/s-pdf:0.18.1",
+      "ports": [
+        "5417:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "env": [
+        {
+          "label": "PUID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "PGID",
+          "name": "PGID",
+          "default": "1000"
+        },
+        {
+          "label": "Enable Login",
+          "name": "DOCKER_ENABLE_SECURITY",
+          "select": [
+            {
+              "text": "Yes, enable login",
+              "value": "true"
+            },
+            {
+              "text": "No, disable login",
+              "value": "false",
+              "default": true
+            }
+          ],
+          "description": "If you want to enable the login, you'll also need to enable login through the Config's settings.yml"
+        }
+      ],
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/StirlingPDF",
+          "container": "/configs"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Libraries/StirlingPDF/tessdata",
+          "container": "/usr/share/tesseract-ocr/5/tessdata"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Terraria Server",
+      "name": "terraria-server",
+      "categories": [
+        "games"
+      ],
+      "description": "Docker container for a Terraria dedicated server.",
+      "note": "Link to <a target='_blank' href='https://terraria.fandom.com/wiki/Guide:Setting_up_a_Terraria_server'>Official documentation \ud83d\uddd7</a> for setting up the server.",
+      "logo": "https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/terraria-server.png",
+      "platform": "linux",
+      "image": "passivelemon/terraria-docker:latest",
+      "ports": [
+        "7777:7777/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "env": [
+        {
+          "label": "PUID",
+          "name": "PUID",
+          "default": "1000"
+        },
+        {
+          "label": "PGID",
+          "name": "PGID",
+          "default": "1000"
+        },
+        {
+          "label": "World name",
+          "name": "WORLD",
+          "default": "dockerworld"
+        }
+      ],
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Libraries/StirlingPDF/tessdata",
+          "container": "/usr/share/tesseract-ocr/5/tessdata"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "Cockpit",
+      "name": "cockpit-cms",
+      "categories": [
+        "cms"
+      ],
+      "description": "Cockpit is a headless CMS with an API-first approach that puts content first.",
+      "note": "Link to <a target='_blank' href='https://v1.getcockpit.com/'>Official documentation \ud83d\uddd7</a>.<br>After deployment, continue to setup by visiting <a target='_blank' href='http://localhost:8088/install'>http://localhost:8088/install</a>",
+      "logo": "https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/cockpit.svg",
+      "platform": "linux",
+      "image": "agentejo/cockpit:latest",
+      "ports": [
+        "8088:80/tcp"
+      ],
+      "restart_policy": "unless-stopped"
+    },
+    {
       "categories": [
         "Web",
         "Tools"
