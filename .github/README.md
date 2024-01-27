@@ -20,6 +20,7 @@
 - [Editing](#editing)
 - [Included Apps](#supported-apps-and-stacks)
 - [Sources](#sources)
+- [Raising Issues](#raising-issues)
 - [Contributing](#contributing)
 - [Website](#website)
 - [Mirror](#mirror)
@@ -656,15 +657,28 @@ The main `templates.json` file is composes of these sources, along with the cont
 
 ---
 
+## Raising Issues
+
+If you notice something not working as it should in any of the [`lib/` scripts](https://github.com/Lissy93/portainer-templates/tree/main/lib), [`website` code](https://github.com/Lissy93/portainer-templates/tree/website), [`README` documentation](https://github.com/Lissy93/portainer-templates/tree/main/.github/README.md), or [`workflows` automations](https://github.com/Lissy93/portainer-templates/tree/main/.github/workflows) - then raise an issue or PR in this repository.
+
+If you encounter an issue with any container included here, please raise a ticket/PR on the up-stream repo, **<ins>not in this repository</ins>**.
+This project simply compiles templates listed in the [Sources](#sources) into a single manifest, so once a fix has been pushed out upstream, it will be available here.
+
+---
+
 ## Contributing
 
 Contributions of any kind are very welcome, and would be much appreciated.
 For Code of Conduct, see [Contributor Convent](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
 
+Not a coder? You can still help, by raising bugs you find, updating docs, or consider sponsoring me on GitHub
+
 For a guide on adding templates, see the [Editing](#editing) section above (TLDR; either update sources.csv, or paste your template collection into the ./sources directory).
 Or, to make changes to the website, see the [Website](#website) section below.
 
-If you're new to GitHub, you can get started by forking the repo, making your changes, adding, commiting and pushing the code, then come back here to open a pull request. You may also find [this guide](https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3#let-s-make-our-first-pull-request-) or the [git docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) helpful for getting started, but feel free to reach out if you need any support.
+Before raising an issue or editing a template, please see the [Raising Issues](#raising-issues) section above (TL;DR: changes need to be made upstream, NOT in this repo).
+
+If you're new to open source, I've put together some guides in [Git-In](https://github.com/Lissy93/git-into-open-source/), but feel free to reach out if you need any support.
 
 ---
 
