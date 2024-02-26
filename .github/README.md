@@ -1,5 +1,5 @@
 <h1 align="center">Portainer Templates</h1>
-<p align="center"><i>A compiled list of 400+ ready to go Portainer App templates</i></p>
+<p align="center"><i>A compiled list of 500+ ready to go Portainer App templates</i></p>
 <p align="center">
   <a href="https://portainer-templates.as93.net">
     🌐 <b>portainer-templates.as93.net</b><br>
