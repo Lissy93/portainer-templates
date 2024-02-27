@@ -699,7 +699,7 @@ npm i # Install dependencies
 npm run dev # Start the development server
 ```
 
-And to pubish, run `npm run build` then either use `npm start` or host the content of the '/build' directory using a web server of your choice. Alternatively, there's a [Dockerfile](https://github.com/Lissy93/portainer-templates/blob/website/Dockerfile), for easy deployment :)
+And to publish, run `npm run build` then either use `npm start` or host the content of the '/build' directory using a web server of your choice. Alternatively, there's a [Dockerfile](https://github.com/Lissy93/portainer-templates/blob/website/Dockerfile), for easy deployment :)
 
 Note that it's not required to make any changes to the website when adding a new template or templates source, as data is fetched directly from [`templates.json`](https://github.com/Lissy93/portainer-templates/blob/main/templates.json) in the repo's main branch - so should show up automatically once your changes are merged.
 
