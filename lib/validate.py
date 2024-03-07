@@ -23,6 +23,9 @@ def main():
 
     except ValidationError as ve:
         print('Validation error:', ve.message)
+        json_obj = ve.instance
+        identifier = json_obj.get('title')
+        print('Title of invalid template:', identifier)
         sys.exit(1)
     except FileNotFoundError as fnfe:
         print(f'File not found error: {fnfe}')

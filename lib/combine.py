@@ -25,12 +25,24 @@ for file in files:
 seen_titles = set()
 filtered_data = []
 
+def normalize_string(original, lowercase = True):
+  normalized = original.translate(str.maketrans('', '', string.punctuation)).replace(' ', '')
+  return normalized.lower() if lowercase else normalized.capitalize()
+
 for x in templates:
-    normalized_title = x['title'].translate(str.maketrans('', '', string.punctuation)).replace(' ', '').lower()
+    normalized_title = normalize_string(x['title'])
     if normalized_title not in seen_titles:
         seen_titles.add(normalized_title)
         filtered_data.append(x)
 
+    categories = x.get('categories', [])
+    x['categories'] = []
+
+    for category in categories:
+      normalized_category = normalize_string(category, lowercase = False)
+
+      if normalized_category not in x['categories']:
+        x['categories'].append(normalized_category)
 
 fileData = {
   'version': '2',
