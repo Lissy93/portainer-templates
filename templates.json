@@ -17610,6 +17610,47 @@
     },
     {
       "type": 1,
+      "title": "Python",
+      "name": "Python",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/python/config</p>",
+      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/python for details.",
+      "platform": "linux",
+      "logo": "",
+      "image": "linuxserver/python:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "80:80/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/python/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": []
+    },
+    {
+      "type": 1,
       "title": "Qdirstat",
       "name": "Qdirstat",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/qdirstat/config<br>mkdir -p /volume1/docker/qdirstat/data</p>",
