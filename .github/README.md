@@ -649,6 +649,13 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/shmolf">
+            <img src="https://avatars.githubusercontent.com/u/6433103?v=4" width="80;" alt="shmolf"/>
+            <br />
+            <sub><b>Nicholas Browning</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/Benoniy">
             <img src="https://avatars.githubusercontent.com/u/47002663?v=4" width="80;" alt="Benoniy"/>
             <br />
@@ -668,20 +675,13 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
             <br />
             <sub><b>Kartik Rao</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/leetrout">
             <img src="https://avatars.githubusercontent.com/u/524648?v=4" width="80;" alt="leetrout"/>
             <br />
             <sub><b>Lee Trout</b></sub>
-        </a>
-    </td></tr>
-<tr>
-    <td align="center">
-        <a href="https://github.com/shmolf">
-            <img src="https://avatars.githubusercontent.com/u/6433103?v=4" width="80;" alt="shmolf"/>
-            <br />
-            <sub><b>Nicholas Browning</b></sub>
         </a>
     </td>
     <td align="center">
@@ -723,7 +723,7 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
     </td>
     <td align="center">
         <a href="https://github.com/bgadrian">
-            <img src="https://avatars.githubusercontent.com/u/830001?v=4" width="80;" alt="bgadrian"/>
+            <img src="https://avatars.githubusercontent.com/u/830001?u=69f115baad2fcd8c14eb05bdbf5cd80f4649a95a&v=4" width="80;" alt="bgadrian"/>
             <br />
             <sub><b>B.G.Adrian</b></sub>
         </a>
@@ -780,7 +780,7 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
     </td>
     <td align="center">
         <a href="https://github.com/InDieTasten">
-            <img src="https://avatars.githubusercontent.com/u/7047377?v=4" width="80;" alt="InDieTasten"/>
+            <img src="https://avatars.githubusercontent.com/u/7047377?u=8d8f8017628b38bc46dcbf3620e194b01d3fb2d1&v=4" width="80;" alt="InDieTasten"/>
             <br />
             <sub><b>InDieTasten</b></sub>
         </a>
@@ -808,6 +808,13 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/mryesiller">
+            <img src="https://avatars.githubusercontent.com/u/24632172?v=4" width="80;" alt="mryesiller"/>
+            <br />
+            <sub><b>Göksel Yeşiller</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/forwardemail">
             <img src="https://avatars.githubusercontent.com/u/32481436?v=4" width="80;" alt="forwardemail"/>
             <br />
@@ -820,15 +827,15 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
             <br />
             <sub><b>Bastii717</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/frankdez93">
             <img src="https://avatars.githubusercontent.com/u/87549420?v=4" width="80;" alt="frankdez93"/>
             <br />
             <sub><b>Frankdez93</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/ratty222">
             <img src="https://avatars.githubusercontent.com/u/92832598?u=137b65530cbd5f5af9c24cde51baa6cc77cc934b&v=4" width="80;" alt="ratty222"/>
@@ -861,7 +868,7 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
         <a href="https://github.com/mezza93">
             <img src="https://avatars.githubusercontent.com/u/153599966?v=4" width="80;" alt="mezza93"/>
             <br />
-            <sub><b>mezza93</b></sub>
+            <sub><b>Mezza93</b></sub>
         </a>
     </td></tr>
 </table>
