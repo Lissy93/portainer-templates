@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   app:
-    image: 'jc21/nginx-proxy-manager:latest'
+    image: 'vjc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
       # These ports are in format <host-port>:<container-port>
