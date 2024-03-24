@@ -930,13 +930,6 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/hernanpopper">
-            <img src="https://avatars.githubusercontent.com/u/104868017?v=4" width="80;" alt="hernanpopper"/>
-            <br />
-            <sub><b>Hernanpopper</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/terminaltrove">
             <img src="https://avatars.githubusercontent.com/u/121595180?v=4" width="80;" alt="terminaltrove"/>
             <br />
