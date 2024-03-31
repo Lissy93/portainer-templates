@@ -10692,6 +10692,51 @@
       "restart_policy": "unless-stopped"
     },
     {
+      "type": 3,
+      "title": "Asciinema {shmolf}",
+      "name": "asciinema",
+      "categories": [
+        "Tools"
+      ],
+      "description": "Self-hosted terminal recording and playback",
+      "logo": "https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/asciinema.svg",
+      "note": "<a target='_blank' href='https://docs.asciinema.org/getting-started/#self-hosting-the-server'>Application documentation \ud83d\uddd7</a><br>For the application secret key, you can use the terminal command <code>tr -dc A-Za-z0-9 &lt;/dev/urandom | head -c 64; echo</code>",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "label": "PGID",
+          "name": "PGID",
+          "default": "1000"
+        },
+        {
+          "label": "Hostname",
+          "name": "HOST_NAME",
+          "default": "localhost",
+          "description": "Localhost for use within the application runtime"
+        },
+        {
+          "label": "Host Port",
+          "name": "HOST_PORT",
+          "default": "3033",
+          "description": "Published port for use within the application runtime"
+        },
+        {
+          "label": "Secret Application Key",
+          "name": "SECRET_KEY",
+          "default": "please-change-this-to-a-random-secret"
+        }
+      ],
+      "platform": "linux",
+      "repository": {
+        "stackfile": "stacks/asciinema/docker-compose.yml",
+        "url": "https://github.com/shmolf/portainer-templates"
+      }
+    },
+    {
       "categories": [
         "Social",
         "Forum"
@@ -16005,49 +16050,6 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/digikam/config"
-        }
-      ],
-      "restart_policy": "unless-stopped"
-    },
-    {
-      "type": 1,
-      "title": "Dillinger",
-      "name": "Dillinger",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/dillinger/config</p>",
-      "description": "[Dillinger](https://github.com/joemccann/dillinger) is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.",
-      "categories": [
-        "Development"
-      ],
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dillinger.png",
-      "image": "linuxserver/dillinger:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        }
-      ],
-      "ports": [
-        "8080:8080/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/dillinger/config"
         }
       ],
       "restart_policy": "unless-stopped"
