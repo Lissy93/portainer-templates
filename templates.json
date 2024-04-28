@@ -8388,7 +8388,7 @@
       "title": "Build-agent",
       "name": "Build-agent",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/build-agent/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/build-agent for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/build-agent for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/build-agent:latest",
@@ -8629,7 +8629,7 @@
       "title": "Ci",
       "name": "Ci",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ci/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ci for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ci for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/ci:latest",
@@ -9431,7 +9431,7 @@
       "title": "Ffmpeg",
       "name": "Ffmpeg",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ffmpeg/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/ffmpeg:latest",
@@ -10233,7 +10233,7 @@
       "title": "Jenkins-builder",
       "name": "Jenkins-builder",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/jenkins-builder/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/jenkins-builder for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/jenkins-builder for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/jenkins-builder:latest",
@@ -10505,6 +10505,74 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/kimai/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": []
+    },
+    {
+      "type": 1,
+      "title": "Kometa",
+      "name": "Kometa",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/kometa/config</p>",
+      "description": "[Kometa](https://github.com/Kometa-Team/Kometa) is a powerful tool designed to give you complete control over your media libraries. With Kometa, you can take your customization to the next level, with granular control over metadata, collections, overlays, and much more.",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/kometa-banner.png",
+      "image": "linuxserver/kometa:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        },
+        {
+          "name": "KOMETA_CONFIG",
+          "label": "KOMETA_CONFIG",
+          "default": "/config/config.yml",
+          "description": "Specify a custom config file to use."
+        },
+        {
+          "name": "KOMETA_TIME",
+          "label": "KOMETA_TIME",
+          "default": "03:00",
+          "description": "Comma-separated list of times to update each day. Format: `HH:MM`."
+        },
+        {
+          "name": "KOMETA_RUN",
+          "label": "KOMETA_RUN",
+          "default": "False",
+          "description": "Set to `True` to run without the scheduler."
+        },
+        {
+          "name": "KOMETA_TEST",
+          "label": "KOMETA_TEST",
+          "default": "False",
+          "description": "Set to `True` to run in debug mode with only collections that have `test: true`."
+        },
+        {
+          "name": "KOMETA_NO_MISSING",
+          "label": "KOMETA_NO_MISSING",
+          "default": "False",
+          "description": "Set to `True` to run without any of the missing movie/show functions."
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/kometa/config"
         }
       ],
       "restart_policy": "unless-stopped",
@@ -10800,6 +10868,54 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/mediaelch/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": []
+    },
+    {
+      "type": 1,
+      "title": "Msedge",
+      "name": "Msedge",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/msedge/config</p>",
+      "description": "[Microsoft Edge](https://www.microsoft.com/edge) is a cross-platform web browser developed by Microsoft and based on Chromium.",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/edge-logo.png",
+      "image": "linuxserver/msedge:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        },
+        {
+          "name": "EDGE_CLI",
+          "label": "EDGE_CLI",
+          "default": "https://www.linuxserver.io/",
+          "description": "Specify one or multiple Chromium CLI flags, this string will be passed to the application in full."
+        }
+      ],
+      "ports": [
+        "3000:3000/tcp",
+        "3001:3001/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/msedge/config"
         }
       ],
       "restart_policy": "unless-stopped",
@@ -11521,7 +11637,7 @@
       "title": "Plex-meta-manager",
       "name": "Plex-meta-manager",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/plex-meta-manager/config</p>",
-      "description": "[Plex-meta-manager](https://github.com/meisnate12/Plex-Meta-Manager) is a Python 3 script that can be continuously run using YAML configuration files to update on a schedule the metadata of the movies, shows, and collections in your libraries as well as automatically build collections based on various methods all detailed in the wiki.",
+      "description": "[Plex-meta-manager](https://github.com/Kometa-Team/Kometa) is a Python 3 script that can be continuously run using YAML configuration files to update on a schedule the metadata of the movies, shows, and collections in your libraries as well as automatically build collections based on various methods all detailed in the wiki.",
       "categories": [
         "Mediamanagement"
       ],
@@ -11800,7 +11916,7 @@
       "title": "Python",
       "name": "Python",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/python/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/python for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/python for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/python:latest",
@@ -12039,7 +12155,7 @@
       "title": "Readme-sync",
       "name": "Readme-sync",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/readme-sync/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/readme-sync for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/readme-sync for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/readme-sync:latest",
@@ -12477,7 +12593,7 @@
       "title": "Socket-proxy",
       "name": "Socket-proxy",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/socket-proxy/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/socket-proxy for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/socket-proxy:latest",
@@ -12591,6 +12707,48 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/speedtest-tracker/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "categories": []
+    },
+    {
+      "type": 1,
+      "title": "Spotube",
+      "name": "Spotube",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/spotube/config</p>",
+      "description": "[Spotube](https://spotube.krtirtho.dev/) is an open source, cross-platform Spotify client compatible across multiple platforms utilizing Spotify's data API and YouTube, Piped.video or JioSaavn as an audio source, eliminating the need for Spotify Premium",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/spotube-logo.png",
+      "image": "linuxserver/spotube:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "3000:3000/tcp",
+        "3001:3001/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/spotube/config"
         }
       ],
       "restart_policy": "unless-stopped",
@@ -13022,7 +13180,7 @@
       "title": "Unrar",
       "name": "Unrar",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/unrar/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/unrar for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/unrar for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/unrar:latest",
@@ -13367,7 +13525,7 @@
       "title": "Yq",
       "name": "Yq",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/yq/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/yq for details.",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/yq for details.",
       "platform": "linux",
       "logo": "",
       "image": "linuxserver/yq:latest",
