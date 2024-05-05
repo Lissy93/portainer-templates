@@ -4714,6 +4714,37 @@
     },
     {
       "categories": [
+        "Productivity",
+        "Timerelated"
+      ],
+      "description": "Open source time-tracker with an interactive user experience and powerful reporting.",
+      "logo": "https://timetagger.app/timetagger_wl.svg",
+      "name": "TimeTagger",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/timetagger.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "TimeTagger",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "Invidious is an open source alternative front-end to YouTube.",
+      "logo": "https://invidious.io/invidious-colored-vector.svg",
+      "name": "Invidious",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/invidious.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Invidious",
+      "type": 3
+    },
+    {
+      "categories": [
         "Filebrowsers"
       ],
       "description": "Chibisafe is a modern and self-hosted take on file uploading services that can handle anything you throw at it thanks to it's robust and fast API, chunked uploads support and more.",
@@ -5374,7 +5405,7 @@
         "Multimedia"
       ],
       "description": "Tubearchivist is your self hosted YouTube media server",
-      "logo": "https://raw.githubusercontent.com/tubearchivist/tubearchivist/master/assets/tube-archivist-banner.jpg",
+      "logo": "https://nas.mengkai.fun:88/images/2023/11/17/tube-archivist.png",
       "name": "tubearchivist",
       "platform": "linux",
       "repository": {
