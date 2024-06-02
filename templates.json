@@ -14674,7 +14674,7 @@
       "type": 1,
       "title": "Pairdrop",
       "name": "Pairdrop",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pairdrop/config</p>",
       "description": "[PairDrop](https://github.com/schlagmichdoch/PairDrop) is a sublime alternative to AirDrop that works on all platforms. Send images, documents or text via peer to peer connection to devices in the same local network/Wi-Fi or to paired devices.",
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/schlagmichdoch/PairDrop/master/public/images/android-chrome-512x512.png",
@@ -14725,6 +14725,12 @@
       ],
       "ports": [
         "3000:3000/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/pairdrop/config"
+        }
       ],
       "restart_policy": "unless-stopped",
       "categories": []
@@ -15334,7 +15340,7 @@
       "type": 1,
       "title": "Rdesktop",
       "name": "Rdesktop",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p><br>mkdir -p /volume1/docker/rdesktop/config</p>",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/rdesktop/config<br><br>mkdir -p /volume1/docker/rdesktop/config</p>",
       "description": "[Rdesktop](http://xrdp.org/) - Containers containing full desktop environments in many popular flavors for Alpine, Ubuntu, Arch, and Fedora accessible via RDP.",
       "platform": "linux",
       "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rdesktop.png",
@@ -15363,6 +15369,10 @@
         "3389:3389/tcp"
       ],
       "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/rdesktop/config"
+        },
         {
           "container": "/var/run/docker.sock",
           "bind": "/var/run/docker.sock"
@@ -19999,6 +20009,22 @@
         "url": "https://github.com/xneo1/portainer_templates"
       },
       "title": "Appwrite",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Lowcode"
+      ],
+      "description": "OpnForm is an open-source form builder. It's an alternative to products like Typeform, JotForm, Tally etc.",
+      "logo": "https://opnform.com/img/logo.svg",
+      "name": "opnform",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/opnform.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "OpnForm",
       "type": 3
     },
     {
