@@ -7193,6 +7193,85 @@
     },
     {
       "type": 1,
+      "title": "Code-server {shmolf}",
+      "name": "code-server",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>This will bind to the following directory on the host filesystem:</p><p><code>/portainer/Files/AppData/Config/code-server</code></p><ul><li>Proxy Domain: See <a href='https://github.com/cdr/code-server/blob/master/docs/FAQ.md#sub-domains' target='_blank'>Documentation \ud83d\uddd7</a></li><li>Timezones: See <a href='https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List' target='_blank'>list \ud83d\uddd7</a></li></ul>",
+      "description": "Code-server (https://coder.com) is VS Code running on a remote server, accessible through the browser. - Code on your Chromebook, tablet, and laptop with a consistent dev environment. - If you have a Windows or Mac workstation, more easily develop for Linux. - Take advantage of large cloud servers to speed up tests, compilations, downloads, and more. - Preserve battery life when you're on the go. - All intensive computation runs on your server. - You're no longer running excess instances of Chrome.",
+      "categories": [
+        "Development"
+      ],
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/code-server-banner.png",
+      "image": "linuxserver/code-server:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use"
+        },
+        {
+          "name": "PASSWORD",
+          "label": "PASSWORD",
+          "default": "password",
+          "description": "Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth."
+        },
+        {
+          "name": "HASHED_PASSWORD",
+          "label": "HASHED_PASSWORD",
+          "default": "",
+          "description": "Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below."
+        },
+        {
+          "name": "SUDO_PASSWORD",
+          "label": "SUDO_PASSWORD",
+          "default": "password",
+          "description": "If this optional variable is set, user will have sudo access in the code-server terminal with the specified password."
+        },
+        {
+          "name": "SUDO_PASSWORD_HASH",
+          "label": "SUDO_PASSWORD_HASH",
+          "default": "",
+          "description": "Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`."
+        },
+        {
+          "name": "PROXY_DOMAIN",
+          "label": "PROXY_DOMAIN",
+          "default": "code-server.my.domain",
+          "description": "If this optional variable is set, this domain will be proxied for subdomain proxying."
+        },
+        {
+          "name": "DEFAULT_WORKSPACE",
+          "label": "DEFAULT_WORKSPACE",
+          "default": "/config/workspace",
+          "description": "If this optional variable is set, code-server will open this directory by default"
+        }
+      ],
+      "ports": [
+        "8443:8443/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/portainer/Files/AppData/Config/code-server"
+        }
+      ],
+      "restart_policy": "unless-stopped"
+    },
+    {
+      "type": 1,
       "title": "Registry",
       "description": "Docker image registry",
       "categories": [
@@ -14199,7 +14278,7 @@
           "name": "DB_PORT",
           "label": "DB_PORT",
           "default": "",
-          "description": "Database port (defaul: 5432)"
+          "description": "Database port (default: 5432)"
         },
         {
           "name": "REDIS_HOST",
