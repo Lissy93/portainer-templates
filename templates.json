@@ -13953,6 +13953,9 @@
           "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
         }
       ],
+      "ports": [
+        "80:80/tcp"
+      ],
       "volumes": [
         {
           "container": "/config",
@@ -14218,6 +14221,9 @@
           "default": "",
           "description": "For passing additional java options."
         }
+      ],
+      "ports": [
+        "80:80/tcp"
       ],
       "volumes": [
         {
@@ -15473,6 +15479,9 @@
           "description": "Set to `True` to run without any of the missing movie/show functions."
         }
       ],
+      "ports": [
+        "80:80/tcp"
+      ],
       "volumes": [
         {
           "container": "/config",
@@ -16644,7 +16653,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pydio-cells/config</p>",
       "description": "[Pydio-cells](https://pydio.com/) is the nextgen file sharing platform for organizations. It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.",
       "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/wiki/pydio/cells/images/PydioCellsColor.png",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pydio-cells-icon.png",
       "image": "linuxserver/pydio-cells:latest",
       "env": [
         {
@@ -16697,7 +16706,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pyload-ng/config<br>mkdir -p /volume1/docker/pyload-ng/downloads</p>",
       "description": "[pyLoad](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
       "platform": "linux",
-      "logo": "https://pyload.net/img/banner.png",
+      "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/pyload-logo.png",
       "image": "linuxserver/pyload-ng:latest",
       "env": [
         {
@@ -19118,6 +19127,22 @@
         "url": "https://github.com/xneo1/portainer_templates"
       },
       "title": "OpnForm",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Social",
+        "Events"
+      ],
+      "description": "Gathio is a simple, federated, privacy-first event hosting platform.",
+      "logo": "https://gath.io/og-image.jpg",
+      "name": "gathio",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/gathio.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Gathio",
       "type": 3
     },
     {
