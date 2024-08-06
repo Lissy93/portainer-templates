@@ -43,7 +43,7 @@ You can browse all supported apps and stacks and see stats, config options and s
 
 1. Log into your Portainer web UI
 2. Under <ins>Settings</ins> --> <ins>App Templates</ins>, update the URL to
-    - `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`
+    - `https://raw.githubusercontent.com/wickedyoda/portainer-templates/main/templates.json`
 3. Now under <ins>Home</ins> --> <ins>App Templates</ins>, you should see all apps. Click one to deploy.
 
 <details>
@@ -78,19 +78,19 @@ If you're using your own template file, but don't want to fork this repository, 
 
 ## Editing
 
-The `template.json` file is generated using the scripts in [`lib`](https://github.com/Lissy93/portainer-templates/tree/main/lib), using GitHub Actions.
+The `template.json` file is generated using the scripts in [`lib`](https://github.com/wickedyoda/portainer-templates/tree/main/lib), using GitHub Actions.
 Running the `make` command will download all listed sources, parse them, and combine them with anything in the sources dir, outputting the `templates.json` file.<br>
-_So, you only need to edit **either** the [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv) file, **or** add your templates directly into the [`sources/`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory._
+_So, you only need to edit **either** the [`sources.csv`](https://github.com/wickedyoda/portainer-templates/blob/main/sources.csv) file, **or** add your templates directly into the [`sources/`](https://github.com/wickedyoda/portainer-templates/tree/main/sources) directory._
 
 ### Adding a new Source
 If you're maintaining your own list of Portainer templates, and would like them to be included, just add the URL to your template.json file to [`sources.csv`](https://github.com/Lissy93/portainer-templates/blob/main/sources.csv), along with a name.
 When the action runs, it will download the content, parse it and add it to the final template.
 
 ### Adding a Template / Template list
-Alternatively, place your template file within the [`sources`](https://github.com/Lissy93/portainer-templates/tree/main/sources) directory, and it will be automatically combined into the main `template.json`. Be sure that your template corresponds to [Portainer's App Template JSON Format](https://docs.portainer.io/advanced/app-templates/format).
+Alternatively, place your template file within the [`sources`](https://github.com/wickedyoda/portainer-templates/tree/main/sources) directory, and it will be automatically combined into the main `template.json`. Be sure that your template corresponds to [Portainer's App Template JSON Format](https://docs.portainer.io/advanced/app-templates/format).
 
 ### Validating Templates
-There is a schema defined in [`Schema.json`](https://github.com/Lissy93/portainer-templates/blob/main/Schema.json), which can be used to validate any Portainer template.
+There is a schema defined in [`Schema.json`](https://github.com/wickedyoda/portainer-templates/blob/main/Schema.json), which can be used to validate any Portainer template.
 Run `make validate` to ensure your template conforms to Portainer's App Template [specification](https://docs.portainer.io/advanced/app-templates/format).
 
 ### Maintaining your own Templates
