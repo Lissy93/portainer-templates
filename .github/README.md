@@ -8,7 +8,7 @@
 </p>
 
 > **TL;DR** Under Settings → App Templates in your Portainer GUI, paste this URL:<br>
-> `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`<br>
+> `https://raw.githubusercontent.com/wickedyoda/portainer-templates/main/templates.json`<br>
 
 
 <details>
