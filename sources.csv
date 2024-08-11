@@ -11,3 +11,4 @@ mycroftwilde_templates, https://raw.githubusercontent.com/mycroftwilde/portainer
 mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json
 shmolf_templates, https://raw.githubusercontent.com/shmolf/portainer-templates/main/templates-2.0.json
 portainer_templates, https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json
+cloudflare_templates, https://raw.githubusercontent.com/tempusthales/Portainer/main/pi_hosted_cloudflare_templates.json
