@@ -40,9 +40,11 @@ def normalize_string(original, lowercase = True):
 
 for x in templates:
     normalized_title = normalize_string(x['title'])
-    if normalized_title not in seen_titles:
-        seen_titles.add(normalized_title)
-        filtered_data.append(x)
+    if normalized_title in seen_titles:
+        continue
+
+    seen_titles.add(normalized_title)
+    filtered_data.append(x)
 
     categories = x.get('categories', [])
     x['categories'] = []

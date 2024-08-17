@@ -1,0 +1,5 @@
+*.json
+
+# Keep these
+!example_templates.json
+!lissy93_tempaltes.json
