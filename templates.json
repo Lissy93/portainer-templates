@@ -18824,6 +18824,54 @@
     },
     {
       "categories": [
+        "Rss"
+      ],
+      "description": "A lightweight RSS feed aggregator and reader.",
+      "logo": "",
+      "name": "fusion",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/fusion.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Fusion",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Analytics"
+      ],
+      "description": "Medama Analytics is an open-source project dedicated to providing self-hostable, cookie-free website analytics.",
+      "logo": "https://raw.githubusercontent.com/medama-io/medama/main/.github/images/banner-dark.svg",
+      "name": "medama",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/medama.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Medama",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Notes"
+      ],
+      "description": "",
+      "logo": "",
+      "name": "markopolis",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/markopolis.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Markopolis",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
         "Automation",
         "Ai"
       ],
