@@ -18049,16 +18049,13 @@
     },
     {
       "type": 1,
-      "title": "Plex-meta-manager",
-      "name": "Plex-meta-manager",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/plex-meta-manager/config</p>",
-      "description": "[Plex-meta-manager](https://github.com/Kometa-Team/Kometa) is a Python 3 script that can be continuously run using YAML configuration files to update on a schedule the metadata of the movies, shows, and collections in your libraries as well as automatically build collections based on various methods all detailed in the wiki.",
-      "categories": [
-        "Mediamanagement"
-      ],
+      "title": "Planka",
+      "name": "Planka",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/planka/config</p>",
+      "description": "[Planka](https://github.com/plankanban/planka/) is an elegant open source project tracking tool.",
       "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-meta-manager-banner.png",
-      "image": "linuxserver/plex-meta-manager:latest",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/planka-logo.png",
+      "image": "linuxserver/planka:latest",
       "env": [
         {
           "name": "PUID",
@@ -18079,44 +18076,42 @@
           "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
         },
         {
-          "name": "PMM_CONFIG",
-          "label": "PMM_CONFIG",
-          "default": "/config/config.yml",
-          "description": "Specify a custom config file to use."
+          "name": "BASE_URL",
+          "label": "BASE_URL",
+          "default": "https://planka.example.com",
+          "description": "The URL you will use to access planka including protocol, and port if not 80/443."
         },
         {
-          "name": "PMM_TIME",
-          "label": "PMM_TIME",
-          "default": "03:00",
-          "description": "Comma-separated list of times to update each day. Format: `HH:MM`."
+          "name": "DATABASE_URL",
+          "label": "DATABASE_URL",
+          "default": "postgresql://user:password@planka-db:5432/planka",
+          "description": "Postgres database URL. Special characters must be [url encoded](https://en.wikipedia.org/wiki/Percent-encoding)."
         },
         {
-          "name": "PMM_RUN",
-          "label": "PMM_RUN",
-          "default": "False",
-          "description": "Set to `True` to run without the scheduler."
+          "name": "SECRET_KEY",
+          "label": "SECRET_KEY",
+          "default": "notasecretkey",
+          "description": "Session encryption key, recommended 32-64 character alphanumeric."
         },
         {
-          "name": "PMM_TEST",
-          "label": "PMM_TEST",
-          "default": "False",
-          "description": "Set to `True` to run in debug mode with only collections that have `test: true`."
-        },
-        {
-          "name": "PMM_NO_MISSING",
-          "label": "PMM_NO_MISSING",
-          "default": "False",
-          "description": "Set to `True` to run without any of the missing movie/show functions."
+          "name": "TRUST_PROXY",
+          "label": "TRUST_PROXY",
+          "default": "0",
+          "description": "Set to `1` to trust upstream proxies if reverse proxying."
         }
+      ],
+      "ports": [
+        "1337:1337/tcp"
       ],
       "volumes": [
         {
           "container": "/config",
-          "bind": "/volume1/docker/plex-meta-manager/config"
+          "bind": "/volume1/docker/planka/config"
         }
       ],
       "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/"
+      "maintainer": " https://github.com/technorabilia/portainer-templates/",
+      "categories": []
     },
     {
       "type": 1,
@@ -18518,50 +18513,6 @@
       "restart_policy": "unless-stopped",
       "maintainer": " https://github.com/technorabilia/portainer-templates/",
       "categories": []
-    },
-    {
-      "type": 1,
-      "title": "Requestrr",
-      "name": "Requestrr",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/requestrr/config</p>",
-      "description": "[Requestrr](https://github.com/darkalfx/requestrr) is a chatbot used to simplify using services like Sonarr/Radarr/Ombi via the use of chat.",
-      "categories": [
-        "Media"
-      ],
-      "platform": "linux",
-      "logo": "https://github.com/darkalfx/requestrr/raw/master/Logos/requestrr_discord_Icon_512.png",
-      "image": "linuxserver/requestrr:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        }
-      ],
-      "ports": [
-        "4545:4545/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/requestrr/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/"
     },
     {
       "type": 1,
@@ -19369,6 +19320,49 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/xbackbone/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "maintainer": " https://github.com/technorabilia/portainer-templates/",
+      "categories": []
+    },
+    {
+      "type": 1,
+      "title": "Yaak",
+      "name": "Yaak",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/yaak/config</p>",
+      "description": "[Yaak](https://yaak.app/) is a desktop API client for organizing and executing REST, GraphQL, and gRPC requests. It's built using [Tauri](https://tauri.app/), [Rust](https://www.rust-lang.org/), and [ReactJS](https://react.dev/).",
+      "platform": "linux",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/yaak-logo.png",
+      "image": "linuxserver/yaak:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "3000:3000/tcp",
+        "3001:3001/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/yaak/config"
         }
       ],
       "restart_policy": "unless-stopped",
