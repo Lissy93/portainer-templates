@@ -1447,7 +1447,7 @@
       "platform": "linux",
       "repository": {
         "url": "https://github.com/Seth9/portainer-templates",
-        "stackfile": "stacks/squad/docker-compose.yml"
+        "stackfile": "sources/stacks/squad/docker-compose.yml"
       },
       "env": [
         {
