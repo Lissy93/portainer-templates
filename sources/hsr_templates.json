@@ -1,0 +1,65 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 3,
+      "title": "Squad-test2",
+      "description": "Squad-test2",
+      "categories": ["HSR"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/Seth9/portainer-templates",
+        "stackfile": "sources/stacks/squad/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "ENV_NAME",
+          "label": "Env name",
+          "description": "Env name eg. 'public' or 'training1' ('latest' if empty)",
+          "default": "test"
+        },
+        {
+          "name": "SERVER_NAME",
+          "label": "Server name",
+          "description": "Server name ('Default Squad Server' if empty)",
+          "default": "Default Squad Server"
+        },
+        {
+          "name": "MAX_PLAYERS",
+          "label": "Max players",
+          "description": "Max players (100 if empty)",
+          "default": "100"
+        },
+        {
+          "name": "SERVER_PORT",
+          "label": "Server port",
+          "description": "Server port of Squad server (7787 if empty)",
+          "default": "7787"
+        },
+        {
+          "name": "BEACON_PORT",
+          "label": "Beacon port",
+          "description": "Beacon port of Squad server (15000 if empty)",
+          "default": "15000"
+        },
+        {
+          "name": "QUERY_PORT",
+          "label": "Query port",
+          "description": "Query port of Squad server (27165 if empty)",
+          "default": "27165"
+        },
+        {
+          "name": "RCON_PORT",
+          "label": "RCON port",
+          "description": "RCON port of Squad server (21114 if empty)",
+          "default": "21114"
+        },
+        {
+          "name": "MODS",
+          "label": "MODS list",
+          "description": "MODS list in () eg. '(13371337 12341234 1111111)'"
+        }
+      ]
+    }
+  ]
+}
