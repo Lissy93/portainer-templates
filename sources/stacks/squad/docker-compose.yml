@@ -1,0 +1,30 @@
+version: "3"
+
+volumes:
+  squad_data:
+    name: "${ENV_NAME:-test}_squad_data"
+
+services:
+  squad-server:
+    image: cm2network/squad
+    container_name: "squad-${ENV_NAME:-test}"
+    restart: unless-stopped
+    volumes:
+      - squad_data:/home/steam/squad-dedicated/
+    environment:
+      - PORT=${SERVER_PORT:-7787}
+      - beaconport=${BEACON_PORT:-15000}
+      - QUERYPORT=${QUERY_PORT:-27165}
+      - RCONPORT=${RCON_PORT:-21114}
+      - FIXEDMAXPLAYERS=${MAX_PLAYERS:-100}
+      - SERVER_NAME=${SERVER_NAME:-Default Squad Server}
+      - MODS=${MODS}
+    ports:
+      - "${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/tcp"
+      - "${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/udp"
+      - "${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/tcp"
+      - "${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/udp"
+      - "${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/tcp"
+      - "${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/udp"
+      - "${RCON_PORT:-21114}:${RCON_PORT:-21114}/tcp"
+      - "${RCON_PORT:-21114}:${RCON_PORT:-21114}/udp"
