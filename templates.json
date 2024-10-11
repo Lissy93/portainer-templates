@@ -1438,7 +1438,7 @@
       "maintainer": " https://github.com/portainer/templates/"
     },
     {
-      "type": 3,
+      "type": 1,
       "title": "Squad",
       "description": "Squad server",
       "categories": [
