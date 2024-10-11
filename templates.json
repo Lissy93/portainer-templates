@@ -1438,7 +1438,7 @@
       "maintainer": " https://github.com/portainer/templates/"
     },
     {
-      "type": 1,
+      "type": 3,
       "title": "Squad",
       "description": "Squad server",
       "categories": [
@@ -1455,6 +1455,12 @@
           "label": "Env name",
           "description": "Env name eg. 'public' or 'training1' ('latest' if empty)",
           "default": "test"
+        },
+        {
+          "name": "NETWORK_MODE",
+          "label": "network mode",
+          "description": "Network mode",
+          "default": "host"
         },
         {
           "name": "SERVER_NAME",
@@ -1475,6 +1481,12 @@
           "default": "7787"
         },
         {
+          "name": "SERVER_PORT_ADDITIONAL",
+          "label": "Server port additional",
+          "description": "Additional server port",
+          "default": "7788"
+        },
+        {
           "name": "BEACON_PORT",
           "label": "Beacon port",
           "description": "Beacon port of Squad server (15000 if empty)",
@@ -1485,6 +1497,12 @@
           "label": "Query port",
           "description": "Query port of Squad server (27165 if empty)",
           "default": "27165"
+        },
+        {
+          "name": "QUERY_PORT_ADDITIONAL",
+          "label": "Query port additional",
+          "description": "Additional query port",
+          "default": "27166"
         },
         {
           "name": "RCON_PORT",

@@ -8,6 +8,7 @@ services:
   squad-server:
     image: cm2network/squad
     container_name: "squad-${ENV_NAME:-test}"
+    network_mode: "${NETWORK_MODE:-host}"
     restart: unless-stopped
     volumes:
       - squad_data:/home/steam/squad-dedicated/
@@ -22,9 +23,13 @@ services:
     ports:
       - "${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/tcp"
       - "${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/udp"
+      - "${SERVER_PORT_ADDITIONAL:-7788}:${SERVER_PORT_ADDITIONAL:-7788}/tcp"
+      - "${SERVER_PORT_ADDITIONAL:-7788}:${SERVER_PORT_ADDITIONAL:-7788}/udp"
       - "${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/tcp"
       - "${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/udp"
       - "${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/tcp"
       - "${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/udp"
+      - "${QUERY_PORT_ADDITIONAL:-27166}:${QUERY_PORT_ADDITIONAL:-27166}/tcp"
+      - "${QUERY_PORT_ADDITIONAL:-27166}:${QUERY_PORT_ADDITIONAL:-27166}/udp"
       - "${RCON_PORT:-21114}:${RCON_PORT:-21114}/tcp"
       - "${RCON_PORT:-21114}:${RCON_PORT:-21114}/udp"
