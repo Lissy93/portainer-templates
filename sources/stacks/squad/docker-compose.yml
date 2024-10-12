@@ -1,8 +1,8 @@
 version: "3"
 
-volumes:
-  squad_data:
-    name: "/srv/core/portainer-volumes/squad_data_${ENV_NAME:-test}"
+#volumes:
+#  squad_data:
+#    name: "/srv/core/portainer-volumes/squad_data_${ENV_NAME:-test}"
 
 services:
   squad-server:
@@ -11,7 +11,8 @@ services:
     network_mode: "${NETWORK_MODE:-host}"
     restart: unless-stopped
     volumes:
-      - squad_data:/home/steam/squad-dedicated/
+      #- squad_data:/home/steam/squad-dedicated/
+      #- "/srv/core/portainer-volumes/squad-data-test:/home/steam/squad-dedicated/"
     environment:
       - PORT=${SERVER_PORT:-7787}
       - beaconport=${BEACON_PORT:-15000}
