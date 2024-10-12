@@ -2,7 +2,7 @@ version: "3"
 
 volumes:
   squad_data:
-    name: "${ENV_NAME:-test}_squad_data"
+    name: "/srv/core/portainer-volumes/squad_data_${ENV_NAME:-test}"
 
 services:
   squad-server:
@@ -21,15 +21,15 @@ services:
       - SERVER_NAME=${SERVER_NAME:-Default Squad Server}
       - MODS=${MODS}
     ports:
-      - "${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/tcp"
-      - "${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/udp"
-      - "${SERVER_PORT_ADDITIONAL:-7788}:${SERVER_PORT_ADDITIONAL:-7788}/tcp"
-      - "${SERVER_PORT_ADDITIONAL:-7788}:${SERVER_PORT_ADDITIONAL:-7788}/udp"
-      - "${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/tcp"
-      - "${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/udp"
-      - "${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/tcp"
-      - "${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/udp"
-      - "${QUERY_PORT_ADDITIONAL:-27166}:${QUERY_PORT_ADDITIONAL:-27166}/tcp"
-      - "${QUERY_PORT_ADDITIONAL:-27166}:${QUERY_PORT_ADDITIONAL:-27166}/udp"
-      - "${RCON_PORT:-21114}:${RCON_PORT:-21114}/tcp"
-      - "${RCON_PORT:-21114}:${RCON_PORT:-21114}/udp"
+      - "${SERVER_IP}:${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/tcp"
+      - "${SERVER_IP}:${SERVER_PORT:-7787}:${SERVER_PORT:-7787}/udp"
+      - "${SERVER_IP}:${SERVER_PORT_ADDITIONAL:-7788}:${SERVER_PORT_ADDITIONAL:-7788}/tcp"
+      - "${SERVER_IP}:${SERVER_PORT_ADDITIONAL:-7788}:${SERVER_PORT_ADDITIONAL:-7788}/udp"
+      - "${SERVER_IP}:${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/tcp"
+      - "${SERVER_IP}:${BEACON_PORT:-15000}:${BEACON_PORT:-15000}/udp"
+      - "${SERVER_IP}:${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/tcp"
+      - "${SERVER_IP}:${QUERY_PORT:-27165}:${QUERY_PORT:-27165}/udp"
+      - "${SERVER_IP}:${QUERY_PORT_ADDITIONAL:-27166}:${QUERY_PORT_ADDITIONAL:-27166}/tcp"
+      - "${SERVER_IP}:${QUERY_PORT_ADDITIONAL:-27166}:${QUERY_PORT_ADDITIONAL:-27166}/udp"
+      - "${SERVER_IP}:${RCON_PORT:-21114}:${RCON_PORT:-21114}/tcp"
+      - "${SERVER_IP}:${RCON_PORT:-21114}:${RCON_PORT:-21114}/udp"

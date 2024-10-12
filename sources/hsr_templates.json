@@ -24,6 +24,12 @@
           "description": "Network mode",
           "default": "host"
 	},
+	{
+          "name": "SERVER_IP",
+          "label": "Server IP",
+          "description": "Server IP",
+          "default": "0.0.0.0"
+	},
         {
           "name": "SERVER_NAME",
           "label": "Server name",
