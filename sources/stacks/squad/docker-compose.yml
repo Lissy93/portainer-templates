@@ -10,7 +10,7 @@ services:
     container_name: "squad-${ENV_NAME:-test}"
     network_mode: "${NETWORK_MODE:-host}"
     restart: unless-stopped
-    volumes:
+    #volumes:
       #- squad_data:/home/steam/squad-dedicated/
       #- "/srv/core/portainer-volumes/squad-data-test:/home/steam/squad-dedicated/"
     environment:
