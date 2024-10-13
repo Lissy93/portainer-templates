@@ -1,5 +1,3 @@
-version: "3"
-
 #volumes:
 #  squad_data:
 #    name: "/srv/core/portainer-volumes/squad_data_${ENV_NAME:-test}"
@@ -75,16 +73,16 @@ services:
       find "$${MODPATH}"/* -maxdepth 0 -regextype posix-egrep -regex ".*/[[:digit:]]+" | xargs -0 -d"\n" rm -R 2>/dev/null
 
       # Install mods (if defined)
-      declare -a MODS="${MODS}"
+      declare -a MODS="$${MODS}"
       if (( $${#MODS[@]} ))
       then
         echo "Installing Mods..."
         for MODID in "$${MODS[@]}"; do
-          echo "> Install mod '${MODID}'"
+          echo "> Install mod '$${MODID}'"
           "$${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "$${STEAMAPPDIR}" +login anonymous +workshop_download_item "$${WORKSHOPID}" "$${MODID}" +quit
 
           echo -e "\n> Link mod content '$${MODID}'"
-          ln -s "$${STEAMAPPDIR}/steamapps/workshop/content/$${WORKSHOPID}/${MODID}" "$${MODPATH}/$${MODID}"
+          ln -s "$${STEAMAPPDIR}/steamapps/workshop/content/$${WORKSHOPID}/$${MODID}" "$${MODPATH}/$${MODID}"
         done
       fi
 
