@@ -87,7 +87,7 @@ services:
         fi
     
         exec "$${STEAMAPPDIR}/SquadGameServer.sh" \
-          MULTIHOME="$${MULTIHOME}" \
+          MultiHome="$${MULTIHOME}" \
           Port="$${PORT}" \
           QueryPort="$${QUERYPORT}" \
           RCONPORT="$${RCONPORT}" \
