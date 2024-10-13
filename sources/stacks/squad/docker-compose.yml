@@ -12,7 +12,7 @@ services:
     network_mode: "${NETWORK_MODE:-bridge}"
     restart: unless-stopped
     #volumes:
-      #- /srv/core/portainer-volumes/squad_data_${setname}:/home/steam/squad-dedicated/SquadGame
+      #- /srv/core/portainer-volumes/squad-data-${setname}:/home/steam/squad-dedicated/SquadGame
       #- squad_data:/home/steam/squad-dedicated/
       #- "/srv/core/portainer-volumes/squad-data-test:/home/steam/squad-dedicated/"
     environment:
