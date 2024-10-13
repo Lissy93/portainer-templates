@@ -1,3 +1,5 @@
+version: "3.9"
+
 #volumes:
 #  squad_data:
 #    name: "/srv/core/portainer-volumes/squad_data_${ENV_NAME:-test}"
