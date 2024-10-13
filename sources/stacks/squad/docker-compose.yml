@@ -52,7 +52,7 @@ services:
     #  - |
     command: |
       bash -c '
-        set -e
+        #set -e
         if [ -n "$${STEAM_BETA_BRANCH}" ]; then
           echo "Loading Steam Beta Branch"
           "$${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "$${STEAMAPPDIR}" \
