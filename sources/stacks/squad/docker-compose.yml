@@ -7,7 +7,7 @@ version: "3.9"
 services:
   squad-server:
     image: cm2network/squad
-    entrypoint: ["/bin/bash", "-c"]
+    #entrypoint: ["/bin/bash", "-c"]
     container_name: "squad-${ENV_NAME:-test}"
     network_mode: "${NETWORK_MODE:-bridge}"
     restart: unless-stopped
@@ -15,7 +15,7 @@ services:
       #- squad_data:/home/steam/squad-dedicated/
       #- "/srv/core/portainer-volumes/squad-data-test:/home/steam/squad-dedicated/"
     environment:
-      - HULTIHOME=${SERVER_IP}
+      - MULTIHOME=${SERVER_IP}
       - PORT=${SERVER_PORT:-7787}
       - beaconport=${BEACON_PORT:-15000}
       - QUERYPORT=${QUERY_PORT:-27165}
@@ -46,11 +46,13 @@ services:
       - "${SERVER_IP}:${QUERY_PORT_ADDITIONAL:-27166}:${QUERY_PORT_ADDITIONAL:-27166}/udp"
       - "${SERVER_IP}:${RCON_PORT:-21114}:${RCON_PORT:-21114}/tcp"
       - "${SERVER_IP}:${RCON_PORT:-21114}:${RCON_PORT:-21114}/udp"
-    command:
-      - /bin/bash
-      - -c
-      - |
-        'set -e
+    #command:
+    #  - /bin/bash
+    #  - -c
+    #  - |
+    command: |
+      bash -c '
+        set -e
         if [ -n "$${STEAM_BETA_BRANCH}" ]; then
           echo "Loading Steam Beta Branch"
           "$${STEAMCMDDIR}/steamcmd.sh" +force_install_dir "$${STEAMAPPDIR}" \
