@@ -47,7 +47,6 @@ services:
       - "${SERVER_IP}:${RCON_PORT:-21114}:${RCON_PORT:-21114}/tcp"
       - "${SERVER_IP}:${RCON_PORT:-21114}:${RCON_PORT:-21114}/udp"
     command:
-command:
       - /bin/bash
       - -c
       - |
