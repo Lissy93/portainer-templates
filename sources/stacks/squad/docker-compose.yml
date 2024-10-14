@@ -32,7 +32,7 @@ services:
       - STEAM_BETA_PASSWORD=${STEAM_BETA_PASSWORD:-}
       - STEAMAPPID=${STEAMAPPID:-403240}
       - MODPATH=${MODPATH:-/home/steam/squad-dedicated/SquadGame/Plugins/Mods}
-      - WORKSHOPID=${WORKSHOPID:-403240}
+      - WORKSHOPID=${WORKSHOPID:-393380}
       - FIXEDMAXTICKRATE=${FIXEDMAXTICKRATE:-50}
       - RANDOM=${RANDOM:-}
     ports:
