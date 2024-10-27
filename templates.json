@@ -19818,6 +19818,48 @@
     },
     {
       "type": 1,
+      "title": "Qemu-static",
+      "name": "Qemu-static",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/qemu-static/config</p>",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/qemu-static for details.",
+      "platform": "linux",
+      "logo": "",
+      "image": "linuxserver/qemu-static:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "80:80/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/qemu-static/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "maintainer": " https://github.com/technorabilia/portainer-templates/",
+      "categories": []
+    },
+    {
+      "type": 1,
       "title": "Quassel-web",
       "name": "Quassel-web",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/quassel-web/config</p>",
@@ -20403,7 +20445,7 @@
           "name": "DNSPLUGIN",
           "label": "DNSPLUGIN",
           "default": "cloudflare",
-          "description": "Required if `VALIDATION` is set to `dns`. Options are `acmedns`, `aliyun`, `azure`, `bunny`, `cloudflare`, `cpanel`, `desec`, `digitalocean`, `directadmin`, `dnsimple`, `dnsmadeeasy`, `dnspod`, `do`, `domeneshop`, `dreamhost`, `duckdns`, `dynudns`, `freedns`, `gandi`, `gehirn`, `glesys`, `godaddy`, `google`, `he`, `hetzner`, `infomaniak`, `inwx`, `ionos`, `linode`, `loopia`, `luadns`, `namecheap`, `netcup`, `njalla`, `nsone`, `ovh`, `porkbun`, `rfc2136`, `route53`, `sakuracloud`, `standalone`, `transip`, and `vultr`. Also need to enter the credentials into the corresponding ini (or json for some plugins) file under `/config/dns-conf`."
+          "description": "Required if `VALIDATION` is set to `dns`. Options are `acmedns`, `aliyun`, `azure`, `bunny`, `cloudflare`, `cpanel`, `desec`, `digitalocean`, `directadmin`, `dnsimple`, `dnsmadeeasy`, `dnspod`, `do`, `domeneshop`, `dreamhost`, `duckdns`, `dynu`, `freedns`, `gandi`, `gehirn`, `glesys`, `godaddy`, `google`, `he`, `hetzner`, `infomaniak`, `inwx`, `ionos`, `linode`, `loopia`, `luadns`, `namecheap`, `netcup`, `njalla`, `nsone`, `ovh`, `porkbun`, `rfc2136`, `route53`, `sakuracloud`, `standalone`, `transip`, and `vultr`. Also need to enter the credentials into the corresponding ini (or json for some plugins) file under `/config/dns-conf`."
         },
         {
           "name": "PROPAGATION",
