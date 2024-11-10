@@ -14823,6 +14823,22 @@
     },
     {
       "categories": [
+        "Multimedia"
+      ],
+      "description": "Your next YouTube media manager",
+      "logo": "https://github.com/kieraneglin/pinchflat/raw/master/priv/static/images/originals/logo-white-wordmark-with-background.png",
+      "name": "pinchflat",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/pinchflat.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Pinchflat",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
         "Automation",
         "Ai"
       ],
