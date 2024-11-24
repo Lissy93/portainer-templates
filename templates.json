@@ -17071,6 +17071,48 @@
     },
     {
       "type": 1,
+      "title": "D2-builder",
+      "name": "D2-builder",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/d2-builder/config</p>",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/d2-builder for details.",
+      "platform": "linux",
+      "logo": "",
+      "image": "linuxserver/d2-builder:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "80:80/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/d2-builder/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "maintainer": " https://github.com/technorabilia/portainer-templates/",
+      "categories": []
+    },
+    {
+      "type": 1,
       "title": "Darktable",
       "name": "Darktable",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/darktable/config</p>",
