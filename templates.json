@@ -20484,8 +20484,8 @@
         {
           "name": "URL",
           "label": "URL",
-          "default": "yourdomain.url",
-          "description": "Top url you have control over (`customdomain.com` if you own it, or `customsubdomain.ddnsprovider.com` if dynamic dns)."
+          "default": "example.com",
+          "description": "Top url you have control over (e.g. `example.com` if you own it, or `customsubdomain.example.com` if dynamic dns)."
         },
         {
           "name": "VALIDATION",
@@ -20533,7 +20533,7 @@
           "name": "EXTRA_DOMAINS",
           "label": "EXTRA_DOMAINS",
           "default": "",
-          "description": "Additional fully qualified domain names (comma separated, no spaces) ie. `extradomain.com,subdomain.anotherdomain.org,*.anotherdomain.org`"
+          "description": "Additional fully qualified domain names (comma separated, no spaces) ie. `example.net,subdomain.example.net,*.example.org`"
         },
         {
           "name": "STAGING",
