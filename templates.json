@@ -17240,7 +17240,7 @@
           "name": "WHISPER_MODEL",
           "label": "WHISPER_MODEL",
           "default": "tiny-int8",
-          "description": "Whisper model that will be used for transcription. From `tiny`, `base`, `small` and `medium`, all with `-int8` compressed variants"
+          "description": "Whisper model that will be used for transcription. From [here](https://github.com/SYSTRAN/faster-whisper/blob/master/faster_whisper/utils.py#L12-L31), all with `-int8` compressed variants"
         },
         {
           "name": "WHISPER_BEAM",
@@ -18584,6 +18584,48 @@
     },
     {
       "type": 1,
+      "title": "Modmanager",
+      "name": "Modmanager",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/modmanager/config</p>",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/modmanager for details.",
+      "platform": "linux",
+      "logo": "",
+      "image": "linuxserver/modmanager:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "80:80/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/modmanager/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "maintainer": " https://github.com/technorabilia/portainer-templates/",
+      "categories": []
+    },
+    {
+      "type": 1,
       "title": "Msedge",
       "name": "Msedge",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/msedge/config</p>",
@@ -19544,73 +19586,6 @@
     },
     {
       "type": 1,
-      "title": "Quassel-web",
-      "name": "Quassel-web",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/quassel-web/config</p>",
-      "description": "[Quassel-web](https://github.com/magne4000/quassel-webserver) is a web client for Quassel. Note that a Quassel-Core instance is required, we have a container available [here.](https://hub.docker.com/r/linuxserver/quassel-core/)",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/quassel-web-banner.png",
-      "image": "linuxserver/quassel-web:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        },
-        {
-          "name": "QUASSEL_CORE",
-          "label": "QUASSEL_CORE",
-          "default": "192.168.1.10",
-          "description": "specify the URL or IP address of your Quassel Core instance"
-        },
-        {
-          "name": "QUASSEL_PORT",
-          "label": "QUASSEL_PORT",
-          "default": "4242",
-          "description": "specify the port of your Quassel Core instance"
-        },
-        {
-          "name": "QUASSEL_HTTPS",
-          "label": "QUASSEL_HTTPS",
-          "default": "",
-          "description": "Set to `true` to have Quassel web serve over https on port 64443 instead of http on port 64080."
-        },
-        {
-          "name": "URL_BASE",
-          "label": "URL_BASE",
-          "default": "/quassel",
-          "description": "Specify a url-base in reverse proxy setups ie. `/quassel`"
-        }
-      ],
-      "ports": [
-        "64080:64080/tcp",
-        "64443:64443/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/quassel-web/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/",
-      "categories": []
-    },
-    {
-      "type": 1,
       "title": "Raneto",
       "name": "Raneto",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/raneto/config</p>",
@@ -20160,6 +20135,12 @@
           "label": "STAGING",
           "default": "false",
           "description": "Set to `true` to retrieve certs in staging mode. Rate limits will be much higher, but the resulting cert will not pass the browser's security test. Only to be used for testing purposes."
+        },
+        {
+          "name": "DISABLE_F2B",
+          "label": "DISABLE_F2B",
+          "default": "",
+          "description": "Set to `true` to disable the Fail2ban service in the container, if you're already running it elsewhere or using a different IPS."
         }
       ],
       "ports": [
