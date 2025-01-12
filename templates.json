@@ -11139,6 +11139,22 @@
     },
     {
       "categories": [
+        "Productivity"
+      ],
+      "description": "Blinko is an innovative open-source project designed for individuals who want to quickly capture and organize their fleeting thoughts. Blinko allows users to seamlessly jot down ideas the moment they strike, ensuring that no spark of creativity is lost.",
+      "logo": "https://blinko-demo.vercel.app/logo-light.png",
+      "name": "blinko",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/blinko.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Blinko",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
         "Automation",
         "Ai"
       ],
