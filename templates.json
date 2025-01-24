@@ -7315,7 +7315,7 @@
           "name": "PGID"
         }
       ],
-      "image": "hotio/readarr:nightly",
+      "image": "linuxserver/readarr:develop",
       "logo": "https://raw.githubusercontent.com/Readarr/Readarr/develop/Logo/128.png",
       "name": "Readerr",
       "platform": "linux",
