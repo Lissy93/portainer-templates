@@ -5860,7 +5860,7 @@
       "title": "Overseerr",
       "description": "Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem.",
       "logo": "https://mediadepot.github.io/templates/img/overseerr.png",
-      "image": "lscr.io/linuxserver/overseerr:latest",
+      "image": "linuxserver/overseerr:latest",
       "categories": [
         "Downloaders",
         "Networkother",
