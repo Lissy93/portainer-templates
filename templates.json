@@ -10228,48 +10228,6 @@
     },
     {
       "type": 1,
-      "title": "Ci",
-      "name": "Ci",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ci/config</p>",
-      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ci for details.",
-      "platform": "linux",
-      "logo": "",
-      "image": "linuxserver/ci:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/ci/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/",
-      "categories": []
-    },
-    {
-      "type": 1,
       "title": "Cura",
       "name": "Cura",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/cura/config</p>",
@@ -10305,48 +10263,6 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/cura/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/",
-      "categories": []
-    },
-    {
-      "type": 1,
-      "title": "D2-builder",
-      "name": "D2-builder",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/d2-builder/config</p>",
-      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/d2-builder for details.",
-      "platform": "linux",
-      "logo": "",
-      "image": "linuxserver/d2-builder:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/d2-builder/config"
         }
       ],
       "restart_policy": "unless-stopped",
@@ -11631,48 +11547,6 @@
     },
     {
       "type": 1,
-      "title": "Jenkins-builder",
-      "name": "Jenkins-builder",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/jenkins-builder/config</p>",
-      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/jenkins-builder for details.",
-      "platform": "linux",
-      "logo": "",
-      "image": "linuxserver/jenkins-builder:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/jenkins-builder/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/",
-      "categories": []
-    },
-    {
-      "type": 1,
       "title": "Kali-linux",
       "name": "Kali-linux",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/kali-linux/config<br></p>",
@@ -12177,6 +12051,48 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/lollypop/config"
+        }
+      ],
+      "restart_policy": "unless-stopped",
+      "maintainer": " https://github.com/technorabilia/portainer-templates/",
+      "categories": []
+    },
+    {
+      "type": 1,
+      "title": "Lsio-api",
+      "name": "Lsio-api",
+      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/lsio-api/config</p>",
+      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/lsio-api for details.",
+      "platform": "linux",
+      "logo": "",
+      "image": "linuxserver/lsio-api:latest",
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1024",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "100",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "Europe/Amsterdam",
+          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+        }
+      ],
+      "ports": [
+        "80:80/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/volume1/docker/lsio-api/config"
         }
       ],
       "restart_policy": "unless-stopped",
@@ -13622,48 +13538,6 @@
     },
     {
       "type": 1,
-      "title": "Python",
-      "name": "Python",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/python/config</p>",
-      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/python for details.",
-      "platform": "linux",
-      "logo": "",
-      "image": "linuxserver/python:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/python/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/",
-      "categories": []
-    },
-    {
-      "type": 1,
       "title": "Qemu-static",
       "name": "Qemu-static",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/qemu-static/config</p>",
@@ -13711,7 +13585,7 @@
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/raneto/config</p>",
       "description": "[Raneto](http://raneto.com/) - is an open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase.",
       "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/gilbitron/Raneto/master/logo/logo_readme.png",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/raneto-logo.png",
       "image": "linuxserver/raneto:latest",
       "env": [
         {
@@ -13783,48 +13657,6 @@
         {
           "container": "/config",
           "bind": "/volume1/docker/rawtherapee/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/technorabilia/portainer-templates/",
-      "categories": []
-    },
-    {
-      "type": 1,
-      "title": "Readme-sync",
-      "name": "Readme-sync",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/readme-sync/config</p>",
-      "description": "# This container needs special attention. Please check https://hub.docker.com/r/linuxserver/readme-sync for details.",
-      "platform": "linux",
-      "logo": "",
-      "image": "linuxserver/readme-sync:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/readme-sync/config"
         }
       ],
       "restart_policy": "unless-stopped",
@@ -16168,6 +16000,22 @@
         "url": "https://github.com/xneo1/portainer_templates"
       },
       "title": "Blinko",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity"
+      ],
+      "description": "The Workspace Streaming Platform.Stream your workspace directly to your web browser on any device and from any location.",
+      "logo": "https://kasmweb.com/assets/images/logo.svg",
+      "name": "kasmworkspaces",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/kasmworkspaces.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Kasm Workspaces",
       "type": 3,
       "maintainer": " https://github.com/xneo1/portainer_templates/"
     },
