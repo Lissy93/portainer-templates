@@ -837,7 +837,7 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
     </td>
     <td align="center">
         <a href="https://github.com/pho3nixf1re">
-            <img src="https://avatars.githubusercontent.com/u/96882?v=4" width="80;" alt="pho3nixf1re"/>
+            <img src="https://avatars.githubusercontent.com/u/96882?u=214f67d8214bf1aff8ec83d4c827904b68f8a77f&v=4" width="80;" alt="pho3nixf1re"/>
             <br />
             <sub><b>Matthew Turney</b></sub>
         </a>
@@ -972,6 +972,13 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/rpvu">
+            <img src="https://avatars.githubusercontent.com/u/90328029?v=4" width="80;" alt="rpvu"/>
+            <br />
+            <sub><b>rpvu</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/terminaltrove">
             <img src="https://avatars.githubusercontent.com/u/121595180?v=4" width="80;" alt="terminaltrove"/>
             <br />
@@ -991,15 +998,15 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
             <br />
             <sub><b>Nrvo</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/hudsonrock-partnerships">
             <img src="https://avatars.githubusercontent.com/u/163282900?u=5f2667f7fe5d284ac7a2da6b0800ea8970b0fcbf&v=4" width="80;" alt="hudsonrock-partnerships"/>
             <br />
             <sub><b>Hudsonrock-partnerships</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/adamt279">
             <img src="https://avatars.githubusercontent.com/u/173125775?v=4" width="80;" alt="adamt279"/>
