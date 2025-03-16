@@ -7281,7 +7281,7 @@
         "Dashboard"
       ],
       "description": "Homepage helps you organize your self-hosted services by making them accessible from a single place",
-      "image": "ghcr.io/gethomepage/homepage:latest",
+      "image": "ghcr.io/gethomepage/homepage:v0.10.9",
       "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/homepage.png",
       "name": "Homepage",
       "platform": "linux",
@@ -7291,6 +7291,13 @@
       "restart_policy": "unless-stopped",
       "title": "Homepage",
       "type": 1,
+      "env": [
+        {
+          "default": "gethomepage.dev",
+          "label": "HOMEPAGE_ALLOWED_HOSTS",
+          "name": "HOMEPAGE_ALLOWED_HOSTS"
+        }
+      ],
       "volumes": [
         {
           "bind": "/portainer/Files/AppData/Config/Homepage/",
