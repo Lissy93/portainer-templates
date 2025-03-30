@@ -12613,6 +12613,2021 @@
       "categories": []
     },
     {
+      "categories": [
+        "Social",
+        "Forum"
+      ],
+      "description": "Zusam is a free and open-source way to self-host private forums for groups of friends.",
+      "env": [
+        {
+          "default": "email@domain.example",
+          "label": "INIT_USER",
+          "name": "INIT_USER"
+        },
+        {
+          "default": "initpass zusam",
+          "label": "INIT_PASSWORD",
+          "name": "INIT_PASSWORD"
+        }
+      ],
+      "image": "zusam/zusam",
+      "logo": "https://github.com/zusam/zusam/raw/master/app/src/assets/zusam_logo.png",
+      "name": "Zusam",
+      "platform": "linux",
+      "ports": [
+        "4180:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Zus.am",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/Zusam",
+          "container": "/zusam/data"
+        }
+      ],
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Social"
+      ],
+      "description": "Use Tiktok with an alternative frontend, inspired by Nitter.",
+      "name": "proxitok",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/proxitok.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "ProxiTok",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Feedreader"
+      ],
+      "description": "Miniflux is a minimalist and opinionated feed reader.",
+      "logo": "",
+      "name": "miniflux",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/miniflux.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Miniflux",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Tools"
+      ],
+      "description": "Koillection is a self-hosted collection manager created to keep track of physical (mostly) collections of any kind like books, DVDs, stamps, games..",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "1000",
+          "label": "PGID",
+          "name": "PGID"
+        },
+        {
+          "label": "PORT",
+          "name": "PORT"
+        }
+      ],
+      "logo": "https://user-images.githubusercontent.com/20560781/80213166-0e560e00-8639-11ea-944e-4f79fdbcef55.png",
+      "name": "Koillection",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/koillection.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Koillection",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Tools"
+      ],
+      "description": "Eufy Security Web Socket. Edit container and add username & password.",
+      "env": [
+        {
+          "default": "InputUSER-email",
+          "label": "USERNAME",
+          "name": "USERNAME"
+        },
+        {
+          "default": "InputPWD",
+          "label": "PASSWORD",
+          "name": "PASSWORD"
+        }
+      ],
+      "image": "bropat/eufy-security-ws:latest",
+      "logo": "https://github.com/bropat/eufy-security-ws/raw/master/docs/_media/eufy-security-ws.png",
+      "name": "eufy-security-ws",
+      "platform": "linux",
+      "ports": [
+        "3993:3000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Eufy Security WS",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/eufy-security-ws",
+          "container": "/data"
+        }
+      ],
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries.",
+      "logo": "https://tdarr.io/static/media/logo3.02a3f4a3.png",
+      "name": "tdarr",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tdarr.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Tdarr",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Social"
+      ],
+      "description": "Monica is a great open source personal relationship management system to organize the interactions with your loved ones.",
+      "logo": "https://raw.githubusercontent.com/docker-library/docs/b962028212dbd77c9531dbcf8d5a81db79d4a735/monica/logo.svg",
+      "name": "monica",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/monica.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Monica",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Tools"
+      ],
+      "description": "Teleport allows engineers and security professionals to unify access for SSH servers, Kubernetes clusters, web applications, and databases across all environments.",
+      "logo": "https://bookface-images.s3.amazonaws.com/logos/386100350818400a035ac8e0caa84111de3316eb.png",
+      "name": "teleport",
+      "repository": {
+        "stackfile": "Template/Stack/teleport.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "platform": "linux",
+      "restart_policy": "always",
+      "title": "Teleport",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Dashboard",
+        "Crypto",
+        "Finance"
+      ],
+      "description": "Cryptofolio is an open-source, and self-hosted solution for tracking your cryptocurrency holdings. It features a web interface, an Android mobile app, and a cross-platform desktop application for Windows, macOS, and Linux.",
+      "image": "xtrendence/cryptofolio:latest",
+      "logo": "https://i.imgur.com/5v8lzea.png",
+      "name": "cryptofolio",
+      "platform": "linux",
+      "ports": [
+        "7280:80/tcp"
+      ],
+      "restart_policy": "always",
+      "title": "Cryptofolio",
+      "type": 1,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Network"
+      ],
+      "description": "Self-hosted website change detection monitoring.",
+      "image": "dgtlmoon/changedetection.io",
+      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/changedetection-custom.png",
+      "name": "changedetection",
+      "platform": "linux",
+      "restart_policy": "always",
+      "title": "Change Detection",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/changedetection",
+          "container": "/datastore"
+        }
+      ],
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Presentation"
+      ],
+      "description": "It is an open source HTML presentation framework. It enables anyone with a web browser to create fully featured and beautiful presentations for free | Production Mode",
+      "image": "cloudogu/reveal.js",
+      "logo": "https://pbs.twimg.com/profile_images/1260911777929400325/_ClbHpsz_400x400.jpg",
+      "name": "revealjs",
+      "platform": "linux",
+      "ports": [
+        "6060:8080/tcp"
+      ],
+      "restart_policy": "always",
+      "title": "Reveal.js",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/revealjs/docs/slides",
+          "container": "/reveal/docs/slides"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Config/revealjs/scripts/test",
+          "container": "/resources"
+        }
+      ],
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Network"
+      ],
+      "description": "An easy to use Status Page for your websites and applications. Statping will automatically fetch the application and render a beautiful status page with tons of features for you to build an even better status page.",
+      "image": "statping/statping:latest",
+      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/statping.png",
+      "name": "statping",
+      "platform": "linux",
+      "ports": [
+        "4040:8080/tcp"
+      ],
+      "restart_policy": "always",
+      "title": "Statping",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/statping",
+          "container": "/app"
+        }
+      ],
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Network"
+      ],
+      "description": "Network UPS Tools server",
+      "image": "upshift/nut-upsd",
+      "logo": "",
+      "name": "nuts",
+      "platform": "linux",
+      "ports": [
+        "3493:3493/tcp"
+      ],
+      "restart_policy": "always",
+      "title": "NUTS",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/nuts",
+          "container": "/app"
+        }
+      ],
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Tools"
+      ],
+      "description": "Your Budgets, Calendars, Meals, Inventory, Tasks, and so much more in one simple app.For everyone in your household.On all of your devices.In the cloud or self-hosted",
+      "logo": "https://homechart.app/images/homechart.min.776793e5e4334866f0799e8a84b8448efb1b06cb2762b2bb20f99068ac36136c.png",
+      "name": "homechart",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/homechart.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Homechart",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Messenger"
+      ],
+      "description": "Ferdi is a messaging browser that allows you to combine your favourite messaging services into one application",
+      "logo": "https://raw.githubusercontent.com/getferdi/server/master/logo.png",
+      "name": "ferdi-server",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/ferdiserver.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Ferdi Server",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Messenger"
+      ],
+      "description": "Ferdium is a messaging browser that allows you to combine your favourite messaging services into one application",
+      "logo": "https://github.com/ferdium/ferdium-server/raw/main/logo.png",
+      "name": "ferdium",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/ferdium.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Ferdium",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Social"
+      ],
+      "description": "LittleLink is an open source DIY self-hosted alternative to services like Linktree and many.link. ",
+      "logo": "https://littlelink.io/images/avatar@2x.png",
+      "name": "littlelink-server",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/littlelink.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "ports": [
+        "3000:3000/tcp"
+      ],
+      "title": "Littlelink Server",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Social"
+      ],
+      "description": "Self-hosted open-source Linktree alternative. LinkStack is a highly customizable link sharing platform with an intuitive, easy to use user interface.",
+      "logo": "https://linkstack.org/wp-content/uploads/2023/04/logo-animated.svg",
+      "name": "linkstack",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/linkstack.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Linkstack",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Downloaders"
+      ],
+      "description": "A perfect Aria2 Docker image. Out of the box, just add download tasks and don't need to think about anything else.",
+      "logo": "https://imgcdn.p3terx.com/post/20201113041845.jpg",
+      "name": "aria2-pro",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/aria2pro.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Aria2 Pro",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Downloaders"
+      ],
+      "description": "A docker image with qBittorrent and the Flood UI, also optional WireGuard VPN support.",
+      "logo": "https://hotio.dev/img/image-logos/flood.svg",
+      "name": "flood",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/flood.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Flood",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Photos",
+        "Ai"
+      ],
+      "description": "PhotoPrism is an AI-powered app for browsing, organizing & sharing your photo collection. It makes use of the latest technologies to tag and find pictures automatically without getting in your way.| Copy as Custom stack and EDIT environment variables.",
+      "logo": "https://photoprism.app/static/img/logo.svg",
+      "name": "photoprism",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/photoprism.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Photoprism",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Photos",
+        "Ai"
+      ],
+      "description": "Immich is a high performance self-hosted photo and video backup solution.",
+      "logo": "https://github.com/immich-app/immich/raw/main/design/immich-logo.svg",
+      "name": "immich",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/immich.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Immich",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Development"
+      ],
+      "description": "netboot.xyz is a convenient place to boot into any type of operating system or utility disk without the need of having to go spend time retrieving the ISO just to run it",
+      "logo": "https://netboot.xyz/img/nbxyz-logo.svg",
+      "name": "netboot.xyz",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/netbootxyz.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Netboot.xyz",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Filebrowsers"
+      ],
+      "description": "Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer.",
+      "logo": "https://user-images.githubusercontent.com/58886915/166198400-c2134044-1198-4647-a8b6-da9c4a204c68.svg",
+      "name": "pingvin-share",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/pingvin.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Pingvin",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Pdftools",
+        "Productivity"
+      ],
+      "description": "This is a powerful locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files, such as splitting merging, converting, reorganizing, adding images, rotating, compressing, and more.",
+      "logo": "https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/docs/stirling.png",
+      "name": "stirling-pdf",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/stirling-pdf.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Stirling-PDF",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Network"
+      ],
+      "description": "WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found.",
+      "logo": "https://avatars.githubusercontent.com/u/96159884?s=48&v=4",
+      "name": "NetAlertX",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/netalertx.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "NetAlertX",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Timerelated"
+      ],
+      "description": "Open source time-tracker with an interactive user experience and powerful reporting.",
+      "logo": "https://timetagger.app/timetagger_wl.svg",
+      "name": "TimeTagger",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/timetagger.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "TimeTagger",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "Invidious is an open source alternative front-end to YouTube.",
+      "logo": "https://invidious.io/invidious-colored-vector.svg",
+      "name": "Invidious",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/invidious.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Invidious",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Filebrowsers"
+      ],
+      "description": "Chibisafe is a modern and self-hosted take on file uploading services that can handle anything you throw at it thanks to it's robust and fast API, chunked uploads support and more.",
+      "logo": "https://chibisafe.moe/logo.svg",
+      "name": "chibisafe",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/chibisafe.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Chibisafe",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Offline"
+      ],
+      "description": "Internet. Offline.Store any website on your mobile phone or computer, easily.",
+      "logo": "https://www.kiwix.org/wp-content/uploads/kiwix-logo-995x200-1.png",
+      "name": "kiwix",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/kiwix.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Kiwix",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Tools"
+      ],
+      "description": "The recipe manager that allows you to manage your ever growing collection of digital recipes.",
+      "logo": "https://docs.tandoor.dev/logo_color.svg",
+      "name": "tandoor",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tandoor.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Tandoor",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Social"
+      ],
+      "description": "Webtrees is the web\u2019s leading online collaborative genealogy application. [GEDCOM files support]",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Logo_webtrees.svg/400px-Logo_webtrees.svg.png",
+      "name": "webtrees",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/webtrees.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Webtrees",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Metrics"
+      ],
+      "description": "This is an exporter that exposes information gathered from Proxmox VE node for use by the Prometheus monitoring system.",
+      "logo": "",
+      "name": "pve-exporter",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/pve-exporter.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "pve-exporter",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Devops"
+      ],
+      "description": "Modern UI for Ansible",
+      "logo": "https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/11/Screenshot_2020-11-21_at_02.05.22.png",
+      "name": "ansible-semaphore",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/ansible-semaphore.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Ansible-semaphore",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Audio",
+        "Multimedia"
+      ],
+      "description": "A social platform to enjoy and share music.Funkwhale is a community-driven project that lets you listen and share music and audio within a decentralized, open network.",
+      "logo": "https://funkwhale.audio/img/with-text-500.4aff7861.png",
+      "name": "funkwhale",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/funkwhale.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Funkwhale",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Cloud"
+      ],
+      "description": "Gokapi is a lightweight server to share files, which expire after a set amount of downloads or days. It is similar to the discontinued\u00a0Firefox Send, with the difference that only the admin is allowed to upload files",
+      "logo": "https://noted.lol/content/images/2023/02/gokapi-self-hosted-main.png",
+      "name": "gokapi",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/gokapi.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Gokapi",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Timetracking"
+      ],
+      "description": "Traggo is a tag-based time tracking tool. In Traggo there are no tasks, only tagged time spans.",
+      "logo": "https://traggo.net/images/favicon.png",
+      "name": "traggo",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/traggo.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Traggo",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Learning"
+      ],
+      "description": "Moodle is a learning platform designed to provide educators, administrators and learners with a single robust, secure and integrated system to create personalised learning environments.",
+      "logo": "https://download.moodle.org/theme/moodleorgcleaned/pix/moodle_logo_TM.svg",
+      "name": "moodle",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/moodle.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Moodle",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Helpdesk"
+      ],
+      "description": "FreeScout\u00a0is the super lightweight free open source help desk and shared inbox written in PHP (Laravel framework) \u2013 self hosted clone of HelpScout.",
+      "logo": "https://raw.githubusercontent.com/freescout-helpdesk/freescout/master/public/img/logo-300.png",
+      "name": "freescout",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/freescout.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Freescout",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Fitness"
+      ],
+      "description": "Self hosted FLOSS fitness/workout, nutrition and weight tracker written with Django",
+      "logo": "https://raw.githubusercontent.com/wger-project/wger/master/wger/core/static/images/logos/logo.png",
+      "name": "wger",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/wger.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Wger",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Docker"
+      ],
+      "description": "Docker Container Stats is a web interface for viewing historical and current statistics per docker container (cpu, mem, net i/o, block i/o) - in a docker container.",
+      "logo": "https://raw.githubusercontent.com/Poeschl/Hassio-Addons/master/container-stats/logo.png",
+      "name": "Docker Container Stats",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/docker-container-stats.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Docker Container Stats",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Ebooks"
+      ],
+      "description": "Codex is a web server comic book browser and reader.",
+      "logo": "https://github.com/ajslater/codex/raw/main/codex/static_src/img/logo.svg",
+      "name": "codex",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/codex.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Codex",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Ebooks",
+        "Comics"
+      ],
+      "description": "Kapowarr is a software to build and manage a comic book library, fitting in the *arr suite of software.",
+      "logo": "",
+      "name": "kapowarr",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/kapowarr.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Kapowarr",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Messaging"
+      ],
+      "description": "A TLS proxy relay for the Signal privacy messenger app.",
+      "logo": "https://avatars.githubusercontent.com/u/702459?s=200&v=4",
+      "name": "signal",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/signal.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Signal Proxy",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Employee"
+      ],
+      "description": "ChiefOnboarding is a free and open source employee onboarding platform. You can onboarding new hires through Slack or the dashboard.",
+      "logo": "https://chiefonboarding.com/wp-content/uploads/2022/07/ChiefOnBoarding-768x138.png",
+      "name": "chiefonboarding",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/chiefonboarding.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Chiefonboarding",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Podcast"
+      ],
+      "description": "Castopod is a free and open-source hosting platform made for podcasters.",
+      "logo": "https://pbs.twimg.com/profile_images/1313854745161932800/w_qe6Qq6_400x400.png",
+      "name": "castopod",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/castopod.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Castopod",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Music",
+        "Monitoring"
+      ],
+      "description": "YourSpotify is a self-hosted application that tracks what you listen and offers you a dashboard to explore statistics about it!",
+      "logo": "",
+      "name": "your_spotify",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/your_spotify.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Your_spotify",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Database",
+        "Metrics"
+      ],
+      "description": "InfluxDB is an open source time series database for recording metrics, events, and analytics. Telegraf is an agent for collecting metrics and writing them to InfluxDB or other outputs.",
+      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/influxdb_telegraf.jpg",
+      "name": "influxdb-telegraf",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/influxdb2_telegraf.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Influxdb & Telegraf",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Database"
+      ],
+      "description": "InfluxDB is an open source time series database for recording metrics, events, and analytics.",
+      "logo": "https://www.niagaramarketplace.com/media/catalog/product/cache/f7420c7cfd302c73440e50c5a6066c3c/m/a/marketplace_icons_13_.png",
+      "name": "influxdb2",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/influxdb2.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Influxdb",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Files"
+      ],
+      "description": "A Dropbox-like file manager that let you manage your data anywhere it is located.",
+      "logo": "https://downloads.filestash.app/brand/logo_white.svg",
+      "name": "filestash",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/filestash.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Filestash",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Cms"
+      ],
+      "description": "Silverstripe CMS is a free and open source Content Management System (CMS) and Framework for creating and maintaining websites and web applications.",
+      "logo": "https://github.com/brettt89/silverstripe-docker/raw/master/docs/logo.png",
+      "name": "silverstripe",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/silverstripe.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Silverstripe",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Adult"
+      ],
+      "description": "Whisparr is an adult movie collection manager for Usenet and BitTorrent users.",
+      "logo": "https://whisparr.com/logo/256.png",
+      "name": "whisparr",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/whisparr.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Whisparr",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "Your media enjoyed through a minimal lightweight media server.",
+      "logo": "https://github.com/midarrlabs/midarr-server/raw/master/priv/static/logo.svg",
+      "name": "midarr",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/midarr.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Midarr",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Social"
+      ],
+      "description": "Mastodon is a free, open-source social network server based on ActivityPub where users can follow friends and discover new ones..",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mastodon-banner.png",
+      "name": "mastodon",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/mastodon.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Mastodon",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Development"
+      ],
+      "description": "Appwrite is a self-hosted backend-as-a-service platform that provides developers with all the core APIs required to build any application.",
+      "logo": "https://appwrite.io/images/appwrite.svg",
+      "name": "appwrite",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/appwrite.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Appwrite",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Lowcode"
+      ],
+      "description": "OpnForm is an open-source form builder. It's an alternative to products like Typeform, JotForm, Tally etc.",
+      "logo": "https://opnform.com/img/logo.svg",
+      "name": "opnform",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/opnform.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "OpnForm",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Social",
+        "Events"
+      ],
+      "description": "Gathio is a simple, federated, privacy-first event hosting platform.",
+      "logo": "https://gath.io/og-image.jpg",
+      "name": "gathio",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/gathio.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Gathio",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Monitoring"
+      ],
+      "description": "A lightweight server resource monitoring hub with historical data, docker stats, and alerts.",
+      "logo": "",
+      "name": "beszel",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/beszel.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Beszel",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Rss"
+      ],
+      "description": "A lightweight RSS feed aggregator and reader.",
+      "logo": "",
+      "name": "fusion",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/fusion.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Fusion",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Analytics"
+      ],
+      "description": "Medama Analytics is an open-source project dedicated to providing self-hostable, cookie-free website analytics.",
+      "logo": "https://raw.githubusercontent.com/medama-io/medama/main/.github/images/banner-dark.svg",
+      "name": "medama",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/medama.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Medama",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Notes"
+      ],
+      "description": "Markopolis is like the self hosted version of Obsidian Publish.",
+      "logo": "",
+      "name": "markopolis",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/markopolis.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Markopolis",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Bookmarks"
+      ],
+      "description": "Hoarder is an open source 'Bookmark Everything' app that uses AI for automatically tagging the content you throw at it.",
+      "logo": "https://raw.githubusercontent.com/hoarder-app/hoarder/main/screenshots/logo.png",
+      "name": "hoarder",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/hoarder.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Hoarder",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "TinyMediaManager is a media management tool written in Java/Swing. It is written to provide metadata for the Kodi Media Center (formerly known as XBMC), MediaPortal and Plex media server.",
+      "logo": "https://www.tinymediamanager.org/images/avatar.png",
+      "name": "tinymediamanager",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tinymediamanager.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "TinyMediaManager",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Tools"
+      ],
+      "description": "Web Check give you a comprehensive, on-demand open source intelligence for any website",
+      "logo": "https://camo.githubusercontent.com/e081ebebf2ef1dbe9ecffa081063db7c9f696e5913d75699f7d2968a186d0d72/68747470733a2f2f692e6962622e636f2f7131675a4e32702f7765622d636865636b2d6c6f676f2e706e67",
+      "name": "web-check",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/webcheck.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Web Check",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Remotecontrol"
+      ],
+      "description": "The open source server management software for SSH, VNC & RDP",
+      "logo": "https://docs.nexterm.dev/logo.png",
+      "name": "nexterm",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/nexterm.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Nexterm",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "Your next YouTube media manager",
+      "logo": "https://github.com/kieraneglin/pinchflat/raw/master/priv/static/images/originals/logo-white-wordmark-with-background.png",
+      "name": "pinchflat",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/pinchflat.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Pinchflat",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity"
+      ],
+      "description": "Blinko is an innovative open-source project designed for individuals who want to quickly capture and organize their fleeting thoughts. Blinko allows users to seamlessly jot down ideas the moment they strike, ensuring that no spark of creativity is lost.",
+      "logo": "https://blinko-demo.vercel.app/logo-light.png",
+      "name": "blinko",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/blinko.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Blinko",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity"
+      ],
+      "description": "The Workspace Streaming Platform.Stream your workspace directly to your web browser on any device and from any location.",
+      "logo": "https://kasmweb.com/assets/images/logo.svg",
+      "name": "kasmworkspaces",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/kasmworkspaces.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Kasm Workspaces",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Entertainment"
+      ],
+      "description": "A beautiful, powerful, self-hosted rom manager.",
+      "logo": "https://raw.githubusercontent.com/rommapp/romm/release/.github/resources/romm_complete.png",
+      "name": "romm",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/romm.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "RomM",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Metrics"
+      ],
+      "description": "Nutify is a comprehensive monitoring system designed to track the health and performance of your Uninterruptible Power Supply (UPS) devices.",
+      "logo": "https://github.com/DartSteven/Nutify/raw/main/pic/logo.jpg",
+      "name": "nutify",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/nutify.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Nutify",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Network"
+      ],
+      "description": "An open source uptime and infrastructure monitoring application.",
+      "logo": "https://docs.checkmate.so/~gitbook/image?url=https%3A%2F%2F417506262-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Forganizations%252FbSM5aZr0UvTUpL4NJpSj%252Fsites%252Fsite_47uuo%252Ficon%252Fwj0lMFzW30pTtvtrrGT7%252FFrame%252028.png%3Falt%3Dmedia%26token%3D252566cf-b036-48ae-b73b-251b67d4f1c5&width=32&dpr=3&quality=100&sign=5c378a81&sv=2",
+      "name": "checkmate",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/checkmate.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Checkmate",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Automation",
+        "Ai"
+      ],
+      "description": "Automate your marketing, sales and operations",
+      "logo": "https://cdn.activepieces.com/brand/full-logo-white.svg",
+      "name": "activepieces",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/activepieces.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Activepieces",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Management"
+      ],
+      "description": "A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.",
+      "logo": "https://github.com/louislam/dockge/raw/master/frontend/public/icon.svg",
+      "name": "dockge",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/dockge.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Dockge",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Management"
+      ],
+      "description": "Deploy compose files, start/stop containers, delete unused images, view logs",
+      "logo": "https://dokemon.dev/logo/dokemon-dark-medium.svg",
+      "name": "dokemon",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/dokemon.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Dokemon",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Tracking"
+      ],
+      "description": "Hauk is a fully open source, self-hosted location sharing service. Install the backend code on a PHP-compatible web server, install the companion app on your phone, and you're good to go!",
+      "logo": "https://github.com/bilde2910/Hauk/raw/master/frontend/assets/logo.svg",
+      "name": "hauk",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/hauk.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Hauk",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Projectmanagement",
+        "Productivity"
+      ],
+      "description": "Project management tool from the future. An open-source software development tool to manage issues, sprints, and product roadmaps with peace of mind.",
+      "logo": "https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-assets/logo/text-logo.svg",
+      "name": "plane",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/plane.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Plane",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Linksharing"
+      ],
+      "description": "The personal, minimalist, super fast, database-free, bookmarking service.",
+      "logo": "https://github.com/shaarli/Shaarli/raw/master/doc/md/images/doc-logo.png",
+      "name": "shaarli",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/shaarli.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Shaarli",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Ai",
+        "Llm"
+      ],
+      "description": "Open source UI visual tool to build your customized LLM flow using LangchainJS, written in Node Typescript/Javascript",
+      "logo": "https://flowiseai.com/_next/static/images/flowise_logo_dark-6c1a356f4868d3deb7864323ff93a0fa.png",
+      "name": "flowiseai",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/flowiseai.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Flowiseai",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "News"
+      ],
+      "description": "FeedCord is a dead-simple RSS Reader designed to integrate seamlessly with Discord. With just a few configuration steps, you can have a news feed text channel up and running in your server.",
+      "logo": "",
+      "name": "feedcord",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/feedcord.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Feedcord",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "System"
+      ],
+      "description": "FetchCord grabs your OS info and displays it as Discord Rich Presence",
+      "logo": "https://camo.githubusercontent.com/508dbb305be551d7278b5b1decb1a68dbac2558c4a2053da1db44690660d0386/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3639353138323834393437363635373232332f3734323036343435323432313238383037372f46657463684469732e706e67",
+      "name": "fetchcord",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/fetchcord.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Fetchcord",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "Tubearchivist is your self hosted YouTube media server",
+      "logo": "https://nas.mengkai.fun:88/images/2023/11/17/tube-archivist.png",
+      "name": "tubearchivist",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tubearchivist.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Tubearchivist",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Finance"
+      ],
+      "description": "Actual is a super fast privacy-focused app for managing your finances. ",
+      "logo": "data:image/png;base64,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",
+      "name": "actual",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/actual.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Actual",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Calendar",
+        "Productivity"
+      ],
+      "description": "Ba\u00efkal is a lightweight CalDAV+CardDAV server. It offers an extensive web interface with easy management of users, address books and calendars.",
+      "logo": "https://sabre.io/img/logo.png",
+      "name": "baikal",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/baikal.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Baikal",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Downloaders",
+        "Multimedia"
+      ],
+      "description": "Autobrr is the modern download automation tool for torrents.",
+      "logo": "https://autobrr.com/img/logo.png",
+      "name": "autobrr",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/autobrr.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Autobrr",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Monitoring"
+      ],
+      "description": "Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc.",
+      "logo": "https://raw.githubusercontent.com/nicolargo/glances/develop/docs/_static/glances-responsive-webdesign.png",
+      "name": "glances",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/glances.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Glances",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Wiki",
+        "Knowledgebase"
+      ],
+      "description": "Documize Community is an open source, modern, self-hosted, enterprise-grade knowledge management solution.",
+      "logo": "",
+      "name": "documize",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/documize.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Documize",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Remotecontrol"
+      ],
+      "description": "RPort is free remote access and remote management, now acquired by RealVNC",
+      "logo": "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_634014ae8000cebecce8a571f9ea316f/cloudradar-gmbh-rport.png",
+      "name": "Rport",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/rport.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Rport",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Remotecontrol"
+      ],
+      "description": "Remotely is a remote control and remote scripting solution, built with .NET 6, Blazor, and SignalR Core.",
+      "logo": "",
+      "name": "Remotely",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/remotely.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Remotely",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Devtools"
+      ],
+      "description": "Tabby is an infinitely customizable cross-platform terminal app for local shells, serial, SSH and Telnet connections.",
+      "logo": "https://tabby.sh/32bf32ff6c87e8d18932.svg",
+      "name": "Tabby",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tabby.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Tabby",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Drawing"
+      ],
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams. Collaborative and end-to-end encrypted.",
+      "logo": "https://github.com/excalidraw/excalidraw/raw/master/public/og-image-sm.png",
+      "name": "excalidraw",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/excalidraw.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Excalidraw",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Network"
+      ],
+      "description": "UpSnap is a simple wake on lan app written with SvelteKit, Go, PocketBase and nmap.",
+      "logo": "https://github.com/seriousm4x/UpSnap/raw/master/frontend/static/favicon.png",
+      "name": "upsnap",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/upsnap.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Upsnap",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Development",
+        "Lowcode",
+        "Nocode"
+      ],
+      "description": "Tooljet is an Open-source low-code application development platform for building and deploying business applications.",
+      "logo": "https://uploads-ssl.webflow.com/6266634263b9179f76b2236e/63aaa161e3b3be42ec50eb6f_Logomark.svg",
+      "name": "tooljet",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/tooljet.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Tooljet",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Development",
+        "Lowcode",
+        "Nocode"
+      ],
+      "description": "Budibase allows no-code users to build apps quickly, with more functionality available with a little bit of inline code.",
+      "logo": "https://files.readme.io/593b386-budibase-logo-website.svg",
+      "name": "budibase",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/budibase.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Budibase",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Search"
+      ],
+      "description": "Meilisearch is a\u00a0**RESTful search API**. It aims to be a\u00a0**ready-to-go solution**\u00a0for everyone who wants a\u00a0**fast and relevant search experience**\u00a0for their end-users",
+      "logo": "https://docs.meilisearch.com/logo.svg",
+      "name": "Meilisearch",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/meilisearch.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Meilisearch",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Identitymanagement",
+        "Accessproxy"
+      ],
+      "description": "Ory Kratos with Oathkeeper is\u00a0_the_\u00a0developer-friendly, security-hardened and battle-test Identity, User Management and Authentication system for the Cloud.",
+      "logo": "https://raw.githubusercontent.com/ory/meta/master/static/banners/kratos.svg",
+      "name": "Ory Kratos",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/ory-kratos-standalone.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Ory Kratos (Standalone)",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Identitymanagement",
+        "Security"
+      ],
+      "description": "Ory Kratos with Oathkeeper (ORY Oathkeeper is an Identity & Access Proxy (IAP) and Access Control Decision API that authorizes HTTP requests based on sets of Access Rules.) ",
+      "logo": "https://raw.githubusercontent.com/ory/meta/master/static/banners/oathkeeper.svg",
+      "name": "Ory Kratos Oathkeeper",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/ory-kratos-oathkeeper.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Ory Kratos (Oathkeeper)",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Development",
+        "Lowcode"
+      ],
+      "description": "Appsmith (www.appsmith.com) is the first open-source low-code tool that helps developers build dashboards and admin panels very quickly.",
+      "logo": "https://cdn-images.himalayas.app/vr60veq4neiptamhqm6qxwi3toi3",
+      "name": "appsmith",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/appsmith.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Appsmith",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Email"
+      ],
+      "description": "Mailpile is an e-mail client!/search engine and a personal webmail server/easy way to encrypt your e-mail/easy way to encrypt your e-mail ",
+      "logo": "https://www.mailpile.is/img/icon-512x512.png",
+      "name": "mailpile",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/mailpile.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Mailpile",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Mail"
+      ],
+      "description": "Full stack mailserver solution with  TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with simple installation and web administration.",
+      "logo": "",
+      "name": "poste.io",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/posteio.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Poste.io",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Network"
+      ],
+      "description": "IPerf3 Docker Build for Network Performance and Bandwidth Testing",
+      "logo": "",
+      "name": "iperf",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/iperf.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "iperf",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Docker"
+      ],
+      "description": "Lazytainer monitors network traffic to containers. If there is traffic, the container runs, otherwise the container is stopped/paused.",
+      "logo": "",
+      "name": "lazytainer",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/lazytainer.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Lazytainer",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Finance"
+      ],
+      "description": "I hate money is a web application made to ease shared budget management. It keeps track of who bought what, when, and for whom; and helps to settle the bills.",
+      "logo": "",
+      "name": "ihatemoney",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/ihatemoney.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "I hate money",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Finance"
+      ],
+      "description": "OpenBudgeteer is a budgeting app based on the Bucket Budgeting Principle and inspired by YNAB and Buckets.",
+      "logo": "https://github.com/TheAxelander/OpenBudgeteer/raw/master/assets/banner.png",
+      "name": "openbudgeteer",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/openbudgeteer.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "OpenBudgeteer",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Multimedia"
+      ],
+      "description": "Fireshare: Share your game clips, videos, or other media via unique links.",
+      "logo": "https://github.com/ShaneIsrael/fireshare/raw/main/app/client/src/assets/logo.png",
+      "name": "fireshare",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/fireshare.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Fireshare",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Downloaders"
+      ],
+      "description": "Peer-to-peer file transfers in your browser",
+      "logo": "https://raw.githubusercontent.com/kern/filepizza/master/src/static/images/wordmark.png",
+      "name": "filepizza",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/filepizza.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Filepizza",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Dashboard"
+      ],
+      "description": "Jump is yet another self-hosted startpage for your server designed to be simple, stylish, fast and secure.",
+      "logo": "",
+      "name": "jump",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/jump.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Jump",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity"
+      ],
+      "description": "Hasty Paste is a fast and minimal paste bin, written in Python using Quart.",
+      "logo": "",
+      "name": "hasty-paste",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/hasty-paste.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Hasty-Paste",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Wiki"
+      ],
+      "description": "Xwiki s a free wiki software platform written in Java with a design emphasis on extensibility. XWiki is an enterprise wiki.",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Logo-xwikiorange.svg",
+      "name": "xwiki",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/xwiki.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Xwiki",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity"
+      ],
+      "description": "Leantime is an open source project management solution to make your ideas reality.",
+      "logo": "https://s3-us-west-2.amazonaws.com/leantime-website/wp-content/uploads/2022/07/24022056/logo-large.png",
+      "name": "leantime",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/leantime.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Leantime",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Entertainment"
+      ],
+      "description": "Jellyseerr is a free and open source fork of Overseerr for managing requests for your media library. It integrates with your existing services, such as Sonarr, Radarr, and Jellyfin!",
+      "logo": "https://raw.githubusercontent.com/Fallenbagel/jellyseerr/develop/public/logo_full.svg",
+      "name": "jellyseer",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/jellyseer.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Jellyseer",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity"
+      ],
+      "description": "Trudesk is an Open Source Help Desk Software and Ticketing System",
+      "logo": "https://trudesk.io/wp-content/uploads/2019/10/logo-med.png",
+      "name": "trudesk",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/trudesk.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Trudesk",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "System"
+      ],
+      "description": "Dashdot is a modern server dashboard, running on the latest tech, designed with glassmorphism in mind. It is intended to be used for smaller VPS and private servers.",
+      "logo": "https://getdashdot.com/img/logo512.png",
+      "name": "dashdot",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/dashdot.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Dashdot",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Development",
+        "Nocode"
+      ],
+      "description": "Open source no-code database and Airtable alternative.Create your own online database without technical experience. Our user friendly no-code tool gives you the powers of a developer without leaving your browser.",
+      "logo": "https://].io/_nuxt/img/logo.1421f77.svg",
+      "name": "Baserow",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/baserow.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Baserow",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Development",
+        "Nocode"
+      ],
+      "description": "Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet.",
+      "logo": "https://github.com/nocodb/nocodb/raw/develop/packages/nc-gui/assets/img/icons/512x512.png",
+      "name": "NocoDB",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/nocodb.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "NocoDB",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Smarthome"
+      ],
+      "description": "BroadlinkManager is a Flask powerd, easy to use system that hepls you to work with Broadlink Devices.",
+      "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/broadlink.png",
+      "name": "broadlink-manager",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/broadlink-manager.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Broadlink Manager",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Analytics"
+      ],
+      "description": "Umami is a simple, easy to use, self-hosted web analytics solution. The goal is to provide you with a friendlier, privacy-focused alternative to Google Analytics and a free, open-sourced alternative to paid solutions",
+      "logo": "https://icons.duckduckgo.com/ip3/umami.is.ico",
+      "name": "umami",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/umami.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "ports": [
+        "3000:3000/tcp"
+      ],
+      "title": "Umami.is",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Analytics"
+      ],
+      "description": "Google Analytics alternative that protects your data and your customers' privacy",
+      "logo": "https://gallery.ncnet.nl/upload/2020/05/22/20200522171613-9205fa32.png",
+      "name": "matomo",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/matomo.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "ports": [
+        "8282:80/tcp"
+      ],
+      "title": "Matomo",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Other"
+      ],
+      "description": "Simple room management system for n.eko. Self hosted rabb.it alternative. --Please add .env file as stated in neko.yml",
+      "logo": "https://raw.githubusercontent.com/m1k1o/neko/master/docs/_media/logo.png",
+      "name": "neko",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/neko.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Neko",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
       "type": 1,
       "title": "Registry (cache)",
       "description": "Docker image registry configured as a DockerHub pull through cache",
@@ -13313,95 +15328,6 @@
     },
     {
       "type": 1,
-      "name": "baserow",
-      "title": "Baserow",
-      "description": " Open source no-code database and Airtable alternative ",
-      "logo": "https://mediadepot.github.io/templates/img/baserow.png",
-      "image": "baserow/baserow:1.22.3",
-      "categories": [
-        "Downloaders",
-        "Tools"
-      ],
-      "ports": [
-        "80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/baserow/data",
-          "bind": "/opt/mediadepot/apps/baserow"
-        }
-      ],
-      "env": [
-        {
-          "name": "BASEROW_PUBLIC_URL",
-          "label": "BASEROW_PUBLIC_URL",
-          "preset": false
-        }
-      ],
-      "labels": [
-        {
-          "name": "traefik.enable",
-          "value": "true"
-        },
-        {
-          "name": "traefik.http.services.baserow.loadbalancer.server.port",
-          "value": "80"
-        },
-        {
-          "name": "traefik.http.routers.baserow.entrypoints",
-          "value": "websecure"
-        },
-        {
-          "name": "traefik.http.routers.baserow.tls.certresolver",
-          "value": "mydnschallenge"
-        }
-      ],
-      "maintainer": " https://github.com/mediadepot/templates/"
-    },
-    {
-      "type": 1,
-      "name": "changedetection",
-      "title": "ChangeDetection",
-      "description": "changedetection.io - The best and simplest self-hosted open source website change detection monitoring and notification service. An alternative to Visualping, Watchtower",
-      "logo": "https://mediadepot.github.io/templates/img/changedetection.jpg",
-      "image": "ghcr.io/dgtlmoon/changedetection.io:latest",
-      "categories": [
-        "Documents",
-        "Networkother",
-        "Tools"
-      ],
-      "ports": [
-        "5000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/datastore",
-          "bind": "/opt/mediadepot/apps/changedetection"
-        }
-      ],
-      "env": [],
-      "labels": [
-        {
-          "name": "traefik.enable",
-          "value": "true"
-        },
-        {
-          "name": "traefik.http.services.changedetection.loadbalancer.server.port",
-          "value": "5000"
-        },
-        {
-          "name": "traefik.http.routers.changedetection.entrypoints",
-          "value": "websecure"
-        },
-        {
-          "name": "traefik.http.routers.changedetection.tls.certresolver",
-          "value": "mydnschallenge"
-        }
-      ],
-      "maintainer": " https://github.com/mediadepot/templates/"
-    },
-    {
-      "type": 1,
       "name": "cloudcmd",
       "title": "Cloud Commander",
       "description": "Cloud Commander a file manager for the web with console and editor.",
@@ -13825,71 +15751,6 @@
         "url": "https://github.com/mediadepot/templates",
         "stackfile": "stacks/mayan/docker-compose.yml"
       },
-      "maintainer": " https://github.com/mediadepot/templates/"
-    },
-    {
-      "type": 1,
-      "name": "netbootxyz",
-      "title": "Netboot.xyz",
-      "description": "Netbootxyz is a way to PXE boot various operating system installers or utilities from one place within the BIOS without the need of having to go retrieve the media to run the tool",
-      "logo": "https://mediadepot.github.io/templates/img/netbootxyz.jpg",
-      "image": "linuxserver/netbootxyz:latest",
-      "categories": [
-        "Downloaders",
-        "Networkother",
-        "Tools"
-      ],
-      "ports": [
-        "3000/tcp",
-        "69/udp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/opt/mediadepot/apps/netbootxyz"
-        },
-        {
-          "container": "/assets",
-          "bind": "/media/storage/software/netbootxyz"
-        },
-        {
-          "container": "/etc/localtime",
-          "bind": "/etc/localtime",
-          "readonly": true
-        }
-      ],
-      "env": [
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "15000",
-          "preset": true
-        },
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "15000",
-          "preset": true
-        }
-      ],
-      "labels": [
-        {
-          "name": "traefik.enable",
-          "value": "true"
-        },
-        {
-          "name": "traefik.http.services.netbootxyz.loadbalancer.server.port",
-          "value": "3000"
-        },
-        {
-          "name": "traefik.http.routers.netbootxyz.entrypoints",
-          "value": "websecure"
-        },
-        {
-          "name": "traefik.http.routers.netbootxyz.tls.certresolver",
-          "value": "mydnschallenge"
-        }
-      ],
       "maintainer": " https://github.com/mediadepot/templates/"
     },
     {
