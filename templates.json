@@ -16031,6 +16031,14 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
     },
     {
+      "type": 1,
+      "title": "The templates created by Technorabilia have been moved",
+      "description": "The new location is https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates.json",
+      "platform": "linux",
+      "maintainer": " https://github.com/technorabilia/portainer-templates/",
+      "categories": []
+    },
+    {
       "categories": [
         "Productivity",
         "Social"
