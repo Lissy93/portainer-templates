@@ -10019,6 +10019,23 @@
     {
       "categories": [
         "Automation",
+        "Orchestration"
+      ],
+      "description": "Powerful orchestration. Simplified workflows.Unify orchestration for all engineers. Build and govern all your workflows \u2014 Everything-as-Code, and from the UI.",
+      "logo": "https://kestra.io/cdn-cgi/image/f=webp,w=236,h=123,q=80/landing/header-menu/download-logo.svg",
+      "name": "Kestra",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/kestra.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Kestra",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Automation",
         "Ai"
       ],
       "description": "Automate your marketing, sales and operations",
