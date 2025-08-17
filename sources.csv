@@ -1,13 +1,28 @@
-dnburgess_templates, https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json, https://github.com/dnburgess/self-hosted-template/
-qballjos_templates, https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json, https://github.com/Qballjos/portainer_templates/
-selfhostedpro_templates, https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json, https://github.com/SelfhostedPro/selfhosted_templates/
-technorabilia_templates, https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json, https://github.com/technorabilia/portainer-templates/
-mikestraney_templates, https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json, https://github.com/mikestraney/portainer-templates/
-xneo1_templates, https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json, https://github.com/xneo1/portainer_templates/
-novaspirit_templates, https://raw.githubusercontent.com/novaspirit/pi-hosted/master/pi-hosted_template/template/portainer-v2.json, https://github.com/novaspirit/pi-hosted/
-donpablonow_templates, https://raw.githubusercontent.com/donpablonow/awesome-saas/master/Template/portainer-v2.json, https://github.com/donpablonow/awesome-saas/
-mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json, https://github.com/mediadepot/templates/
-mycroftwilde_templates, https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json, https://github.com/mycroftwilde/portainer_templates/
-mediadepot_templates, https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json, https://github.com/mediadepot/templates/
-shmolf_templates, https://raw.githubusercontent.com/shmolf/portainer-templates/main/templates-2.0.json, https://github.com/shmolf/portainer-templates/
-portainer_templates, https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json, https://github.com/portainer/templates/
+xneo1_templates,https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json,https://github.com/xneo1/portainer_templates/
+novaspirit_templates,https://raw.githubusercontent.com/novaspirit/pi-hosted/master/pi-hosted_template/template/portainer-v2.json,https://github.com/novaspirit/pi-hosted/
+donpablonow_templates,https://raw.githubusercontent.com/donpablonow/awesome-saas/master/Template/portainer-v2.json,https://github.com/donpablonow/awesome-saas/
+portainer_templates,https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json,https://github.com/portainer/templates/
+TheLustriVA_templates,https://raw.githubusercontent.com/TheLustriVA/portainer-templates-Nov-2022-collection/refs/heads/main/templates_2_2_rc_2_2.json,https://github.com/TheLustriVA/portainer-templates-Nov-2022-collection
+ntv-one,https://raw.githubusercontent.com/ntv-one/portainer/refs/heads/main/template.json,https://github.com/ntv-one/portainer
+ethibox,https://raw.githubusercontent.com/ethibox/awesome-stacks/refs/heads/master/templates.json,https://github.com/ethibox/awesome-stacks
+camunda,https://raw.githubusercontent.com/camunda/portainer-templates/refs/heads/master/templates.json,https://github.com/camunda/portainer-templates
+mediadepot/templates,https://raw.githubusercontent.com/mediadepot/templates/refs/heads/master/portainer.json,https://github.com/mediadepot/templates
+pi-hosted,https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/template/portainer-v2-arm64.json,https://github.com/novaspirit/pi-hosted
+docker-friends,https://raw.githubusercontent.com/docker-friends/portainer-templates/refs/heads/main/app-templates.json,https://github.com/docker-friends/portainer-templates
+jothi-prasath,https://raw.githubusercontent.com/jothi-prasath/portainer-templates/refs/heads/master/templates.json,https://github.com/jothi-prasath
+mycroftwilde,https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json,https://github.com/mycroftwilde/portainer_templates/
+GeekTekRob,https://raw.githubusercontent.com/GeekTekRob/PortainerTemplates/refs/heads/main/Template.json,https://github.com/GeekTekRob/PortainerTemplates
+joseagrc,https://raw.githubusercontent.com/joseagrc/portainer-templates/refs/heads/main/templates.json,https://github.com/joseagrc/portainer-templates
+StinkyTACO,https://raw.githubusercontent.com/StinkyTACO/portainer-templates/refs/heads/main/template/templates.json,https://github.com/StinkyTACO/portainer-templates
+aab12345,https://raw.githubusercontent.com/aab12345/portainer-app-templates/refs/heads/main/templates/2.0.json,https://github.com/aab12345/portainer-app-templates/tree/b7ef0a33bd5b7b31a6c2d694347898feda333ba3
+devlikeapro,https://raw.githubusercontent.com/devlikeapro/portainer-templates/refs/heads/main/templates.json,https://github.com/devlikeapro/portainer-templates
+Lissy93,https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates_v3.json,lissy93/portainer-templates: 🚢 500+ 1-click Portainer app templates
+portainer,https://raw.githubusercontent.com/portainer/templates/refs/heads/v3/templates.json,https://github.com/portainer/portainer
+psy0rz,https://raw.githubusercontent.com/psy0rz/portainer-templates/refs/heads/main/templates.json,https://github.com/psy0rz/portainer-templates
+technorabilia,https://raw.githubusercontent.com/technorabilia/portainer-templates/refs/heads/main/lsio/templates/templates.json,https://github.com/technorabilia/portainer-templates/
+solutema,https://raw.githubusercontent.com/solutema/templates/refs/heads/main/templates.json,https://github.com/solutema/templates
+henksteenwijk,https://raw.githubusercontent.com/henksteenwijk/templates/refs/heads/main/template.json,https://github.com/henksteenwijk/templates
+colin-stubbs,https://raw.githubusercontent.com/colin-stubbs/portainer-templates/refs/heads/main/templates.json,https://github.com/colin-stubbs/portainer-templates
+mediadepot,https://raw.githubusercontent.com/mediadepot/templates/master/portainer.json,https://github.com/mediadepot/templates/
+shmolf,https://raw.githubusercontent.com/shmolf/portainer-templates/main/templates-2.0.json,https://github.com/shmolf/portainer-templates
+Lissy93_templates,https://raw.githubusercontent.com/Lissy93/portainer-templates/refs/heads/main/templates_v3.json,https://github.com/Lissy93/portainer-templates/
