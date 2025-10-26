@@ -3439,7 +3439,7 @@
           "name": "PGID"
         }
       ],
-      "image": "hotio/lidarr:release",
+      "image": "linuxserver/lidarr:latest",
       "logo": "https://raw.githubusercontent.com/xneo1/portainer_templates/master/Images/lidarr.png",
       "name": "lidarr",
       "platform": "linux",
