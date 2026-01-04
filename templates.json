@@ -5680,6 +5680,22 @@
     },
     {
       "categories": [
+        "Analytics"
+      ],
+      "description": "Open source monitoring tool built with Node.js & React",
+      "logo": "https://raw.githubusercontent.com/KSJaay/Lunalytics/main/public/LogoWithName.png",
+      "name": "lunalytics",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/lunalytics.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Lunalytics",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
         "Network"
       ],
       "description": "NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers.",
