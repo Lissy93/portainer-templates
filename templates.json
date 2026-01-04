@@ -1726,7 +1726,7 @@
           "name": "PORT"
         }
       ],
-      "image": "zadam/trilium:latest",
+      "image": "triliumnext/trilium:latest",
       "logo": "https://www.saashub.com/images/app/service_logos/55/2901389fab77/large.png?1561117248",
       "name": "trilium",
       "platform": "linux",
