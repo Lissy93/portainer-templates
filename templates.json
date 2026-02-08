@@ -5696,6 +5696,54 @@
     },
     {
       "categories": [
+        "Shopping"
+      ],
+      "description": "A self-hosted price tracking application that monitors product prices from any website.Get notified when prices drop, hit your target price, or items come back in stock.",
+      "logo": "https://github.com/clucraft/PriceGhost/raw/main/assets/header.svg",
+      "name": "priceghost",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/priceghost.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "PriceGhost",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Personalfinance"
+      ],
+      "description": "Golang-based web application for personal expense management, focused on a clean monthly workflow and intuitive tracking of recurring and non-recurring costs.",
+      "logo": "",
+      "name": "gocostweb",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/gocostweb.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "GoCostWeb",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
+        "Productivity"
+      ],
+      "description": "An offline first, self hostable note taking application",
+      "logo": "https://raw.githubusercontent.com/zhfahim/anchor/main/web/public/icons/anchor_icon.png",
+      "name": "anchor",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Template/Stack/anchor.yml",
+        "url": "https://github.com/xneo1/portainer_templates"
+      },
+      "title": "Anchor",
+      "type": 3,
+      "maintainer": " https://github.com/xneo1/portainer_templates/"
+    },
+    {
+      "categories": [
         "Network"
       ],
       "description": "NetBox is an infrastructure resource modeling (IRM) application designed to empower network automation. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers.",
@@ -8796,2138 +8844,6 @@
       "maintainer": " https://github.com/shmolf/portainer-templates/"
     },
     {
-      "type": 1,
-      "title": "Pwndrop",
-      "name": "Pwndrop",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pwndrop/config</p>",
-      "description": "[Pwndrop](https://github.com/kgretzky/pwndrop) is a self-deployable file hosting service for sending out red teaming payloads or securely sharing your private files over HTTP and WebDAV.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/kgretzky/pwndrop/master/media/pwndrop-logo-512.png",
-      "image": "linuxserver/pwndrop:latest",
-      "categories": [
-        "Taskserver"
-      ],
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "SECRET_PATH",
-          "label": "SECRET_PATH",
-          "default": "/pwndrop",
-          "description": "Secret path for admin access. Defaults to `/pwndrop`. This parameter only takes effect during initial install; it can later be changed in the web gui."
-        }
-      ],
-      "ports": [
-        "8080:8080/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/pwndrop/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "categories": [
-        "Mediaserver"
-      ],
-      "description": "Helps you organize your *Ahem* ...more MATURE Media material....",
-      "env": [
-        {
-          "label": "PORT",
-          "name": "PORT"
-        }
-      ],
-      "logo": "https://dashy.to/img/dashy.png",
-      "name": "Stash",
-      "note": "## Keep configs, scrapers, and plugins here. </p><p> - /portainer/Files/AppData/Config/stash:/root/.stash </p><p> ## Point this at your collection. </p><p> - ./data:/data </p><p> ## This is where your stash's metadata lives </p><p> - /portainer/Files/AppData/Config/stashmeta:/metadata </p><p> ## Any other cache content. </p><p> - /portainer/Files/AppData/Config/stashcache:/cache </p><p> ## Where to store generated content (screenshots,previews,transcodes,sprites) </p><p> - /portainer/Files/AppData/Config/stashgenerated:/generated",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "Template/Stack/stash.yml",
-        "url": "https://github.com/mycroftwilde/portainer_templates"
-      },
-      "title": "Stash",
-      "type": 3,
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "categories": [
-        "Chatserver"
-      ],
-      "description": "Rocket.Chat Server",
-      "logo": "https://raw.githubusercontent.com/portapps/rocketchat-portable/master/res/papp.png",
-      "note": "Rocket.Chat Server Container",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "Template/Stack/rocketchat.yml",
-        "url": "https://github.com/mycroftwilde/portainer_templates"
-      },
-      "title": "Rocket Chat",
-      "type": 3,
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "categories": [
-        "Notesserver"
-      ],
-      "description": "Joplin is an open-source note-taking app",
-      "env": [
-        {
-          "default": "22300",
-          "label": "PORT",
-          "name": "PORT"
-        },
-        {
-          "default": "http://joplin.yourdomain.tld:22300",
-          "label": "URL",
-          "name": "URL"
-        }
-      ],
-      "logo": "https://raw.githubusercontent.com/laurent22/joplin/master/Assets/SquareIcon512.png",
-      "note": "Joplin is an open-source note-taking app",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "Template/Stack/joplin.yml",
-        "url": "https://github.com/mycroftwilde/portainer_templates"
-      },
-      "title": "Joplin",
-      "type": 3,
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Libraryserver"
-      ],
-      "title": "Calibre",
-      "name": "Calibre",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/calibre/config</p>",
-      "description": "Calibre is a powerful and easy to use e-book manager. Users say it\u2019s outstanding and a must-have. It\u2019ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It\u2019s also completely free and open source and great for both casual users and computer experts.",
-      "platform": "linux",
-      "logo": "https://github.com/kovidgoyal/calibre/raw/master/resources/images/lt.png",
-      "image": "linuxserver/calibre:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "PASSWORD",
-          "label": "PASSWORD",
-          "default": "",
-          "description": "Optionally set a password for the gui."
-        },
-        {
-          "name": "CLI_ARGS",
-          "label": "CLI_ARGS",
-          "default": "",
-          "description": "Optionally pass cli start arguments to calibre."
-        }
-      ],
-      "ports": [
-        "8080:8080/tcp",
-        "8081:8081/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/calibre/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Smarthome"
-      ],
-      "title": "Habridge",
-      "name": "Habridge",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/habridge/config</p>",
-      "description": "Habridge emulates Philips Hue API to other home automation gateways such as an Amazon Echo/Dot Gen 1 (gen 2 has issues discovering ha-bridge) or other systems that support Philips Hue.  [https://github.com/bwssytems/ha-bridge/wiki](https://github.com/bwssytems/ha-bridge/wiki)",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/bwssytems/ha-bridge/master/src/main/resources/public/img/favicon.ico",
-      "image": "linuxserver/habridge:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "SEC_KEY",
-          "label": "SEC_KEY",
-          "default": "<Your Key To Encrypt Security Data>",
-          "description": "Key used to secure communication."
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "8080:8080/tcp",
-        "50000:50000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/habridge/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "categories": [
-        "Dashboardserver"
-      ],
-      "description": "MagicMirror2 Server",
-      "env": [
-        {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "100",
-          "label": "PGID",
-          "name": "PGID"
-        }
-      ],
-      "image": "karsten13/magicmirror:latest",
-      "logo": "https://github.com/MichMich/MagicMirror/raw/master/.github/header.png",
-      "name": "MagicMirror2",
-      "platform": "linux",
-      "ports": [
-        "8080:8080/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "command": "/bin/bash -c \"npm run server\" && exit 777",
-      "title": "MagicMirror2",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/opt/magic_mirror/config"
-        },
-        {
-          "container": "/opt/magic_mirror/modules"
-        },
-        {
-          "container": "/opt/magic_mirror/css"
-        }
-      ],
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "categories": [
-        "Libraryserver"
-      ],
-      "description": "Koomga Manga, Comic and E-Book Server",
-      "env": [
-        {
-          "default": "1000",
-          "label": "PUID",
-          "name": "PUID"
-        },
-        {
-          "default": "100",
-          "label": "PGID",
-          "name": "PGID"
-        }
-      ],
-      "image": "gotson/komga:latest",
-      "logo": "https://raw.githubusercontent.com/gotson/komga/master/.github/readme-images/app-icon.png",
-      "name": "Komga",
-      "platform": "linux",
-      "ports": [
-        "8080:8080/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "title": "Komga",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/books"
-        },
-        {
-          "container": "/comics"
-        },
-        {
-          "container": "/manga"
-        },
-        {
-          "container": "/config"
-        }
-      ],
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Managementutilityserver"
-      ],
-      "title": "Snipe-it",
-      "name": "Snipe-it",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/snipe-it/config</p>",
-      "description": "Snipe-it makes asset management easy. It was built by people solving real-world IT and asset management problems, and a solid UX has always been a top priority. Straightforward design and bulk actions mean getting things done faster.",
-      "platform": "linux",
-      "logo": "https://s3-us-west-2.amazonaws.com/linuxserver-docs/images/snipe-it-logo500x500.png",
-      "image": "linuxserver/snipe-it:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "APP_URL",
-          "label": "APP_URL",
-          "default": "<hostname or ip>",
-          "description": "Hostname or IP and port if applicable IE <ip or hostname>:8080"
-        },
-        {
-          "name": "MYSQL_PORT_3306_TCP_ADDR",
-          "label": "MYSQL_PORT_3306_TCP_ADDR",
-          "default": "<mysql host>",
-          "description": "Mysql hostname or IP to use"
-        },
-        {
-          "name": "MYSQL_PORT_3306_TCP_PORT",
-          "label": "MYSQL_PORT_3306_TCP_PORT",
-          "default": "<mysql port>",
-          "description": "Mysql port to use"
-        },
-        {
-          "name": "MYSQL_DATABASE",
-          "label": "MYSQL_DATABASE",
-          "default": "<mysql database>",
-          "description": "Mysql database to use"
-        },
-        {
-          "name": "MYSQL_USER",
-          "label": "MYSQL_USER",
-          "default": "<mysql pass>",
-          "description": "Mysql user to use"
-        },
-        {
-          "name": "MYSQL_PASSWORD",
-          "label": "MYSQL_PASSWORD",
-          "default": "changeme",
-          "description": "Mysql password to use"
-        }
-      ],
-      "ports": [
-        "8080:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/snipe-it/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Tools"
-      ],
-      "title": "Foldingathome",
-      "name": "Foldingathome",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/foldingathome/config</p>",
-      "description": "[Folding@home](https://foldingathome.org/) is a distributed computing project for simulating protein dynamics, including the process of protein folding and the movements of proteins implicated in a variety of diseases. It brings together citizen scientists who volunteer to run simulations of protein dynamics on their personal computers. Insights from this data are helping scientists to better understand biology, and providing new opportunities for developing therapeutics.",
-      "platform": "linux",
-      "logo": "https://foldingathome.org/wp-content/uploads/2016/09/folding-at-home-logo.png",
-      "image": "linuxserver/foldingathome:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "7396:7396/tcp",
-        "36330:36330/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/foldingathome/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Tools"
-      ],
-      "title": "Audacity",
-      "name": "Audacity",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/audacity/config</p>",
-      "description": "[Audacity](https://www.audacityteam.org/) is an easy-to-use, multi-track audio editor and recorder. Developed by a group of volunteers as open source.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png",
-      "image": "linuxserver/audacity:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "3000:3000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/audacity/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Libraryserver"
-      ],
-      "title": "Booksonic-air",
-      "name": "Booksonic-air",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/booksonic-air/config<br>mkdir -p /volume1/docker/booksonic-air/audiobooks<br>mkdir -p /volume1/docker/booksonic-air/podcasts<br>mkdir -p /volume1/docker/booksonic-air/othermedia</p>",
-      "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
-      "image": "linuxserver/booksonic-air:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "CONTEXT_PATH",
-          "label": "CONTEXT_PATH",
-          "default": "url-base",
-          "description": "Base url for use with reverse proxies etc."
-        }
-      ],
-      "ports": [
-        "4040:4040/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/booksonic-air/config"
-        },
-        {
-          "container": "/audiobooks",
-          "bind": "/volume1/docker/booksonic-air/audiobooks"
-        },
-        {
-          "container": "/podcasts",
-          "bind": "/volume1/docker/booksonic-air/podcasts"
-        },
-        {
-          "container": "/othermedia",
-          "bind": "/volume1/docker/booksonic-air/othermedia"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Codeserver"
-      ],
-      "title": "Cloud9",
-      "name": "Cloud9",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/cloud9/config<br>mkdir -p /volume1/docker/cloud9/code<br></p>",
-      "description": "[Cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cloud9.png",
-      "image": "linuxserver/cloud9:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "GITURL",
-          "label": "GITURL",
-          "default": "https://github.com/linuxserver/docker-cloud9.git",
-          "description": "Specify a git repo to checkout on first startup"
-        },
-        {
-          "name": "USERNAME",
-          "label": "USERNAME",
-          "default": "",
-          "description": "Optionally specify a username for http auth"
-        },
-        {
-          "name": "PASSWORD",
-          "label": "PASSWORD",
-          "default": "",
-          "description": "Optionally specify a password for http auth (if USERNAME and PASSWORD are not set, there will be no http auth)"
-        }
-      ],
-      "ports": [
-        "8000:8000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/cloud9/config"
-        },
-        {
-          "container": "/code",
-          "bind": "/volume1/docker/cloud9/code"
-        },
-        {
-          "container": "/var/run/docker.sock",
-          "bind": "/var/run/docker.sock"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Notesserver"
-      ],
-      "title": "Dokuwiki",
-      "name": "Dokuwiki",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/dokuwiki/config</p>",
-      "description": "[Dokuwiki](https://www.dokuwiki.org/dokuwiki/) is a simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax. The ease of maintenance, backup and integration makes it an administrator's favorite. Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context and the large number of plugins contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dokuwiki-icon.png",
-      "image": "linuxserver/dokuwiki:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "80:80/tcp",
-        "443:443/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/dokuwiki/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Gamingserver"
-      ],
-      "title": "Emulatorjs",
-      "name": "Emulatorjs",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/emulatorjs/config<br>mkdir -p /volume1/docker/emulatorjs/data</p>",
-      "description": "[Emulatorjs](https://github.com/linuxserver/emulatorjs) - In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emulatorjs-logo.png",
-      "image": "linuxserver/emulatorjs:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "SUBFOLDER",
-          "label": "SUBFOLDER",
-          "default": "/",
-          "description": "Specify a subfolder for reverse proxies IE '/FOLDER/'"
-        }
-      ],
-      "ports": [
-        "3000:3000/tcp",
-        "80:80/tcp",
-        "4001:4001/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/emulatorjs/config"
-        },
-        {
-          "container": "/data",
-          "bind": "/volume1/docker/emulatorjs/data"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Tools"
-      ],
-      "title": "Endlessh",
-      "name": "Endlessh",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/endlessh/config</p>",
-      "description": "[Endlessh](https://github.com/skeeto/endlessh) is an SSH tarpit that very slowly sends an endless, random SSH banner. It keeps SSH clients locked up for hours or even days at a time. The purpose is to put your real SSH server on another port and then let the script kiddies get stuck in this tarpit instead of bothering a real server.",
-      "platform": "linux",
-      "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/openssh-server-logo.png",
-      "image": "linuxserver/endlessh:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "MSDELAY",
-          "label": "MSDELAY",
-          "default": "10000",
-          "description": "The endless banner is sent one line at a time. This is the delay in milliseconds between individual lines."
-        },
-        {
-          "name": "MAXLINES",
-          "label": "MAXLINES",
-          "default": "32",
-          "description": "The length of each line is randomized. This controls the maximum length of each line. Shorter lines may keep clients on for longer if they give up after a certain number of bytes."
-        },
-        {
-          "name": "MAXCLIENTS",
-          "label": "MAXCLIENTS",
-          "default": "4096",
-          "description": "Maximum number of connections to accept at a time. Connections beyond this are not immediately rejected, but will wait in the queue."
-        },
-        {
-          "name": "LOGFILE",
-          "label": "LOGFILE",
-          "default": "false",
-          "description": "By default, the app logs to container log. If this is set to `true`, the log will be output to file under `/config/logs/endlessh` (`/config` needs to be mapped)."
-        },
-        {
-          "name": "BINDFAMILY",
-          "label": "BINDFAMILY",
-          "default": "",
-          "description": "By default, the app binds to IPv4 and IPv6 addresses. Set it to `4` or `6` to bind to IPv4 only or IPv6 only, respectively. Leave blank to bind to both."
-        }
-      ],
-      "ports": [
-        "22:2222/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/endlessh/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Mediaserver"
-      ],
-      "title": "Ffmpeg",
-      "name": "Ffmpeg",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ffmpeg/config</p>",
-      "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/ffmpeg for details.",
-      "platform": "linux",
-      "logo": "",
-      "image": "linuxserver/ffmpeg:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/ffmpeg/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Ftpserver"
-      ],
-      "title": "Filezilla",
-      "name": "Filezilla",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/filezilla/config</p>",
-      "description": "[FIleZilla](https://filezilla-project.org/) Client is a fast and reliable cross-platform FTP, FTPS and SFTP client with lots of useful features and an intuitive graphical user interface.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png",
-      "image": "linuxserver/filezilla:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "3000:3000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/filezilla/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Taskserver"
-      ],
-      "title": "Healthchecks",
-      "name": "Healthchecks",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/healthchecks/config</p>",
-      "description": "[Healthchecks](https://github.com/healthchecks/healthchecks) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/healthchecks/healthchecks/master/static/img/up.png",
-      "image": "linuxserver/healthchecks:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "SITE_ROOT",
-          "label": "SITE_ROOT",
-          "default": "<SITE_ROOT>",
-          "description": "The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000)"
-        },
-        {
-          "name": "SITE_NAME",
-          "label": "SITE_NAME",
-          "default": "<SITE_NAME>",
-          "description": "The site's name (e.g., 'Example Corp HealthChecks')"
-        },
-        {
-          "name": "DEFAULT_FROM_EMAIL",
-          "label": "DEFAULT_FROM_EMAIL",
-          "default": "<DEFAULT_FROM_EMAIL>",
-          "description": "From email for alerts"
-        },
-        {
-          "name": "EMAIL_HOST",
-          "label": "EMAIL_HOST",
-          "default": "<EMAIL_HOST>",
-          "description": "SMTP host"
-        },
-        {
-          "name": "EMAIL_PORT",
-          "label": "EMAIL_PORT",
-          "default": "<EMAIL_PORT>",
-          "description": "SMTP port"
-        },
-        {
-          "name": "EMAIL_HOST_USER",
-          "label": "EMAIL_HOST_USER",
-          "default": "<EMAIL_HOST_USER>",
-          "description": "SMTP user"
-        },
-        {
-          "name": "EMAIL_HOST_PASSWORD",
-          "label": "EMAIL_HOST_PASSWORD",
-          "default": "<EMAIL_HOST_PASSWORD>",
-          "description": "SMTP password"
-        },
-        {
-          "name": "EMAIL_USE_TLS",
-          "label": "EMAIL_USE_TLS",
-          "default": "<True or False>",
-          "description": "Use TLS for SMTP (`True` or `False`)"
-        },
-        {
-          "name": "ALLOWED_HOSTS",
-          "label": "ALLOWED_HOSTS",
-          "default": "<ALLOWED_HOSTS>",
-          "description": "array of valid hostnames for the server `['test.com','test2.com']` (default: `['*']`)"
-        },
-        {
-          "name": "SUPERUSER_EMAIL",
-          "label": "SUPERUSER_EMAIL",
-          "default": "<SUPERUSER_EMAIL>",
-          "description": "Superuser email"
-        },
-        {
-          "name": "SUPERUSER_PASSWORD",
-          "label": "SUPERUSER_PASSWORD",
-          "default": "<SUPERUSER_PASSWORD>",
-          "description": "Superuser password"
-        },
-        {
-          "name": "REGENERATE_SETTINGS",
-          "label": "REGENERATE_SETTINGS",
-          "default": "True/False",
-          "description": "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."
-        },
-        {
-          "name": "SITE_LOGO_URL",
-          "label": "SITE_LOGO_URL",
-          "default": "<SITE_LOGO_URL>",
-          "description": "Custom site logo URL"
-        },
-        {
-          "name": "SECRET_KEY",
-          "label": "SECRET_KEY",
-          "default": "<SECRET_KEY>",
-          "description": "A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist"
-        },
-        {
-          "name": "APPRISE_ENABLED",
-          "label": "APPRISE_ENABLED",
-          "default": "True/False",
-          "description": "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)"
-        }
-      ],
-      "ports": [
-        "8000:8000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/healthchecks/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Smarthome"
-      ],
-      "title": "Homeassistant",
-      "name": "Homeassistant",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/homeassistant/config</p>",
-      "description": "[Home Assistant Core](https://www.home-assistant.io/) - Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
-      "platform": "linux",
-      "logo": "https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192-full.png",
-      "image": "linuxserver/homeassistant:latest",
-      "network": "host",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "8123:8123/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/homeassistant/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Mediaserver"
-      ],
-      "title": "Kanzi",
-      "name": "Kanzi",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/kanzi/config</p>",
-      "description": "[Kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents). This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/kanzi.png",
-      "image": "linuxserver/kanzi:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "INVOCATION_NAME",
-          "label": "INVOCATION_NAME",
-          "default": "kanzi",
-          "description": "Specify an invocation name for this skill, use either kanzi or kod."
-        },
-        {
-          "name": "URL_ENDPOINT",
-          "label": "URL_ENDPOINT",
-          "default": "https://server.com/kanzi/",
-          "description": "Specify the URL at which the webserver is reachable either `https://kanzi.server.com/` or `https://server.com/kanzi/` Note the trailing slash **MUST** be included."
-        }
-      ],
-      "ports": [
-        "8000:8000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/kanzi/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Proxyserver"
-      ],
-      "title": "Ldap-auth",
-      "name": "Ldap-auth",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
-      "description": "[Ldap-auth](https://github.com/nginxinc/nginx-ldap-auth) software is for authenticating users who request protected resources from servers proxied by nginx. It includes a daemon (ldap-auth) that communicates with an authentication server, and a webserver daemon that generates an authentication cookie based on the user\u2019s credentials. The daemons are written in Python for use with a Lightweight Directory Access Protocol (LDAP) authentication server (OpenLDAP or Microsoft Windows Active Directory 2003 and 2012).",
-      "platform": "linux",
-      "logo": "https://jumpcloud.com/wp-content/uploads/2016/12/LDAP_Logo-1420591101.jpg",
-      "image": "linuxserver/ldap-auth:latest",
-      "env": [
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "FERNETKEY",
-          "label": "FERNETKEY",
-          "default": "",
-          "description": "Optionally define a custom fernet key, has to be base64-encoded 32-byte (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)"
-        },
-        {
-          "name": "CERTFILE",
-          "label": "CERTFILE",
-          "default": "",
-          "description": "Point this to a certificate file to enable HTTP over SSL (HTTPS) for the ldap auth daemon"
-        },
-        {
-          "name": "KEYFILE",
-          "label": "KEYFILE",
-          "default": "",
-          "description": "Point this to the private key file, matching the certificate file referred to in CERTFILE"
-        }
-      ],
-      "ports": [
-        "8888:8888/tcp",
-        "9000:9000/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Familyappserver"
-      ],
-      "title": "Libreoffice",
-      "name": "Libreoffice",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/libreoffice/config</p>",
-      "description": "[LibreOffice](https://www.libreoffice.org/) is a free and powerful office suite, and a successor to OpenOffice.org (commonly known as OpenOffice). Its clean interface and feature-rich tools help you unleash your creativity and enhance your productivity.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/libreoffice-logo.png",
-      "image": "linuxserver/libreoffice:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "3000:3000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/libreoffice/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Codeserver"
-      ],
-      "title": "Limnoria",
-      "name": "Limnoria",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/limnoria/config</p>",
-      "description": "[Limnoria](https://github.com/ProgVal/limnoria) A robust, full-featured, and user/programmer-friendly Python IRC bot, with many existing plugins. Successor of the well-known Supybot.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-limnoria/master/logo.png",
-      "image": "linuxserver/limnoria:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "8080:8080/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/limnoria/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Tools"
-      ],
-      "title": "Nano",
-      "name": "Nano",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nano/config</p>",
-      "description": "[Nano](https://nano.org/) is a digital payment protocol designed to be accessible and lightweight, with a focus on removing inefficiencies present in other cryptocurrencies. With ultrafast transactions and zero fees on a secure, green and decentralized network, this makes Nano ideal for everyday transactions.",
-      "platform": "linux",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Nano_logo.png/640px-Nano_logo.png",
-      "image": "linuxserver/nano:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "PEER_HOST",
-          "label": "PEER_HOST",
-          "default": "localhost",
-          "description": "Default peer host (can be overidden with an array by command line options)"
-        },
-        {
-          "name": "LIVE_GENESIS_PUB",
-          "label": "LIVE_GENESIS_PUB",
-          "default": "GENESIS_PUBLIC",
-          "description": "Genesis block public key"
-        },
-        {
-          "name": "LIVE_GENESIS_ACCOUNT",
-          "label": "LIVE_GENESIS_ACCOUNT",
-          "default": "nano_xxxxxx",
-          "description": "Genesis block account"
-        },
-        {
-          "name": "LIVE_GENESIS_WORK",
-          "label": "LIVE_GENESIS_WORK",
-          "default": "WORK_FOR_BLOCK",
-          "description": "Genesis block proof of work"
-        },
-        {
-          "name": "LIVE_GENESIS_SIG",
-          "label": "LIVE_GENESIS_SIG",
-          "default": "BLOCK_SIGNATURE",
-          "description": "Genesis block signature"
-        },
-        {
-          "name": "CLI_OPTIONS",
-          "label": "CLI_OPTIONS",
-          "default": "--config node.enable_voting=true",
-          "description": "Node run command cli args"
-        },
-        {
-          "name": "LMDB_BOOTSTRAP_URL",
-          "label": "LMDB_BOOTSTRAP_URL",
-          "default": "http://example.com/Nano_64_version_20.7z",
-          "description": "HTTP/HTTPS endpoint to download a 7z file with the data.ldb to bootstrap to this node"
-        }
-      ],
-      "ports": [
-        "8075:8075/tcp",
-        "7076:3000/tcp",
-        "7077:3001/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/nano/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Tools"
-      ],
-      "title": "Nano-wallet",
-      "name": "Nano-wallet",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
-      "description": "[Nano-wallet](https://nano.org/) is a digital payment protocol designed to be accessible and lightweight, with a focus on removing inefficiencies present in other cryptocurrencies. With ultrafast transactions and zero fees on a secure, green and decentralized network, this makes Nano ideal for everyday transactions. This container is a simple nginx wrapper for the light wallet located [here](https://github.com/linuxserver/nano-wallet). You will need to pass a valid RPC host when accessing this container.",
-      "platform": "linux",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Nano_logo.png/640px-Nano_logo.png",
-      "image": "linuxserver/nano-wallet:latest",
-      "ports": [
-        "80:80/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Managementutilityserver"
-      ],
-      "title": "Openssh-server",
-      "name": "Openssh-server",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openssh-server/config</p>",
-      "description": "[Openssh-server](https://www.openssh.com/) is a sandboxed environment that allows ssh access without giving keys to the entire server. Giving ssh access via private key often means giving full access to the server. This container creates a limited and sandboxed environment that others can ssh into. The users only have access to the folders mapped and the processes running inside this container.",
-      "platform": "linux",
-      "logo": "https://upload.wikimedia.org/wikipedia/en/6/65/OpenSSH_logo.png",
-      "image": "linuxserver/openssh-server:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "PUBLIC_KEY",
-          "label": "PUBLIC_KEY",
-          "default": "yourpublickey",
-          "description": "Optional ssh public key, which will automatically be added to authorized_keys."
-        },
-        {
-          "name": "PUBLIC_KEY_FILE",
-          "label": "PUBLIC_KEY_FILE",
-          "default": "/path/to/file",
-          "description": "Optionally specify a file containing the public key (works with docker secrets)."
-        },
-        {
-          "name": "PUBLIC_KEY_DIR",
-          "label": "PUBLIC_KEY_DIR",
-          "default": "/path/to/directory/containing/_only_/pubkeys",
-          "description": "Optionally specify a directory containing the public keys (works with docker secrets)."
-        },
-        {
-          "name": "PUBLIC_KEY_URL",
-          "label": "PUBLIC_KEY_URL",
-          "default": "https://github.com/username.keys",
-          "description": "Optionally specify a URL containing the public key."
-        },
-        {
-          "name": "SUDO_ACCESS",
-          "label": "SUDO_ACCESS",
-          "default": "false",
-          "description": "Set to `true` to allow `linuxserver.io`, the ssh user, sudo access. Without `USER_PASSWORD` set, this will allow passwordless sudo access."
-        },
-        {
-          "name": "PASSWORD_ACCESS",
-          "label": "PASSWORD_ACCESS",
-          "default": "false",
-          "description": "Set to `true` to allow user/password ssh access. You will want to set `USER_PASSWORD` or `USER_PASSWORD_FILE` as well."
-        },
-        {
-          "name": "USER_PASSWORD",
-          "label": "USER_PASSWORD",
-          "default": "password",
-          "description": "Optionally set a sudo password for `linuxserver.io`, the ssh user. If this or `USER_PASSWORD_FILE` are not set but `SUDO_ACCESS` is set to true, the user will have passwordless sudo access."
-        },
-        {
-          "name": "USER_PASSWORD_FILE",
-          "label": "USER_PASSWORD_FILE",
-          "default": "/path/to/file",
-          "description": "Optionally specify a file that contains the password. This setting supersedes the `USER_PASSWORD` option (works with docker secrets)."
-        },
-        {
-          "name": "USER_NAME",
-          "label": "USER_NAME",
-          "default": "linuxserver.io",
-          "description": "Optionally specify a user name (Default:`linuxserver.io`)"
-        }
-      ],
-      "ports": [
-        "2222:2222/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/openssh-server/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Familyappserver"
-      ],
-      "title": "Paperless-ng",
-      "name": "Paperless-ng",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/paperless-ng/config<br>mkdir -p /volume1/docker/paperless-ng/data</p>",
-      "description": "[Paperless-ng](https://github.com/jonaswinkler/paperless-ng) is an application by Daniel Quinn and contributors that indexes your scanned documents and allows you to easily search for documents and store metadata alongside your documents.'",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/jonaswinkler/paperless-ng/master/resources/logo/web/png/Color%20logo%20with%20background.png",
-      "image": "linuxserver/paperless-ng:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "REDIS_URL",
-          "label": "REDIS_URL",
-          "default": "",
-          "description": "Specify an external redis instance to use. Can optionally include a port (`redis:6379`) and/or db (`redis/foo`). If left blank or not included, will use a built-in redis instance. If changed after initial setup will also require manual modification of /config/settings.py"
-        }
-      ],
-      "ports": [
-        "8000:8000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/paperless-ng/config"
-        },
-        {
-          "container": "/data",
-          "bind": "/volume1/docker/paperless-ng/data"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Familyappserver"
-      ],
-      "title": "Papermerge",
-      "name": "Papermerge",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/papermerge/config<br>mkdir -p /volume1/docker/papermerge/data</p>",
-      "description": "[Papermerge](https://www.papermerge.com/) is an open source document management system (DMS) primarily designed for archiving and retrieving your digital documents. Instead of having piles of paper documents all over your desk, office or drawers - you can quickly scan them and configure your scanner to directly upload to Papermerge DMS.'",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/ciur/papermerge/master/artwork/logo.png",
-      "image": "linuxserver/papermerge:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "REDIS_URL",
-          "label": "REDIS_URL",
-          "default": "",
-          "description": "Specify an external redis instance to use. Can optionally include a port (`redis:6379`) and/or db (`redis/foo`). If left blank or not included, will use a built-in redis instance. If changed after initial setup will also require manual modification of /config/settings.py"
-        }
-      ],
-      "ports": [
-        "8000:8000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/papermerge/config"
-        },
-        {
-          "container": "/data",
-          "bind": "/volume1/docker/papermerge/data"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Chatserver"
-      ],
-      "title": "Pidgin",
-      "name": "Pidgin",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pidgin/config</p>",
-      "description": "[Pidgin](https://pidgin.im/) is a chat program which lets you log into accounts on multiple chat networks simultaneously. This means that you can be chatting with friends on XMPP and sitting in an IRC channel at the same time.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pidgin-logo.png",
-      "image": "linuxserver/pidgin:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "3000:3000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/pidgin/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Managementutilityserver"
-      ],
-      "title": "Rdesktop",
-      "name": "Rdesktop",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p><br>mkdir -p /volume1/docker/rdesktop/config</p>",
-      "description": "[Rdesktop](http://xrdp.org/) - Ubuntu based containers containing full desktop environments in officially supported flavors accessible via RDP.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rdesktop.png",
-      "image": "linuxserver/rdesktop:latest",
-      "privileged": true,
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "3389:3389/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/var/run/docker.sock",
-          "bind": "/var/run/docker.sock"
-        },
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/rdesktop/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Backupandsyncserver"
-      ],
-      "title": "Rsnapshot",
-      "name": "Rsnapshot",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/rsnapshot/config<br>mkdir -p /volume1/docker/rsnapshot/.snapshots<br>mkdir -p /volume1/docker/rsnapshot/data</p>",
-      "description": "[Rsnapshot](http://www.rsnapshot.org/) is a filesystem snapshot utility based on rsync. rsnapshot makes it easy to make periodic snapshots of local machines, and remote machines over ssh. The code makes extensive use of hard links whenever possible, to greatly reduce the disk space required.'",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rsnapshot.png",
-      "image": "linuxserver/rsnapshot:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/rsnapshot/config"
-        },
-        {
-          "container": "/.snapshots",
-          "bind": "/volume1/docker/rsnapshot/.snapshots"
-        },
-        {
-          "container": "/data",
-          "bind": "/volume1/docker/rsnapshot/data"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Familyappserver"
-      ],
-      "title": "Snapdrop",
-      "name": "Snapdrop",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/snapdrop/config</p>",
-      "description": "[Snapdrop](https://github.com/RobinLinus/snapdrop) A local file sharing in your browser. Inspired by Apple's Airdrop.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/RobinLinus/snapdrop/master/client/images/logo_transparent_512x512.png",
-      "image": "linuxserver/snapdrop:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "80:80/tcp",
-        "443:443/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/snapdrop/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "categories": [
-        "Vpnserver"
-      ],
-      "title": "Wireguard",
-      "name": "Wireguard",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/wireguard/config<br></p>",
-      "description": "[WireGuard\u00ae](https://www.wireguard.com/) is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.",
-      "platform": "linux",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Logo_of_WireGuard.png/320px-Logo_of_WireGuard.png",
-      "image": "linuxserver/wireguard:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "SERVERURL",
-          "label": "SERVERURL",
-          "default": "wireguard.domain.com",
-          "description": "External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically"
-        },
-        {
-          "name": "SERVERPORT",
-          "label": "SERVERPORT",
-          "default": "51820",
-          "description": "External port for docker host. Used in server mode."
-        },
-        {
-          "name": "PEERS",
-          "label": "PEERS",
-          "default": "1",
-          "description": "Number of peers to create confs for. Required for server mode. Can also be a list of names: `myPC,myPhone,myTablet` (alphanumeric only)"
-        },
-        {
-          "name": "PEERDNS",
-          "label": "PEERDNS",
-          "default": "auto",
-          "description": "DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward."
-        },
-        {
-          "name": "INTERNAL_SUBNET",
-          "label": "INTERNAL_SUBNET",
-          "default": "10.13.13.0",
-          "description": "Internal subnet for the wireguard and server and peers (only change if it clashes). Used in server mode."
-        },
-        {
-          "name": "ALLOWEDIPS",
-          "label": "ALLOWEDIPS",
-          "default": "0.0.0.0/0",
-          "description": "The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1."
-        }
-      ],
-      "ports": [
-        "51820:51820/udp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/wireguard/config"
-        },
-        {
-          "container": "/lib/modules",
-          "bind": "/lib/modules"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "categories": [
-        "Managementutilityserver"
-      ],
-      "type": 1,
-      "title": "Wireshark",
-      "name": "Wireshark",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/wireshark/config</p>",
-      "description": "[Wireshark](https://www.wireshark.org/) is the world\u2019s foremost and widely-used network protocol analyzer. It lets you see what\u2019s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions. Wireshark development thrives thanks to the volunteer contributions of networking experts around the globe and is the continuation of a project started by Gerald Combs in 1998.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/wireshark-icon.png",
-      "image": "linuxserver/wireshark:latest",
-      "network": "host",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "3000:3000/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/wireshark/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "title": "Airsonic-advanced",
-      "name": "Airsonic-advanced",
-      "categories": [
-        "Musicserver"
-      ],
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/airsonic-advanced/config<br>mkdir -p /volume1/docker/airsonic-advanced/music<br>mkdir -p /volume1/docker/airsonic-advanced/playlists<br>mkdir -p /volume1/docker/airsonic-advanced/podcasts<br>mkdir -p /volume1/docker/airsonic-advanced/media</p>",
-      "description": "[Airsonic-advanced](https://github.com/airsonic-advanced/airsonic-advanced) is a free, web-based media streamer, providing ubiquitious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.",
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/airsonic-banner.png",
-      "image": "linuxserver/airsonic-advanced:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "CONTEXT_PATH",
-          "label": "CONTEXT_PATH",
-          "default": "<URL_BASE>",
-          "description": "For setting url-base in reverse proxy setups."
-        },
-        {
-          "name": "JAVA_OPTS",
-          "label": "JAVA_OPTS",
-          "default": "<options>",
-          "description": "For passing additional java options."
-        }
-      ],
-      "ports": [
-        "4040:4040/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/airsonic-advanced/config"
-        },
-        {
-          "container": "/music",
-          "bind": "/volume1/docker/airsonic-advanced/music"
-        },
-        {
-          "container": "/playlists",
-          "bind": "/volume1/docker/airsonic-advanced/playlists"
-        },
-        {
-          "container": "/podcasts",
-          "bind": "/volume1/docker/airsonic-advanced/podcasts"
-        },
-        {
-          "container": "/media",
-          "bind": "/volume1/docker/airsonic-advanced/media"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "title": "Phpmyadmin",
-      "name": "Phpmyadmin",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
-      "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
-      "categories": [
-        "Databaseserver"
-      ],
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
-      "image": "linuxserver/phpmyadmin:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "PMA_ARBITRARY",
-          "label": "PMA_ARBITRARY",
-          "default": "1",
-          "description": "Set to `1` to allow you to connect to any server. Setting to `0` will only allow you to connect to specified hosts (See Application Setup)"
-        },
-        {
-          "name": "PMA_ABSOLUTE_URI",
-          "label": "PMA_ABSOLUTE_URI",
-          "default": "https://phpmyadmin.example.com",
-          "description": "Set the URL you will use to access the web frontend"
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/phpmyadmin/config"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "title": "Pixapop",
-      "name": "Pixapop",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pixapop/config<br>mkdir -p /volume1/docker/pixapop/photos</p>",
-      "description": "[Pixapop](https://github.com/bierdok/pixapop) is an open-source single page application to view your photos in the easiest way possible.",
-      "categories": [
-        "Photos"
-      ],
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pixapop.png",
-      "image": "linuxserver/pixapop:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        },
-        {
-          "name": "APP_USERNAME",
-          "label": "APP_USERNAME",
-          "default": "admin",
-          "description": "Specify a username to enable authentication."
-        },
-        {
-          "name": "APP_PASSWORD",
-          "label": "APP_PASSWORD",
-          "default": "admin",
-          "description": "Specify a password to enable authentication."
-        }
-      ],
-      "ports": [
-        "80:80/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/pixapop/config"
-        },
-        {
-          "container": "/photos",
-          "bind": "/volume1/docker/pixapop/photos"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "title": "Syslog-ng",
-      "name": "Syslog-ng",
-      "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/syslog-ng/config<br></p>",
-      "description": "[syslog-ng](https://www.syslog-ng.com/products/open-source-log-management/) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.",
-      "categories": [
-        "Taskserver"
-      ],
-      "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png",
-      "image": "linuxserver/syslog-ng:latest",
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1024",
-          "description": "for GroupID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "100",
-          "description": "for UserID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "Europe/Amsterdam",
-          "description": "Specify a timezone to use for example Europe/Amsterdam"
-        }
-      ],
-      "ports": [
-        "514:5514/udp",
-        "601:6601/tcp",
-        "6514:6514/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/config",
-          "bind": "/volume1/docker/syslog-ng/config"
-        },
-        {
-          "container": "/var/log",
-          "bind": "/var/log"
-        }
-      ],
-      "restart_policy": "unless-stopped",
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
-      "type": 1,
-      "title": "Wowza",
-      "description": "Streaming media server",
-      "categories": [
-        "Mediaserver"
-      ],
-      "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wowza.png",
-      "image": "sameersbn/wowza:4.1.2-8",
-      "env": [
-        {
-          "name": "WOWZA_ACCEPT_LICENSE",
-          "label": "Agree to Wowza EULA",
-          "set": "yes"
-        },
-        {
-          "name": "WOWZA_KEY",
-          "label": "License key"
-        }
-      ],
-      "ports": [
-        "1935/tcp",
-        "8086/tcp",
-        "8087/tcp",
-        "8088/tcp"
-      ],
-      "volumes": [
-        {
-          "container": "/var/lib/wowza"
-        }
-      ],
-      "maintainer": " https://github.com/mycroftwilde/portainer_templates/"
-    },
-    {
       "categories": [
         "Other"
       ],
@@ -11181,6 +9097,40 @@
       "volumes": [
         {
           "container": "/var/urbackup"
+        }
+      ],
+      "maintainer": " https://github.com/mikestraney/portainer-templates/"
+    },
+    {
+      "type": 1,
+      "title": "Wowza",
+      "description": "Streaming media server",
+      "categories": [
+        "Streaming"
+      ],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wowza.png",
+      "image": "sameersbn/wowza:4.1.2-8",
+      "env": [
+        {
+          "name": "WOWZA_ACCEPT_LICENSE",
+          "label": "Agree to Wowza EULA",
+          "set": "yes"
+        },
+        {
+          "name": "WOWZA_KEY",
+          "label": "License key"
+        }
+      ],
+      "ports": [
+        "1935/tcp",
+        "8086/tcp",
+        "8087/tcp",
+        "8088/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/var/lib/wowza"
         }
       ],
       "maintainer": " https://github.com/mikestraney/portainer-templates/"
@@ -11518,6 +9468,107 @@
         },
         {
           "name": "traefik.http.routers.gaps.tls.certresolver",
+          "value": "mydnschallenge"
+        }
+      ],
+      "maintainer": " https://github.com/mediadepot/templates/"
+    },
+    {
+      "type": 1,
+      "name": "healthchecks",
+      "title": "Healthchecks",
+      "description": "Healthchecks is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.",
+      "logo": "https://mediadepot.github.io/templates/img/healthchecks-logo.png",
+      "image": "linuxserver/healthchecks",
+      "categories": [
+        "Tools",
+        "Networkweb",
+        "Networkother",
+        "Statusstable"
+      ],
+      "ports": [
+        "8000/tcp"
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "/opt/mediadepot/apps/healthchecks"
+        }
+      ],
+      "env": [
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "15000",
+          "preset": true
+        },
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "15000",
+          "preset": true
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Los_Angeles"
+        },
+        {
+          "name": "SITE_ROOT",
+          "label": "SITE_ROOT",
+          "default": "healthchecks.depot.lan"
+        },
+        {
+          "name": "SITE_NAME",
+          "label": "SITE_NAME",
+          "default": "healthchecks"
+        },
+        {
+          "name": "DEFAULT_FROM_EMAIL",
+          "label": "DEFAULT_FROM_EMAIL",
+          "default": "healthchecks@depot.lan"
+        },
+        {
+          "name": "EMAIL_HOST",
+          "label": "EMAIL_HOST",
+          "default": ""
+        },
+        {
+          "name": "EMAIL_PORT",
+          "label": "EMAIL_PORT",
+          "default": ""
+        },
+        {
+          "name": "EMAIL_HOST_USER",
+          "label": "EMAIL_HOST_USER",
+          "default": ""
+        },
+        {
+          "name": "EMAIL_HOST_PASSWORD",
+          "label": "EMAIL_HOST_PASSWORD",
+          "default": ""
+        },
+        {
+          "name": "EMAIL_USE_TLS",
+          "label": "EMAIL_USE_TLS",
+          "default": ""
+        }
+      ],
+      "labels": [
+        {
+          "name": "traefik.enable",
+          "value": "true"
+        },
+        {
+          "name": "traefik.http.services.healthchecks.loadbalancer.server.port",
+          "value": "8000"
+        },
+        {
+          "name": "traefik.http.routers.healthchecks.entrypoints",
+          "value": "websecure"
+        },
+        {
+          "name": "traefik.http.routers.healthchecks.tls.certresolver",
           "value": "mydnschallenge"
         }
       ],
@@ -13196,6 +11247,28 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/"
     },
     {
+      "description": "Home Assistant is a free and open-source software for home automation that is designed to be the central control system for smart home devices with focus on local control and privacy.",
+      "image": "homeassistant/home-assistant:latest",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/homeassistant.png",
+      "name": "home-assistant",
+      "platform": "linux",
+      "ports": [
+        "8999:8123/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Home Assistant",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/HomeAssistant/assets",
+          "container": "/config"
+        }
+      ],
+      "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.home-assistant.io/\" target=\"_blank\">https://www.home-assistant.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.home-assistant.io/installation/raspberrypi#install-home-assistant-container\" target=\"_blank\">https://www.home-assistant.io/installation/raspberrypi#install-home-assistant-container</a><br><br><br>",
+      "maintainer": " https://github.com/novaspirit/pi-hosted/",
+      "categories": []
+    },
+    {
       "categories": [
         "Homeautomation"
       ],
@@ -13419,6 +11492,40 @@
       "restart_policy": "unless-stopped",
       "title": "Klipper[Testing], Mainsail, Moonraker",
       "type": 3,
+      "maintainer": " https://github.com/novaspirit/pi-hosted/"
+    },
+    {
+      "categories": [
+        "Books",
+        "Tools"
+      ],
+      "description": "Komga is a free and open source comics/mangas/magazines server.",
+      "image": "gotson/komga:latest",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/komga.png",
+      "name": "komga",
+      "platform": "linux",
+      "ports": [
+        "8995:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Komga",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/komga/config",
+          "container": "/config"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Config/komga/data",
+          "container": "/data"
+        },
+        {
+          "bind": "/etc/timezone",
+          "container": "/etc/timezone",
+          "read_only": "true"
+        }
+      ],
+      "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/gotson/komga\" target=\"_blank\">https://github.com/gotson/komga</a><br><b>Official Docker Documentation: </b><a href=\"https://komga.org/\" target=\"_blank\">https://komga.org/</a><br><br><br>",
       "maintainer": " https://github.com/novaspirit/pi-hosted/"
     },
     {
