@@ -16714,7 +16714,7 @@
           "container": "/data"
         },
         {
-          "bind": " /etc/timezone",
+          "bind": "/etc/timezone",
           "container": "/etc/timezone:ro"
         },
         {
