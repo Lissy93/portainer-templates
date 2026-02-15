@@ -9618,7 +9618,7 @@
       "note": "To support multiple languages for OCR, per the <a target='_blank' href='https://github.com/Stirling-Tools/Stirling-PDF/blob/main/HowToUseOCR.md'>Official documentation \ud83d\uddd7</a>, download your Tess Data from <a target='_blank' href='https://github.com/tesseract-ocr/tessdata'>from another repo \ud83d\uddd7</a>. <br>Then, place said 'traineddata' files into <code>/portainer/Files/AppData/Libraries/StirlingPDF/tessdata</code> <br>For more information about login, read <a target='_blank' href='https://github.com/Stirling-Tools/Stirling-PDF?tab=readme-ov-file#prerequisites'>the official documentation \ud83d\uddd7</a>.",
       "logo": "https://raw.githubusercontent.com/shmolf/portainer-templates/main/assets/logos/stirling-pdf.svg",
       "platform": "linux",
-      "image": "frooodle/s-pdf:0.18.1",
+      "image": "stirlingtools/stirling-pdf:latest",
       "ports": [
         "5417:8080/tcp"
       ],
