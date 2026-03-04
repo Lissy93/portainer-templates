@@ -1,0 +1,515 @@
+{
+  "version": "3",
+  "templates": [
+    {
+      "categories": [
+        "Tools",
+        "Productivity"
+      ],
+      "description": "Collection of handy online tools for developers, with great UX",
+      "env": [],
+      "image": "corentinth/it-tools:latest",
+      "logo": "https://avatars.githubusercontent.com/u/25065347",
+      "name": "it-tools",
+      "platform": "linux",
+      "ports": [
+        "8080:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "IT-Tools",
+      "type": 1
+    },
+    {
+      "categories": [
+        "Notifications",
+        "Messaging"
+      ],
+      "command": "serve --cache-file /var/cache/ntfy/cache.db",
+      "description": "Simple HTTP-based pub-sub notification service. Send push notifications to your phone or desktop via PUT/POST",
+      "env": [],
+      "image": "binwiederhier/ntfy:latest",
+      "logo": "https://avatars.githubusercontent.com/u/664597",
+      "name": "ntfy",
+      "platform": "linux",
+      "ports": [
+        "8080:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "ntfy",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/cache/ntfy"
+        },
+        {
+          "container": "/etc/ntfy"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Bookmarks",
+        "Productivity"
+      ],
+      "description": "Self-hosted bookmark manager that is minimal and fast",
+      "env": [
+        {
+          "default": "admin",
+          "label": "LD_SUPERUSER_NAME",
+          "name": "LD_SUPERUSER_NAME"
+        },
+        {
+          "default": "changeme",
+          "label": "LD_SUPERUSER_PASSWORD",
+          "name": "LD_SUPERUSER_PASSWORD"
+        }
+      ],
+      "image": "sissbruecker/linkding:latest",
+      "logo": "https://avatars.githubusercontent.com/u/357820",
+      "name": "linkding",
+      "platform": "linux",
+      "ports": [
+        "9090:9090/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Linkding",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/etc/linkding/data"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Inventory",
+        "Productivity"
+      ],
+      "description": "Inventory and organization system built for the home user",
+      "env": [],
+      "image": "ghcr.io/sysadminsmedia/homebox:latest",
+      "logo": "https://avatars.githubusercontent.com/u/151488376",
+      "name": "homebox",
+      "platform": "linux",
+      "ports": [
+        "7745:7745/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Homebox",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Dashboard",
+        "Monitoring"
+      ],
+      "description": "A self-hosted dashboard that puts all your feeds in one place",
+      "env": [],
+      "image": "glanceapp/glance:latest",
+      "logo": "https://avatars.githubusercontent.com/u/159397742",
+      "name": "glance",
+      "platform": "linux",
+      "ports": [
+        "8080:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Glance",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/app/config"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Monitoring",
+        "Networking"
+      ],
+      "description": "Automated developer-oriented status page with highly configurable health checks",
+      "env": [],
+      "image": "twinproduction/gatus:latest",
+      "logo": "https://avatars.githubusercontent.com/u/15699766",
+      "name": "gatus",
+      "platform": "linux",
+      "ports": [
+        "8080:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Gatus",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "File Sharing",
+        "Networking"
+      ],
+      "description": "Local file sharing in your browser, inspired by Apple's AirDrop",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "1000",
+          "label": "PGID",
+          "name": "PGID"
+        },
+        {
+          "default": "Etc/UTC",
+          "label": "TZ",
+          "name": "TZ"
+        }
+      ],
+      "image": "lscr.io/linuxserver/pairdrop:latest",
+      "logo": "https://avatars.githubusercontent.com/u/52242352",
+      "name": "pairdrop",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "PairDrop",
+      "type": 1
+    },
+    {
+      "categories": [
+        "Social",
+        "Fediverse"
+      ],
+      "description": "An ActivityPub social network server written in Go, providing a lightweight alternative to Mastodon",
+      "env": [
+        {
+          "default": "localhost",
+          "label": "GTS_HOST",
+          "name": "GTS_HOST"
+        }
+      ],
+      "image": "superseriousbusiness/gotosocial:latest",
+      "logo": "https://avatars.githubusercontent.com/u/79751420",
+      "name": "gotosocial",
+      "platform": "linux",
+      "ports": [
+        "8080:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "GoToSocial",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/gotosocial/storage"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Documents",
+        "Productivity"
+      ],
+      "description": "Open source DocuSign alternative for document filling and signing",
+      "env": [],
+      "image": "docuseal/docuseal:latest",
+      "logo": "https://avatars.githubusercontent.com/u/138379721",
+      "name": "docuseal",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "DocuSeal",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Tools",
+        "Documents"
+      ],
+      "description": "Docker-powered stateless API for PDF files: conversions, generation, merging, and more",
+      "env": [],
+      "image": "gotenberg/gotenberg:8",
+      "logo": "https://avatars.githubusercontent.com/u/66820499",
+      "name": "gotenberg",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Gotenberg",
+      "type": 1
+    },
+    {
+      "categories": [
+        "DNS",
+        "Networking"
+      ],
+      "description": "An open source authoritative and recursive DNS server with a web console for management",
+      "env": [
+        {
+          "default": "dns-server",
+          "label": "DNS_SERVER_DOMAIN",
+          "name": "DNS_SERVER_DOMAIN"
+        }
+      ],
+      "image": "technitium/dns-server:latest",
+      "logo": "https://avatars.githubusercontent.com/u/12230362",
+      "name": "technitium-dns",
+      "platform": "linux",
+      "ports": [
+        "5380:5380/tcp",
+        "53:53/tcp",
+        "53:53/udp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Technitium DNS",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/etc/dns"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Database",
+        "Tools"
+      ],
+      "description": "Cloud database manager providing a web interface for working with various databases",
+      "env": [],
+      "image": "dbeaver/cloudbeaver:latest",
+      "logo": "https://avatars.githubusercontent.com/u/34743864",
+      "name": "cloudbeaver",
+      "platform": "linux",
+      "ports": [
+        "8978:8978/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "CloudBeaver",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/opt/cloudbeaver/workspace"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Media",
+        "Books"
+      ],
+      "description": "A free and open source comics, manga, and digital book server with OPDS support",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "1000",
+          "label": "PGID",
+          "name": "PGID"
+        },
+        {
+          "default": "/config",
+          "label": "STUMP_CONFIG_DIR",
+          "name": "STUMP_CONFIG_DIR"
+        }
+      ],
+      "image": "aaronleopold/stump:latest",
+      "logo": "https://avatars.githubusercontent.com/u/114969632",
+      "name": "stump",
+      "platform": "linux",
+      "ports": [
+        "10801:10801/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Stump",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/config"
+        },
+        {
+          "container": "/data"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Automation",
+        "Tools"
+      ],
+      "command": "dagu start-all",
+      "description": "A powerful, self-contained DAG-based job scheduler with a web UI, YAML definitions, and no dependencies",
+      "env": [
+        {
+          "default": "0.0.0.0",
+          "label": "DAGU_HOST",
+          "name": "DAGU_HOST"
+        }
+      ],
+      "image": "ghcr.io/dagu-org/dagu:latest",
+      "logo": "https://avatars.githubusercontent.com/u/131097250",
+      "name": "dagu",
+      "platform": "linux",
+      "ports": [
+        "8080:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Dagu",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/var/lib/dagu"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Development",
+        "Version Control"
+      ],
+      "description": "A self-hosted lightweight software forge, providing Git hosting, code review, issue tracking, and CI/CD",
+      "env": [
+        {
+          "default": "1000",
+          "label": "USER_UID",
+          "name": "USER_UID"
+        },
+        {
+          "default": "1000",
+          "label": "USER_GID",
+          "name": "USER_GID"
+        }
+      ],
+      "image": "codeberg.org/forgejo/forgejo:14",
+      "logo": "https://avatars.githubusercontent.com/u/118922216",
+      "name": "forgejo",
+      "platform": "linux",
+      "ports": [
+        "3000:3000/tcp",
+        "222:22/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Forgejo",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Email",
+        "Networking"
+      ],
+      "description": "All-in-one mail server supporting SMTP, IMAP, JMAP, and more, with a built-in web administration interface",
+      "env": [],
+      "image": "stalwartlabs/stalwart:latest",
+      "logo": "https://avatars.githubusercontent.com/u/114914856",
+      "name": "stalwart-mail",
+      "platform": "linux",
+      "ports": [
+        "8080:8080/tcp",
+        "443:443/tcp",
+        "25:25/tcp",
+        "587:587/tcp",
+        "465:465/tcp",
+        "143:143/tcp",
+        "993:993/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Stalwart Mail Server",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/opt/stalwart"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Project Management"
+      ],
+      "description": "Open source Trello-like kanban board for project management built with React and Node.js",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/64215741",
+      "name": "planka",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/planka.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Planka",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Email",
+        "Marketing"
+      ],
+      "description": "High performance self-hosted newsletter and mailing list manager with a modern dashboard",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/17838164",
+      "name": "listmonk",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/listmonk.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Listmonk",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Documentation",
+        "Productivity"
+      ],
+      "description": "Open source collaborative wiki and documentation software, an alternative to Confluence and Notion",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/172325533",
+      "name": "docmost",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/docmost.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Docmost",
+      "type": 3
+    },
+    {
+      "categories": [
+        "CI/CD",
+        "Development"
+      ],
+      "description": "A simple yet powerful CI/CD engine with great extensibility, built for containers",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/84780935",
+      "name": "woodpecker-ci",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/woodpecker-ci.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Woodpecker CI",
+      "type": 3
+    }
+  ]
+}

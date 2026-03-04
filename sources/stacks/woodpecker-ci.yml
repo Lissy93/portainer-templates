@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  woodpecker-server:
+    image: woodpeckerci/woodpecker-server:v3
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - WOODPECKER_OPEN=true
+      - WOODPECKER_HOST=http://localhost:8000
+      - WOODPECKER_AGENT_SECRET=changeme-generate-a-long-random-secret
+    volumes:
+      - woodpecker-data:/var/lib/woodpecker/
+
+  woodpecker-agent:
+    image: woodpeckerci/woodpecker-agent:v3
+    restart: unless-stopped
+    environment:
+      - WOODPECKER_SERVER=woodpecker-server:9000
+      - WOODPECKER_AGENT_SECRET=changeme-generate-a-long-random-secret
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - woodpecker-server
+
+volumes:
+  woodpecker-data:

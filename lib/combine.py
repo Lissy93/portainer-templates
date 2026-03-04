@@ -5,8 +5,6 @@ import string
 BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SOURCES_DIR = os.path.join(BASE_DIR, 'sources')
 
-LOCAL_SOURCES = {'lissy93_templates.json', 'example_templates.json'}
-
 TYPE_LABELS = {1: 'container', 2: 'swarm', 3: 'stack', 4: 'kubernetes'}
 
 reset_color = "\033[0m"
@@ -26,22 +24,28 @@ def template_score(t):
   return score
 
 def load_sources():
-  """Load and merge all template JSON files from the sources directory."""
+  """Load and merge all template JSON files from sources/local/ and sources/external/."""
   templates = []
-  for file in sorted(os.listdir(SOURCES_DIR)):
-    file_path = os.path.join(SOURCES_DIR, file)
-    if not (os.path.isfile(file_path) and file.endswith('.json')):
+  local_dir = os.path.join(SOURCES_DIR, 'local')
+  external_dir = os.path.join(SOURCES_DIR, 'external')
+  for is_local, d in [(True, local_dir), (False, external_dir)]:
+    if not os.path.isdir(d):
       continue
-    with open(file_path) as f:
-      try:
-        source_templates = json.load(f)['templates']
-      except (json.decoder.JSONDecodeError, KeyError) as err:
-        print(f'{rgb(255, 0, 0)}Skipping source due to error:{reset_color} {f.name}')
-        print(f'Error: {err}')
+    for file in sorted(os.listdir(d)):
+      file_path = os.path.join(d, file)
+      if not (os.path.isfile(file_path) and file.endswith('.json')):
         continue
-    for t in source_templates:
-      t['_source'] = file
-    templates += source_templates
+      with open(file_path) as f:
+        try:
+          source_templates = json.load(f)['templates']
+        except (json.decoder.JSONDecodeError, KeyError) as err:
+          print(f'{rgb(255, 0, 0)}Skipping source due to error:{reset_color} {f.name}')
+          print(f'Error: {err}')
+          continue
+      for t in source_templates:
+        t['_source'] = file
+        t['_local'] = is_local
+      templates += source_templates
   return templates
 
 VALID_ENV_KEYS = {'name', 'label', 'description', 'default', 'preset', 'select'}
@@ -96,11 +100,11 @@ def deduplicate_and_normalize(templates):
       print(f'{rgb(255, 165, 0)}Skipping invalid template:{reset_color} {t.get("title", "<no title>")}')
       continue
     key = (normalize_string(t['title']), t.get('type', 1))
-    t_is_local = t.get('_source') in LOCAL_SOURCES
+    t_is_local = t.get('_local', False)
     t_score = template_score(t)
     if key in best:
       existing = best[key]
-      existing_is_local = existing.get('_source') in LOCAL_SOURCES
+      existing_is_local = existing.get('_local', False)
       existing_score = template_score(existing)
       # Local always beats non-local; among same locality, higher score wins
       if t_is_local and not existing_is_local:
@@ -146,9 +150,10 @@ if __name__ == '__main__':
   normalize_template_fields(raw)
   templates = deduplicate_and_normalize(raw)
   postfix_ambiguous_titles(templates)
-  # Strip internal _source tag
+  # Strip internal tags
   for t in templates:
     t.pop('_source', None)
+    t.pop('_local', None)
   templates.sort(key=lambda t: t['title'].lower())
   for i, t in enumerate(templates, start=1):
     t['id'] = i

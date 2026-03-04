@@ -5,7 +5,7 @@ import json
 
 dir = os.path.dirname(os.path.abspath(__file__))
 
-destination_dir = os.path.join(dir, '../sources')
+destination_dir = os.path.join(dir, '../sources/external')
 sources_list = os.path.join(dir, '../sources.csv')
 
 # Downloads the file from a given URL, to the local destination
