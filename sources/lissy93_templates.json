@@ -1,5 +1,5 @@
 {
-  "version": "2",
+  "version": "3",
   "templates": [
     {
       "categories": [
@@ -206,7 +206,7 @@
         "Web",
         "Network"
       ],
-      "description": " The Cloud Native Application Proxy ",
+      "description": "The Cloud Native Application Proxy",
       "env": [],
       "logo": "https://raw.githubusercontent.com/traefik/traefik/master/docs/content/assets/img/traefik.logo.png",
       "name": "traefik",
@@ -216,7 +216,92 @@
         "url": "https://github.com/lissy93/portainer-templates"
       },
       "restart_policy": "unless-stopped",
-      "title": "Outline",
+      "title": "Traefik",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Productivity",
+        "Cloud"
+      ],
+      "description": "Collaboration suite, encrypted and open-source",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/20967956",
+      "name": "cryptpad",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/cryptpad.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "CryptPad",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Messaging",
+        "Social"
+      ],
+      "description": "A lightweight federated messaging service",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/108325695",
+      "name": "databag",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/databag.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Databag",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Gaming",
+        "Other"
+      ],
+      "description": "Dedicated Terraria server in a Docker container",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/584474",
+      "name": "terraria-server",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/terraria-server.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Terraria Server",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Gaming",
+        "Other"
+      ],
+      "description": "Valheim dedicated gameserver in Docker with full modding support",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/82116562",
+      "name": "valheim-server-docker",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/valheim-server-docker.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Valheim Server",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Networking",
+        "VPN"
+      ],
+      "description": "ZeroTier network controller with a web UI",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/4173285",
+      "name": "ztnet",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/ztnet/docker-compose.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "ZTNet",
       "type": 3
     }
   ]
