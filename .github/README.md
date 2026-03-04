@@ -8,7 +8,7 @@
 </p>
 
 > **TL;DR** Under Settings → App Templates in your Portainer GUI, paste this URL:<br>
-> `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates_v3.json`<br>
+> `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`<br>
 
 
 <details>
@@ -43,10 +43,10 @@ You can browse all supported apps and stacks and see stats, config options and s
 
 1. Log into your Portainer web UI
 2. Under <ins>Settings</ins> --> <ins>App Templates</ins>, update the URL to
-    - `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates_v3.json`
+    - `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`
 3. Now under <ins>Home</ins> --> <ins>App Templates</ins>, you should see all apps. Click one to deploy.
 
-The old v2 (`https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`) is no longer working with the current portainer version.    
+This template file uses Portainer's v3 format, which is compatible with all Portainer versions.
 
 <details>
 <summary>Show me...</summary>
@@ -726,4 +726,3 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               |     /          |     /     ~-.     ~- _
               |_____|          |_____|         ~ - . _ _~_-_
 -->
-
