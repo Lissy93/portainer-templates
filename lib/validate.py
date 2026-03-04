@@ -8,30 +8,24 @@ def load_json_file(file_path):
         return json.load(file)
 
 def main():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.join(script_dir, '..')
+
     try:
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-
-        schema_file = os.path.join(script_dir, '..', 'Schema.json')
-        templates_file = os.path.join(script_dir, '..', 'templates.json')
-
-        schema = load_json_file(schema_file)
-        templates = load_json_file(templates_file)
-        
+        schema = load_json_file(os.path.join(root_dir, 'Schema.json'))
+        templates = load_json_file(os.path.join(root_dir, 'templates.json'))
         validate(instance=templates, schema=schema)
-        
         print('✅ templates.json is valid against the schema')
-
     except ValidationError as ve:
-        print('Validation error:', ve.message)
-        json_obj = ve.instance
-        identifier = json_obj.get('title')
-        print('Title of invalid template:', identifier)
+        print(f'❌ Validation error: {ve.message}')
+        if isinstance(ve.instance, dict):
+            print(f'   Title of invalid template: {ve.instance.get("title")}')
         sys.exit(1)
     except FileNotFoundError as fnfe:
-        print(f'File not found error: {fnfe}')
+        print(f'❌ File not found: {fnfe}')
         sys.exit(1)
     except json.JSONDecodeError as jde:
-        print(f'JSON decoding error: {jde}')
+        print(f'❌ JSON decoding error: {jde}')
         sys.exit(1)
 
 if __name__ == '__main__':

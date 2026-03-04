@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "title": "PortainerAppTemplate",
+  "title": "PortainerAppTemplateV3",
   "properties": {
     "version": {
       "type": "string",
-      "minLength": 1,
+      "const": "3",
       "description": "The version of the Portainer App Template."
     },
     "templates": {
@@ -13,11 +13,16 @@
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Unique identifier for the template."
+          },
           "type": {
             "type": "integer",
             "minimum": 1,
-            "maximum": 2,
-            "description": "The type of the application (1 for container, 2 for swarm stack)."
+            "maximum": 4,
+            "description": "The type of the application (1=container, 2=swarm stack, 3=compose stack, 4=kubernetes)."
           },
           "title": {
             "type": "string",
@@ -61,8 +66,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "pattern": "^[0-9]+:[0-9]+(/tcp|/udp)?$",
-              "description": "A port mapping in the format 'hostPort:containerPort/protocol'."
+              "minLength": 1
             },
             "description": "An array of port mappings for the application."
           },
@@ -71,22 +75,25 @@
             "items": {
               "type": "object",
               "properties": {
-                "bind": {
-                  "type": "string",
-                  "minLength": 1,
-                  "description": "The host path for the volume binding."
-                },
                 "container": {
                   "type": "string",
                   "minLength": 1,
                   "description": "The container path for the volume binding."
+                },
+                "bind": {
+                  "type": "string",
+                  "description": "The host path for the volume binding."
+                },
+                "readonly": {
+                  "type": "boolean",
+                  "description": "Whether the volume is read-only."
                 }
               },
-              "required": ["bind", "container"]
+              "required": ["container"]
             },
             "description": "An array of volume mappings for the application."
           },
-          "environment": {
+          "env": {
             "type": "array",
             "items": {
               "type": "object",
@@ -97,16 +104,132 @@
                   "description": "The name of the environment variable."
                 },
                 "label": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Display label for the environment variable."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description of the environment variable."
+                },
+                "default": {
+                  "type": "string",
+                  "description": "The default value for the environment variable."
+                },
+                "preset": {
+                  "type": "boolean",
+                  "description": "When true, the variable is applied silently with its default value."
+                },
+                "select": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "text": { "type": "string" },
+                      "value": { "type": "string" },
+                      "default": { "type": "boolean" }
+                    },
+                    "required": ["text", "value"]
+                  },
+                  "description": "Dropdown options for the environment variable."
                 }
+              },
+              "required": ["name"]
+            },
+            "description": "Environment variables for the template."
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": ["name", "value"]
+            },
+            "description": "Docker labels for the template."
+          },
+          "repository": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL of the git repository."
+              },
+              "stackfile": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Path to the stack file within the repository."
               }
-            }
+            },
+            "required": ["url", "stackfile"],
+            "description": "Repository details for stack templates (types 2 and 3)."
+          },
+          "note": {
+            "type": "string",
+            "description": "Usage or deployment notes (supports HTML)."
+          },
+          "name": {
+            "type": "string",
+            "description": "Default name for the stack/container."
+          },
+          "administrator_only": {
+            "type": "boolean",
+            "description": "Whether the template is only available to administrators."
+          },
+          "registry": {
+            "type": "string",
+            "description": "Registry to pull the image from."
+          },
+          "command": {
+            "type": "string",
+            "description": "Command to run in the container."
+          },
+          "network": {
+            "type": "string",
+            "description": "Network to attach the container to."
+          },
+          "privileged": {
+            "type": "boolean",
+            "description": "Whether to run the container in privileged mode."
+          },
+          "interactive": {
+            "type": "boolean",
+            "description": "Whether the container requires an interactive shell."
+          },
+          "hostname": {
+            "type": "string",
+            "description": "Hostname for the container."
+          },
+          "stackFile": {
+            "type": "string",
+            "description": "Inline stack file content. When present, Portainer uses this directly instead of cloning the repository."
           }
         },
-        "required": ["type", "title", "description", "categories", "platform", "logo", "image"]
+        "required": ["id", "type", "title", "description"],
+        "allOf": [
+          {
+            "if": { "properties": { "type": { "const": 1 } } },
+            "then": { "required": ["image"] }
+          },
+          {
+            "if": { "properties": { "type": { "const": 2 } } },
+            "then": { "required": ["repository"] }
+          },
+          {
+            "if": { "properties": { "type": { "const": 3 } } },
+            "then": { "required": ["repository"] }
+          }
+        ]
       }
     }
   },
   "required": ["version", "templates"]
 }
-
