@@ -50,19 +50,28 @@ def load_sources():
 
 VALID_ENV_KEYS = {'name', 'label', 'description', 'default', 'preset', 'select'}
 
+def _as_list(value):
+  if value is None:
+    return []
+  return value if isinstance(value, list) else [value]
+
+
 def normalize_template_fields(templates):
   """Fix non-standard field names and malformed entries from upstream sources."""
   for t in templates:
     # Merge singular 'category' into 'categories'
     if 'category' in t:
-      existing = t.get('categories', [])
-      merged = list(dict.fromkeys(existing + t.pop('category')))
+      existing = _as_list(t.get('categories', []))
+      category = _as_list(t.pop('category'))
+      merged = list(dict.fromkeys(existing + category))
       t['categories'] = merged
 
     # Fix env vars
     if 'env' in t:
       cleaned_env = []
-      for env in t['env']:
+      for env in _as_list(t['env']):
+        if not isinstance(env, dict):
+          continue
         # Filter malformed entries (entire templates nested in env arrays)
         if not isinstance(env.get('name'), str) or any(k in env for k in ('categories', 'repository', 'logo')):
           continue
