@@ -37,6 +37,8 @@ This repo combines app templates from several [sources](#sources), to create a r
 
 You can browse all supported apps and stacks and see stats, config options and stand-alone installation commands for each, at [portainer-templates.as93.net](https://portainer-templates.as93.net)
 
+The template file uses Portainer's v3 format, which is compatible with all Portainer versions.
+
 ---
 
 ## Usage
@@ -46,12 +48,10 @@ You can browse all supported apps and stacks and see stats, config options and s
     - `https://raw.githubusercontent.com/Lissy93/portainer-templates/main/templates.json`
 3. Now under <ins>Home</ins> --> <ins>App Templates</ins>, you should see all apps. Click one to deploy.
 
-This template file uses Portainer's v3 format, which is compatible with all Portainer versions.
-
 <details>
 <summary>Show me...</summary>
 
-<p align="center"><a href="https://portainer-templates.as93.net"><img width="800" src="https://i.ibb.co/XxGRjrs/portainer-templates-installation.gif" /></a></p>
+<p align="center"><a href="https://portainer-templates.as93.net"><img width="800" src="https://cdn.as93.net/project-screens/portainer-templates-installation/w1024" /></a></p>
 
 </details>
 
@@ -65,7 +65,10 @@ If you'd prefer to source templates locally, you can self-host with Docker - the
 Just run: `docker run -p 8080:80 lissy93/portainer-templates` (changing 8080 to a port of your choice)<br>
 You'll then be able to pass Portainer the template file located at `http://[host]:[port]/templates.json`<br>
 
-Alternatively, you can build the image yourself locally, with the following commands (if you're using your own fork, don't forget to switch `lissy93` out for your username!)
+<details>
+<summary>Or, build locally...</summary>
+
+If you'd prefer to build the image yourself locally, you can do so with the following commands (if you're using your own fork, don't forget to switch `lissy93` out for your username!)
 
 ```bash
 git clone https://github.com/lissy93/portainer-templates.git
@@ -73,6 +76,7 @@ cd portainer-templates
 docker build -t portainer-templates .
 docker run -d -p "8080:80" portainer-templates
 ```
+</details>
 
 If you're using your own template file, but don't want to fork this repository, you can instead simply pass your `templates.json` file to the above Docker container as a volume, with `-v "${PWD}/templates.json:/usr/share/nginx/html/templates.json"`
 
@@ -669,8 +673,9 @@ The main `templates.json` file is composes of these sources, along with the cont
 
 If you notice something not working as it should in any of the [`lib/` scripts](https://github.com/Lissy93/portainer-templates/tree/main/lib), [`website` code](https://github.com/Lissy93/portainer-templates/tree/website), [`README` documentation](https://github.com/Lissy93/portainer-templates/tree/main/.github/README.md), or [`workflows` automations](https://github.com/Lissy93/portainer-templates/tree/main/.github/workflows) - then raise an issue or PR in this repository.
 
-If you encounter an issue with any container included here, please raise a ticket/PR on the up-stream repo, **<ins>not in this repository</ins>**.
-This project simply compiles templates listed in the [Sources](#sources) into a single manifest, so once a fix has been pushed out upstream, it will be available here.
+> [!IMPORTANT]
+> If you encounter an issue with any container included here, please raise a ticket/PR on the up-stream repo, **<ins>not in this repository</ins>**.
+> This project simply compiles templates listed in the [Sources](#sources) into a single manifest, so once a fix has been pushed out upstream, it will be available here.
 
 ---
 
@@ -698,12 +703,12 @@ The source is located in the [`website`](https://github.com/Lissy93/portainer-te
 To make changes to the website, you'll need Node.js and Git installed. Then just run the following commands:
 ```bash
 git clone -b website git@github.com:Lissy93/portainer-templates.git # Clone the website branch
-cd portainer-templates # Navigate into the directory
-npm i # Install dependencies
-npm run dev # Start the development server
+cd portainer-templates          # Navigate into the directory
+npm i                           # Install dependencies
+npm run dev                     # Start the development server
 ```
 
-And to publish, run `npm run build` then either use `npm start` or host the content of the '/build' directory using a web server of your choice. Alternatively, there's a [Dockerfile](https://github.com/Lissy93/portainer-templates/blob/website/Dockerfile), for easy deployment :)
+And to publish, run `npm run build` then either use `npm start` or host the content of the `/build` directory using a web server of your choice. Alternatively, there's a [Dockerfile](https://github.com/Lissy93/portainer-templates/blob/website/Dockerfile), for easy deployment :)
 
 Note that it's not required to make any changes to the website when adding a new template or templates source, as data is fetched directly from [`templates.json`](https://github.com/Lissy93/portainer-templates/blob/main/templates.json) in the repo's main branch - so should show up automatically once your changes are merged.
 
@@ -743,7 +748,7 @@ https://codeberg.org/alicia/portainer-templates/raw/branch/main/templates.json
 
 > **Note** For licenses for each app listed here, see their websites _(linked to [above](#supported-apps-and-stacks))_.
 
-> _**[Lissy93/Portainer-Templates](https://github.com/Lissy93/portainer-templates)** is licensed under [MIT](https://github.com/Lissy93/portainer-templates/blob/HEAD/LICENSE) © [Alicia Sykes](https://aliciasykes.com) 2023._<br>
+> _**[Lissy93/Portainer-Templates](https://github.com/Lissy93/portainer-templates)** is licensed under [MIT](https://github.com/Lissy93/portainer-templates/blob/HEAD/LICENSE) © [Alicia Sykes](https://aliciasykes.com) 2023 - 2026._<br>
 > <sup align="right">For information, see <a href="https://tldrlegal.com/license/mit-license">TLDR Legal > MIT</a></sup>
 
 <details>
@@ -775,9 +780,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 <!-- License + Copyright -->
 <p  align="center">
-  <i>© <a href="https://aliciasykes.com">Alicia Sykes</a> 2023</i><br>
+  <i>© <a href="https://aliciasykes.com">Alicia Sykes</a> 2026</i><br>
   <i>Licensed under <a href="https://gist.github.com/Lissy93/143d2ee01ccc5c052a17">MIT</a></i><br>
-  <a href="https://github.com/lissy93"><img src="https://i.ibb.co/4KtpYxb/octocat-clean-mini.png" /></a><br>
+  <a href="https://github.com/lissy93"><img src="https://pixelflare.cc/alicia/images/octoface.png?w=56" /></a><br>
   <sup>Thanks for visiting :)</sup>
 </p>
 
