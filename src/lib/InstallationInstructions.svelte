@@ -56,7 +56,7 @@
 
   <details>
     <summary>Show Me</summary>
-    <img class="demo" src="https://i.ibb.co/XxGRjrs/portainer-templates-installation.gif" alt="demo" />
+    <img class="demo" src="https://cdn.as93.net/project-screens/portainer-templates-installation" alt="demo" />
   </details>
 
   {#if dockerRunCommand}
@@ -79,7 +79,7 @@
       </div>
     {/each}
   {/if}
-  
+
   {#if dockerComposeFile}
     <hr />
     <h3>Via Docker Compose</h3>
