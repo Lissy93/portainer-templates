@@ -510,6 +510,77 @@
       },
       "title": "Woodpecker CI",
       "type": 3
+    },
+    {
+      "categories": [
+        "Tools",
+        "Monitoring"
+      ],
+      "description": "Self-hosted passive income orchestrator for bandwidth sharing, DePIN, storage, and GPU compute services",
+      "env": [
+        {
+          "default": "UTC",
+          "label": "Timezone",
+          "name": "TZ"
+        },
+        {
+          "label": "Encryption Key",
+          "name": "CASHPILOT_SECRET_KEY"
+        },
+        {
+          "label": "API Key (shared with workers)",
+          "name": "CASHPILOT_API_KEY"
+        }
+      ],
+      "image": "drumsergio/cashpilot:latest",
+      "logo": "https://avatars.githubusercontent.com/u/9169332",
+      "name": "cashpilot",
+      "platform": "linux",
+      "ports": [
+        "8080:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "CashPilot",
+      "type": 1,
+      "volumes": [
+        {
+          "container": "/data"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "Development",
+        "Productivity"
+      ],
+      "description": "Self-hostable AI config management platform for AGENTS.md, CLAUDE.md, Cursor rules, and 30+ AI assistant formats",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/9169332",
+      "name": "lynxprompt",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/lynxprompt.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "LynxPrompt",
+      "type": 3
+    },
+    {
+      "categories": [
+        "Tools",
+        "Networking"
+      ],
+      "description": "Open-source fuel and EV route planner with real-time prices across 36 countries",
+      "env": [],
+      "logo": "https://avatars.githubusercontent.com/u/9169332",
+      "name": "pumperly",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "sources/stacks/pumperly.yml",
+        "url": "https://github.com/lissy93/portainer-templates"
+      },
+      "title": "Pumperly",
+      "type": 3
     }
   ]
 }
