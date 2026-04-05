@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  pumperly:
+    image: drumsergio/pumperly:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://pumperly:pumperly@postgres:5432/pumperly
+      - TZ=UTC
+      - PUMPERLY_DEFAULT_COUNTRY=ES
+      - PUMPERLY_CLUSTER_STATIONS=true
+      - PUMPERLY_EV_ENABLED=1
+    depends_on:
+      - postgres
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  postgres:
+    image: postgis/postgis:17-3.4
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=pumperly
+      - POSTGRES_USER=pumperly
+      - POSTGRES_PASSWORD=pumperly
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
