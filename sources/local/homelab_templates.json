@@ -581,6 +581,32 @@
       },
       "title": "Pumperly",
       "type": 3
+    },
+    {
+      "categories": [
+        "Web",
+        "Tools"
+      ],
+      "description": "Static, config-driven link-in-bio page. Profile card, tappable links, vCard download, QR share — all driven from a single YAML file baked at build time.",
+      "env": [],
+      "image": "kartikey31choudhary/reach-me-out:latest",
+      "logo": "https://raw.githubusercontent.com/kartikeychoudhary/Reach-me-out/main/public/logo.svg",
+      "name": "reach-me-out",
+      "note": "Mount your own config.yaml to /usr/share/nginx/html/config.yaml (read-only) to customize name, links and theme. See https://github.com/kartikeychoudhary/Reach-me-out for the YAML schema and examples.",
+      "platform": "linux",
+      "ports": [
+        "8080:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Reach Me Out",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/path/to/config.yaml",
+          "container": "/usr/share/nginx/html/config.yaml",
+          "readonly": true
+        }
+      ]
     }
   ]
 }
