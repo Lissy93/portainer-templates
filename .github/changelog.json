@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.2.9",
+      "previous": "v1.2.8",
+      "date": "2026-09-27",
+      "templateCount": 799,
+      "added": [
+        "Homedex"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.2.8",
       "previous": "v1.2.7",
       "date": "2026-09-25",
