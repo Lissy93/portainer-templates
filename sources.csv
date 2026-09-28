@@ -10,3 +10,4 @@ selfhostedpro_templates, https://raw.githubusercontent.com/SelfhostedPro/selfhos
 dnburgess_templates, https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json, https://github.com/dnburgess/self-hosted-template/, collection
 deployable_sh_templates, https://deployable.sh/portainer/templates.json, https://github.com/deployable-sh/stacks/, collection
 homedex, https://raw.githubusercontent.com/HarshShah0203/homedex/main/portainer-template.json, https://github.com/HarshShah0203/homedex/, app
+replayhaven, https://raw.githubusercontent.com/SauerExe/ReplayHaven/main/portainer-template.json, https://github.com/SauerExe/ReplayHaven/, app
