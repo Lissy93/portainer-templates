@@ -38,6 +38,7 @@ This repo combines app templates from several [sources](#sources), to create a r
 You can browse all supported apps and stacks and see stats, config options and stand-alone installation commands for each, at [portainer-templates.as93.net](https://portainer-templates.as93.net)
 
 The template file uses Portainer's v3 format, which is compatible with all Portainer versions.
+To add a new template, see [this guide](.github/CREATING_A_TEMPLATE.md).
 
 ---
 
