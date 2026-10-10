@@ -1,6 +1,29 @@
 {
   "entries": [
     {
+      "version": "v1.3.3",
+      "previous": "v1.3.2",
+      "date": "2026-10-10",
+      "templateCount": 797,
+      "added": [],
+      "removed": [],
+      "renamed": [],
+      "updated": [
+        {
+          "title": "AI Marketplace Monitor",
+          "fields": [
+            "env"
+          ]
+        },
+        {
+          "title": "Pumperly",
+          "fields": [
+            "description"
+          ]
+        }
+      ]
+    },
+    {
       "version": "v1.3.2",
       "previous": "v1.3.1",
       "date": "2026-10-10",
