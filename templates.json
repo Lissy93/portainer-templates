@@ -286,7 +286,8 @@
         {
           "name": "UNITYSVC_API_KEY",
           "label": "UnitySVC API key",
-          "description": "For the default configuration: the AI that rates listings, and email and phone notifications. Leave it empty only if you set up other AI and notification services in the web UI; until then, aimm waits."
+          "description": "For the default configuration: the AI that rates listings, and email and phone notifications. Replace the placeholder with your key; with the placeholder, aimm searches but cannot rate listings or send notifications until you set a key here or other AI and notification services in the web UI.",
+          "default": "svcpass_XXXXX"
         },
         {
           "name": "TZ",
@@ -22457,7 +22458,7 @@
         "Tools",
         "Networking"
       ],
-      "description": "Open-source fuel and EV route planner with real-time prices across 36 countries. Source: https://github.com/GeiserX/Pumperly",
+      "description": "Open-source fuel and EV route planner with live prices from 22 countries. Source: https://github.com/GeiserX/Pumperly",
       "env": [
         {
           "default": "ES",
