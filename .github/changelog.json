@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "version": "v1.3.2",
+      "previous": "v1.3.1",
+      "date": "2026-10-10",
+      "templateCount": 797,
+      "added": [
+        "AI Marketplace Monitor"
+      ],
+      "removed": [],
+      "renamed": [],
+      "updated": []
+    },
+    {
       "version": "v1.3.1",
       "previous": "v1.3.0",
       "date": "2026-10-08",
