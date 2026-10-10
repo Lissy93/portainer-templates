@@ -156,30 +156,6 @@
     },
     {
       "categories": [
-        "Database",
-        "Tools"
-      ],
-      "description": "Web-based SQL IDE for sixteen database engines, with a schema browser, ER diagrams and query history. Source: https://github.com/libredb/libredb-studio",
-      "env": [],
-      "image": "ghcr.io/libredb/libredb-studio:latest",
-      "logo": "https://avatars.githubusercontent.com/u/251081537",
-      "name": "libredb-studio",
-      "note": "On first run LibreDB Studio generates the admin password and writes it once to the container logs (<code>docker logs libredb-studio</code>). Sign in as <code>admin@libredb.org</code> with that password. Connections and query history are kept in the <code>/app/data</code> volume. Reaching it over plain HTTP on a LAN address needs <code>AUTH_COOKIE_SECURE=false</code>, otherwise login fails while the container stays healthy.",
-      "platform": "linux",
-      "ports": [
-        "3000:3000/tcp"
-      ],
-      "restart_policy": "unless-stopped",
-      "title": "LibreDB Studio",
-      "type": 1,
-      "volumes": [
-        {
-          "container": "/app/data"
-        }
-      ]
-    },
-    {
-      "categories": [
         "Database"
       ],
       "description": "Open-source search and analytics engine",
