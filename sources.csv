@@ -12,3 +12,4 @@ deployable_sh_templates, https://deployable.sh/portainer/templates.json, https:/
 homedex, https://raw.githubusercontent.com/HarshShah0203/homedex/main/portainer-template.json, https://github.com/HarshShah0203/homedex/, app
 replayhaven, https://raw.githubusercontent.com/SauerExe/ReplayHaven/main/portainer-template.json, https://github.com/SauerExe/ReplayHaven/, app
 ai-marketplace-monitor, https://raw.githubusercontent.com/BoPeng/ai-marketplace-monitor/main/deploy/portainer/templates.json, https://github.com/BoPeng/ai-marketplace-monitor/, app
+libredb_studio, https://raw.githubusercontent.com/libredb/libredb-studio/main/portainer-template.json, https://github.com/libredb/libredb-studio/, app
