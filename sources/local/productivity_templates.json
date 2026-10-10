@@ -294,7 +294,7 @@
         "Tools",
         "Networking"
       ],
-      "description": "Open-source fuel and EV route planner with real-time prices across 36 countries. Source: https://github.com/GeiserX/Pumperly",
+      "description": "Open-source fuel and EV route planner with live prices from 22 countries. Source: https://github.com/GeiserX/Pumperly",
       "env": [
         {
           "default": "ES",
